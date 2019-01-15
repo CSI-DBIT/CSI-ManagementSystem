@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get("/test",(req,res)=>{
-	return res.send("It works!!");
+	return res.send("Welcome to CSI DBIT!!!");
 });
 
 // Server start
