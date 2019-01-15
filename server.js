@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+var port = process.env.PORT || 8080;
+
 // Body-parser Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -13,6 +15,6 @@ app.get("/test",(req,res)=>{
 });
 
 // Server start
-app.listen(8080, (req, res) => {
-    console.log("Listening to port 8080");
+app.listen(port, (req, res) => {
+    console.log("Listening to port");
 });
