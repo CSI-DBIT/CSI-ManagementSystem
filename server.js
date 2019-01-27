@@ -53,7 +53,7 @@ connection.connect(function(err) {
 //server scripting
 var router=express.Router();
 router.post('/login', (req, res) =>{
-	 var id= req.body.id;
+     var id= req.body.id;
      var password = req.body.password;
      connection.query('SELECT * FROM users WHERE id = ?',[id], function (error, results, fields) {
      if (error) {
@@ -61,31 +61,31 @@ router.post('/login', (req, res) =>{
       res.send({
       "code":400,
       "failed":"error ocurred"
-    })
-	}else{
-    // console.log('The solution is: ', results);
-    if(results.length >0){
-      if(results[0].password == password){
-        res.send({
-          "code":200,
-          "success":"login sucessfull"
-            });
-      }
-	  else{
-        res.send({
+      })
+     }else{
+        // console.log('The solution is: ', results);
+       if(results.length >0){
+          if(results[0].password == password){
+             res.send({
+             "code":200,
+             "success":"login sucessfull"
+             });
+          }
+	else{
+          res.send({
           "code":204,
           "success":"Email and password does not match"
-            });
-      }
-    }
-	else{
-      res.send({
-        "code":204,
-        "success":"Email does not exits"
           });
-    }
-  }
-  });
+        }
+       }
+       else{
+         res.send({
+         "code":204,
+         "success":"Email does not exits"
+         });
+       }
+      }
+    });
 });
 
 //port activation
