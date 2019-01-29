@@ -31,6 +31,7 @@
 + Page should also consist of an "Add" button which is used to create a new Minute, in the form of bullet points.
 + A POST request will be sent to IP/minutesList to get the list of minutes.
 + On OK response, a JSON Array will be received -> 
+<pre>
 {
    "minutes":[
       {
@@ -56,7 +57,9 @@
       }
    ]
 }
+</pre>
 + A POST request will be sent to IP/createMinutes to create a new minute with the JSON Object ->
+<pre>
 {
    "agenda":"Some Agenda",
    "date":"Some standard format",
@@ -67,8 +70,8 @@
       "World"
    ]
 }
-
+</pre>
 #### Back-End
-+ Create a Database -> "CsiManagementSystem"
-+ Create a table -> "users(id varchar(10),name varchar(25),role varchar(25),password varchar(60))"
-+ Install nodejs and write and test API -> method="POST" , Inputs(name,password), Description: Check if passwords match of the user, Output(role)
++ Create a table -> "minutes(id varchar(10),agenda varchar(25),date varchar(25),time varchar(25),creator varchar(25),minute blob)"
+Write and test "createMinutes" API -> method="POST" , Inputs(agenda,user id, points), Description: get realtime date and time and save it in the database, Output(status codes)
+Write and test "minutesList" API -> method="POST" , Inputs(userid), Check if user is valid and return a JSON object as mentioned above.
