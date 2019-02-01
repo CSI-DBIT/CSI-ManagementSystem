@@ -11,6 +11,10 @@ app.use(bodyParser.urlencoded({
 
 app.use('/login',login);
 
+app.get("/", (req,res)=>{
+return res.send("Welcome to CSI-DBIT");
+});
+
 //port activation
 app.listen(8080, (req, res) => {
     console.log("Listening on 8080");
