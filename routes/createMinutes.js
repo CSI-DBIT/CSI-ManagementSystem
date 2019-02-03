@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({
 var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: 'oracle',
+    user: process.env.database_user,
+    password: process.env.database_password,
     database: 'CsiManagementSystem'
 });
 connection.connect(function(err) {
@@ -30,10 +30,7 @@ app.post('/createMinutes',(req,res)=>{
 	//checking users exists?
 	connection.query('SELECT * FROM users WHERE id = ?',[id], function (error, results, fields){
     if  (error){
-        res.send({
-        "code":400,
-        "failed":"error ocurred"
-        });
+        res.sendStatus(404);
 	}
 	else{
 		if(results.length >0){
@@ -49,9 +46,7 @@ app.post('/createMinutes',(req,res)=>{
 				if (err)
 				console.log(err);
 				else{
-					res.send({
-					"code":"200",
-					});
+					res.sendStatus(200);
 					console.log("Data Inserted");
 				}
 				});
@@ -59,10 +54,7 @@ app.post('/createMinutes',(req,res)=>{
 			});
 		}
 		else{
-			res.send({
-			"code":400,
-			"failed":"ID does not exsit"
-         });
+			res.sendStatus(400);
 		}		
 	}
 	});
