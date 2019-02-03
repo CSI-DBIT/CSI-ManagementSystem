@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({
 var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: 'oracle',
+    user: process.env.database_user,
+    password: process.env.database_password,
     database: 'CsiManagementSystem'
 });
 connection.connect(function(err) {
@@ -30,10 +30,7 @@ app.post('/minutesList', (req, res) =>{
 	//checking users exists?
 	connection.query('SELECT * FROM users WHERE id = ?',[id], function (error, results, fields){
     if  (error){
-        res.send({
-        "code":400,
-        "failed":"error ocurred"
-        });
+        res.sendStatus(404);
 	}
 	
 	else{
@@ -42,25 +39,19 @@ app.post('/minutesList', (req, res) =>{
 			connection.query('SELECT * FROM minute', function (error, results, fields) {
 			res.send(results);
 			if (error){
-				res.send({
-				"code":400,
-				"failed":"error ocurred"
-				});
+				res.sendStatus(400);
 			}
 			});
 		}
 		else{
-			res.send({
-			"code":400,
-			"failed":"ID does not exsit"
-         });
+			res.sendStatus(400);
 		}
 	}
     });
 });
 
 
-//port listening
+//port listenings
 app.listen(8080, (req, res) => {
     console.log("Listening on 8080");
 });
