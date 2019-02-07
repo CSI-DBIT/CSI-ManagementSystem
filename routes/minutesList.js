@@ -27,27 +27,14 @@ connection.connect(function(err) {
 
 app.post('/minutesList', (req, res) =>{
 	var id = req.body.id;
-	//checking users exists?
-	connection.query('SELECT * FROM users WHERE id = ?',[id], function (error, results, fields){
-    if  (error){
-        res.sendStatus(404);
+	//fetching from minute table
+	connection.query('SELECT * FROM minute', function (error, results, fields) {
+	if (error){
+		res.sendStatus(400);
 	}
-	
-	else{
-		if(results.length >0){
-			//fetching from minute table
-			connection.query('SELECT * FROM minute', function (error, results, fields) {
-			res.send(results);
-			if (error){
-				res.sendStatus(400);
-			}
-			});
-		}
-		else{
-			res.sendStatus(400);
-		}
-	}
-    });
+	else
+	res.send(results);
+	});
 });
 
 
