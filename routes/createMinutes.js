@@ -27,35 +27,23 @@ connection.connect(function(err) {
 
 app.post('/createMinutes',(req,res)=>{
 	var id = req.body.id;
-	//checking users exists?
-	connection.query('SELECT * FROM users WHERE id = ?',[id], function (error, results, fields){
-    if  (error){
-        res.sendStatus(404);
-	}
+	var agenda= req.body.agenda;
+	var points = req.body.points;	
+	
+	//fetching creator from users table
+	connection.query('SELECT name FROM users WHERE users.id=?',[id],function(error,creator,fields){
+	if (error)
+		res.sendStatus(400);
 	else{
-		if(results.length >0){
-			var agenda= req.body.agenda;
-			var points = req.body.points;	
-			//fetching creator from users table
-			connection.query('SELECT name FROM users WHERE users.id=?',[id],function(error,creator,fields){
-			if (error)
-			console.log(error);
-			else{
-				//pushing into minute table 
-				connection.query('INSERT INTO minute VALUES(?,?,CURDATE(),CURTIME(),?,?)',[id,agenda,creator[0].name,points],function(err,results,fields){
-				if (err)
-				console.log(err);
-				else{
-					res.sendStatus(200);
-					console.log("Data Inserted");
-				}
-				});
-			}
-			});
-		}
+		//pushing into minute table 
+		connection.query('INSERT INTO minute VALUES(?,?,CURDATE(),CURTIME(),?,?)',[id,agenda,creator[0].name,points],function(err,results,fields){
+		if (err)
+		res.sendStatus(400);
 		else{
-			res.sendStatus(400);
-		}		
+				res.sendStatus(200);
+				console.log("Data Inserted");
+			}
+		});
 	}
 	});
 });
