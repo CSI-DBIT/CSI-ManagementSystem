@@ -102,6 +102,7 @@
 {
    "id":"2016134613",
    "name":"Calden Rodrigues",
+   "position":"Technical Head"
    "email":"caldenrodrigues1202@gmail.com",
    "phone":"0123456789",
    "year":"FE/SE/TE/BE",
