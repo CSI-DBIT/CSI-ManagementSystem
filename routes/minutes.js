@@ -1,10 +1,6 @@
 var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+var router = express.Router();
+var mysql = require('mysql');
 
 
 // MySQL Connection
@@ -17,7 +13,7 @@ var connection = mysql.createConnection({
 });
 connection.connect(function(err) {
     if (!err) {
-        console.log('Connected to MySql!\n');
+        //console.log('Connected to MySql!\n');
     } else {
         console.log(err);
     }
@@ -25,20 +21,24 @@ connection.connect(function(err) {
 
 
 
-app.post('/createMinutes',(req,res)=>{
+router.post('/create',(req,res)=>{
 	var id = req.body.id;
 	var agenda= req.body.agenda;
 	var points = req.body.points;	
-	
+	console.log(id);
 	//fetching creator from users table
-	connection.query('SELECT name FROM users WHERE users.id=?',[id],function(error,creator,fields){
-	if (error)
+	connection.query('SELECT name FROM profile WHERE profile.id=?',[id],function(error,creator,fields){
+	if (error){
+		console.log(error);
 		res.sendStatus(400);
+	}
 	else{
 		//pushing into minute table 
 		connection.query('INSERT INTO minute VALUES(?,?,CURDATE(),CURTIME(),?,?)',[id,agenda,creator[0].name,points],function(err,results,fields){
-		if (err)
-		res.sendStatus(400);
+		if (err){
+			console.log(err);			
+			res.sendStatus(400);
+		}
 		else{
 				res.sendStatus(200);
 				console.log("Data Inserted");
@@ -48,9 +48,18 @@ app.post('/createMinutes',(req,res)=>{
 	});
 });
 
-
-//Port Listening
-app.listen(8080, (req, res) => {
-    console.log("Listening on 8080");
+router.post('/list', (req, res) =>{
+	var id = req.body.id;
+	//fetching from minute table
+	connection.query('SELECT id,agenda,da_te,ti_me,creator,CONVERT(minute USING utf8) as minute FROM minute', function (error, results, fields) {
+	if (error){
+		console.log(error)
+		res.sendStatus(400);
+	}
+	else
+	res.send(results);
+	});
 });
-	
+
+
+module.exports = router;

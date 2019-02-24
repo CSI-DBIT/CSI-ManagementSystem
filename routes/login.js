@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
 
 connection.connect(function(err) {
     if (!err) {
-        console.log('Connected to MySql!\n');
+        //console.log('Connected to MySql!\n');
     } else {
         console.log(err);
     }
@@ -22,7 +22,7 @@ router.post('/', (req, res) =>{
      var id= req.body.id;
      var password = req.body.password;
      //Query to select the tuple of the user
-     connection.query('SELECT * FROM users WHERE id = ?',[id], function (error, results, fields) {
+     connection.query('SELECT * FROM profile WHERE id = ?',[id], function (error, results, fields) {
      if (error) {
       console.log(error);
       res.status(404);
