@@ -19,7 +19,7 @@ connection.connect(function(err) {
 
 router.post('/',(req,res)=>{
 	var id = req.body.id;
-	
+
 	//fetching deatails from profile table
 	connection.query('SELECT id,name,role,email,phone,year,branch,rollno,batch,membership_left FROM profile where id=?',[id],function(error,results,fields){
 	if(error)
@@ -42,8 +42,8 @@ router.post('/edit',(req,res)=>{
 	var branch = req.body.branch;
 	var rollno = req.body.rollno;
 	var batch = req.body.batch;
-	
-	
+
+
 	//fetching creator from users table
 	connection.query('UPDATE profile SET name =?,email =?,role=?,phone =?,year =?,branch =?,rollno =?,batch =? WHERE id=?',[name,email,role,phone,year,branch,rollno,batch,id],function(error,fields){
 	if (error)
@@ -58,5 +58,3 @@ router.post('/edit',(req,res)=>{
 
 
 module.exports = router;
-	
-	
