@@ -49,7 +49,7 @@
 </template>
 
 <script>
-//import axios from 'axios';
+import axios from 'axios';
   export default {
     name: "login",
     data() {
@@ -79,13 +79,13 @@
             password
           })
             .then((res) => {
-              console.log(res.data);
-              console.log("Inside");
-              //this.$emit("authenticated",true);
-              //this.$router.replace({ name: 'Dash', params: { id: this.id } });
+              console.log(res.data.role);
+              if(res.data.role == "technical head"){
+                this.$emit("authenticated",true);
+                this.$router.replace({ name: 'Dash', params: { id: this.id } });
+              }
             })
             .catch();
-
         }
       },
     }
