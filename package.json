@@ -19,6 +19,7 @@
   "homepage": "https://github.com/CSI-DBIT/CSI-ManagementSystem#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "forever": "^0.15.3",
     "mysql": "^2.16.0"
