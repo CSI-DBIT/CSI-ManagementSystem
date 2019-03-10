@@ -32,6 +32,39 @@ router.post('/',(req,res)=>{
 	});
 });
 
+router.post('/new',(req,res) => {
+  var id = req.body.studentId;
+  var name = req.body.fullName;
+  var email = req.body.email;
+  var phone = req.body.phone;
+  var year = req.body.yearSelect;
+  var branch = req.body.branchSelect;
+  var rollno = req.body.rollno;
+  var batch = req.body.batchSelect;
+  var years = req.body.membershipSelect;
+  connection.query('Insert into profile values(?,?,?,?,?,?,?,?,?,?,?)',[id,"calden","member",name,email,phone,year,branch,rollno,batch,years],function(error,results,fields){
+    if(error){
+      console.log(error);
+      res.sendStatus(400);
+    }
+    else{
+      res.sendStatus(200);
+    }
+  });
+});
+
+router.post('/view', (req,res) => {
+  connection.query('Select id,name,email,phone,year,branch,rollno,batch,membership_left from profile where role=\'member\'',[],function(error,results,fields){
+    if(error){
+      console.log(error);
+      res.sendStatus(400);
+    }
+    else{
+      res.send(results);
+    }
+  });
+});
+
 router.post('/edit',(req,res)=>{
 	var id = req.body.id;
 	var name = req.body.name;
@@ -51,7 +84,7 @@ router.post('/edit',(req,res)=>{
 	else
 	{
 		res.sendStatus(200);
-		console.log("Data Updated");
+		//console.log("Data Updated");
 	}
 	});
 });

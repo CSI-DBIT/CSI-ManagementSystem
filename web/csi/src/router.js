@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from './views/login.vue'
-import Dash from './views/dash.vue'
+import DashAdd from './views/dashAdd.vue'
+import DashMembers from './views/dashMembers.vue'
 
 Vue.use(Router)
 
@@ -19,9 +20,14 @@ export default new Router({
       component: Login
     },
     {
-      path: '/dash',
-      name: 'Dash',
-      component: Dash
+      path: '/dashadd',
+      name: 'DashAdd',
+      component: DashAdd
+    },
+    {
+      path: '/dashMembers',
+      name: 'DashMembers',
+      component: DashMembers
     }
   ]
 })

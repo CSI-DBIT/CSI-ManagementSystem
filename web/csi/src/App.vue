@@ -9,6 +9,8 @@
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
           <v-btn flat to="/login" v-if="authenticated == false">Login</v-btn>
+          <v-btn flat v-if="authenticated" to="/dashMembers" replace>Members</v-btn>
+          <v-btn flat v-if="authenticated" to="/dashAdd" replace>Add Member</v-btn>
           <v-btn flat v-if="authenticated" to="/" v-on:click.native="logout()" replace>Logout</v-btn>
         </v-toolbar-items>
       </v-toolbar>
