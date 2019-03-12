@@ -1,5 +1,15 @@
 var express = require('express');
 var router = express.Router();
+var generator = require('generate-password');
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.email_id,
+    pass: process.env.email_password
+  }
+});
 
 // MySQL Connection
 var mysql = require('mysql');
@@ -33,7 +43,12 @@ router.post('/',(req,res)=>{
 });
 
 router.post('/new',(req,res) => {
+  var password = generator.generate({
+    length: 10,
+    numbers: true
+  });
   var id = req.body.studentId;
+  
   var name = req.body.fullName;
   var email = req.body.email;
   var phone = req.body.phone;
@@ -42,7 +57,20 @@ router.post('/new',(req,res) => {
   var rollno = req.body.rollno;
   var batch = req.body.batchSelect;
   var years = req.body.membershipSelect;
-  connection.query('Insert into profile values(?,?,?,?,?,?,?,?,?,?,?)',[id,"calden","member",name,email,phone,year,branch,rollno,batch,years],function(error,results,fields){
+  var mailOptions = {
+    from: process.env.email_id,
+    to: email,
+    subject: 'First Time Login Password',
+    text: 'Your password for First Time Login into CSI-Management App is '+password
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+  connection.query('Insert into profile values(?,?,?,?,?,?,?,?,?,?,?)',[id,password,"member",name,email,phone,year,branch,rollno,batch,years],function(error,results,fields){
     if(error){
       console.log(error);
       res.sendStatus(400);
