@@ -63,7 +63,7 @@ router.post('/requestlist', (req, res) =>{
 	}
 	else
 	{
-    res.send(results).sendStatus(200);
+    		res.status(200).send(results);
 	}
 	});
 });
@@ -74,7 +74,7 @@ router.post('/finallist', (req, res) =>{
   for (var i = 0; i < req.body.accepted.length; i++)
 {
 	var rid = req.body.accepted[i]
-	connection.query('INSERT INTO final_list SELECT RID, stud_id, name, date, s1, s2, s3, s4, s5, s6, s7 FROM request WHERE RID = ?',[rid], function (error, fields){
+	connection.query('INSERT INTO final_list SELECT RID, stud_id, name, date, s1, s2, s3, s4, s5, s6, s7, reason FROM request WHERE RID = ?',[rid], function (error, fields){
 
 	if (error){
 		console.log(error)
