@@ -82,7 +82,7 @@ import axios from 'axios';
               console.log(res.data.role);
               if(res.data.role == "technical head"){
                 this.$emit("authenticated",true);
-                this.$router.replace({ name: 'Dash', params: { id: this.id } });
+                this.$router.replace({ name: 'DashMembers', params: { id: this.id } });
               }
             })
             .catch();

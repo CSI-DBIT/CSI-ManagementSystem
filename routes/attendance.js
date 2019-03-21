@@ -19,8 +19,6 @@ connection.connect(function(err) {
     }
 });
 
-
-
 router.post('/request',(req,res)=>{
 	var id = req.body.id;
 	var date = req.body.date;
@@ -65,8 +63,7 @@ router.post('/requestlist', (req, res) =>{
 	}
 	else
 	{
-    res.status(400).json(results);
-    //res.send(results).sendStatus(200);
+    res.send(results).sendStatus(200);
 	}
 	});
 });
@@ -78,6 +75,7 @@ router.post('/finallist', (req, res) =>{
 {
 	var rid = req.body.accepted[i]
 	connection.query('INSERT INTO final_list SELECT RID, stud_id, name, date, s1, s2, s3, s4, s5, s6, s7 FROM request WHERE RID = ?',[rid], function (error, fields){
+
 	if (error){
 		console.log(error)
 		res.sendStatus(400);
@@ -97,7 +95,7 @@ router.post('/finallist', (req, res) =>{
 		});
 		console.log("Inserted succesfully");
 		res.sendStatus(200);
-		
+
 	}
 	});
 }
