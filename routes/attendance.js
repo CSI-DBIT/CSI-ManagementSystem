@@ -3,6 +3,7 @@ var router = express.Router();
 var mysql = require('mysql');
 
 // MySQL Connection
+var mysql = require('mysql');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: process.env.database_user,
@@ -17,8 +18,6 @@ connection.connect(function(err) {
         console.log(err);
     }
 });
-
-
 
 router.post('/request',(req,res)=>{
 	var id = req.body.id;
@@ -46,8 +45,9 @@ router.post('/request',(req,res)=>{
 			res.sendStatus(400);
 		}
 		else{
+			console.log("Data Inserted");
 				res.sendStatus(200);
-				console.log("Data Inserted");
+				
 			}
 		});
 	}
@@ -58,7 +58,7 @@ router.post('/request',(req,res)=>{
 router.post('/requestlist', (req, res) =>{
 	connection.query('SELECT * FROM request', function (error, results, fields) {
 	if (error){
-		console.log(error)
+		//console.log(error)
 		res.sendStatus(400);
 	}
 	else
@@ -71,16 +71,34 @@ router.post('/requestlist', (req, res) =>{
 //accept json array, move the record from request to final_list
 router.post('/finallist', (req, res) =>{
   console.log(req.body.accepted[0])
-	connection.query('INSERT INTO final_list SELECT id, stud_id, name, date, s1, s2, s3, s4, s5, s6, s7, reason FROM request WHERE id = ?',[req.body.accepted[0]], function (error, fields){
+  for (var i = 0; i < req.body.accepted.length; i++)
+{
+	var rid = req.body.accepted[i]
+	connection.query('INSERT INTO final_list SELECT RID, stud_id, name, date, s1, s2, s3, s4, s5, s6, s7 FROM request WHERE RID = ?',[rid], function (error, fields){
+
 	if (error){
 		console.log(error)
 		res.sendStatus(400);
 	}
 	else
 	{
-    res.sendStatus(200);
+		connection.query('delete from request where RID = ?',[rid], function (error, results, fields) {
+		if (error){
+			console.log(error)
+			res.sendStatus(400);
+		}
+		else
+		{
+			console.log("Deleted succesfully");
+	    	//res.sendStatus(200);
+		}
+		});
+		console.log("Inserted succesfully");
+		res.sendStatus(200);
+
 	}
 	});
+}
 });
 
 module.exports = router;
