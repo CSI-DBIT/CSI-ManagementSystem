@@ -63,7 +63,7 @@ router.post('/requestlist', (req, res) =>{
 	}
 	else
 	{
-    res.send(results).sendStatus(200);
+    		res.status(200).send(results);
 	}
 	});
 });
@@ -74,7 +74,8 @@ router.post('/finallist', (req, res) =>{
   for (var i = 0; i < req.body.accepted.length; i++)
 {
 	var rid = req.body.accepted[i]
-	connection.query('INSERT INTO final_list SELECT RID, stud_id, name, date, s1, s2, s3, s4, s5, s6, s7 FROM request WHERE RID = ?',[rid], function (error, fields){
+	connection.query('INSERT INTO final_list SELECT RID, stud_id, name, date, s1, s2, s3, s4, s5, s6, s7, reason FROM request WHERE RID = ?',[rid], function (error, fields)
+	{
 
 	if (error){
 		console.log(error)
@@ -82,6 +83,7 @@ router.post('/finallist', (req, res) =>{
 	}
 	else
 	{
+		console.log("Inserted succesfully");
 		connection.query('delete from request where RID = ?',[rid], function (error, results, fields) {
 		if (error){
 			console.log(error)
@@ -90,11 +92,29 @@ router.post('/finallist', (req, res) =>{
 		else
 		{
 			console.log("Deleted succesfully");
+			console.log(req.body.rejected[0])
+  			for (var i = 0; i < req.body.rejected.length; i++)
+			{
+				var id = req.body.rejected[i]
+				connection.query('delete FROM request WHERE RID = ?',[id], function (error, fields){
+
+			if (error){
+				console.log(error)
+				res.sendStatus(400);
+			}
+			else
+			{
+				console.log("Rejected succesfully");
+				res.sendStatus(200);
+
+			}
+			});
+			}
 	    	//res.sendStatus(200);
 		}
 		});
-		console.log("Inserted succesfully");
-		res.sendStatus(200);
+		//console.log("Inserted succesfully");
+		//res.sendStatus(200);
 
 	}
 	});
