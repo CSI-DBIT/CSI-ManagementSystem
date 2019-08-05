@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CSI</string>
+    <string name="title_activity_minutes_list">MinutesList</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">User Name</string>
+    <string name="nav_header_subtitle">User ID</string>
+    <string name="nav_heder_subsubtitle">User Role</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_manager">ActivityManager</string>
+    <string name="title_activity_history">History</string>
+    <string name="title_activity_attendance">Attendance</string>
+    <string name="title_activity_minute_manager">MinuteManager</string>
+
+    <string name="login_preference">com.example.csi_login_preference</string>
+    <string name="login_status_preference">ccom.example.csi_login_status_preference</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id="@+id/detail_activity"
+    tools:context=".DetailActivity">
+
+    <TextView
+        android:id="@+id/final_agenda"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="36dp"
+        android:maxLines="1"
+        android:text="Agenda:"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/final_date"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="36dp"
+        android:maxLines="1"
+        android:text="Date:"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/final_agenda"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/final_time"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:maxLines="1"
+        android:text="Time:"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/final_date"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/final_creator"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:maxLines="1"
+        android:text="Creator:"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/final_time"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/final_points"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:maxLines="1"
+        android:text="Points:"
+        android:textSize="17sp"
+        android:lines="10"
+        app:layout_constraintTop_toBottomOf="@id/final_creator"
+        tools:layout_editor_absoluteX="16dp" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Manager">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Request for attendence "
+            android:textSize="20sp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/colorPrimary"/>
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter date   "
+            android:textSize="15sp"
+            android:padding="5dp"
+            android:background="@drawable/ripple_effect"
+            android:id="@+id/dateBtn"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:id="@+id/date"
+            android:textSize="20sp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/colorPrimary"/>
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select time slot"
+            android:textSize="15sp"
+            android:id="@+id/timeBtn"
+            android:background="@drawable/ripple_effect"
+            android:textColor="@color/white"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
+            android:id="@+id/checkBox"
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            android:padding="5dp">
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="09:00AM - 10:00AM"
+                android:textColor="@color/colorPrimary"
+                android:padding="5dp"/>
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10:00AM - 11:00AM"
+                android:textColor="@color/colorPrimary"
+                android:padding="5dp"/>
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="11:15AM - 12:15PM"
+                android:textColor="@color/colorPrimary"
+                android:padding="5dp"/>
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="12:15PM - 01:15PM"
+                android:textColor="@color/colorPrimary"
+                android:padding="5dp"/>
+            <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="02:00PM - 03:00PM"
+                android:textColor="@color/colorPrimary"
+                android:padding="5dp"/>
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="03:00PM - 04:00PM"
+                android:textColor="@color/colorPrimary"
+                android:padding="5dp"/>
+            <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="04:00PM - 05:00PM"
+                android:textColor="@color/colorPrimary"
+                android:padding="5dp"/>
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/CheckBoxOK"
+                android:layout_marginTop="25dp"
+                android:text="ok"
+                android:background="@drawable/ripple_effect"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/selectedtime"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Reason"
+            android:id="@+id/reason"
+            android:background="@drawable/buts"
+            android:textColor="@color/colorPrimary"
+            android:isScrollContainer="true"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:scrollbarSize="5dp"
+            android:paddingRight="15dp"/>
+
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_effect"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>
