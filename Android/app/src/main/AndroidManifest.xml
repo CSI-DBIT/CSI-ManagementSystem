@@ -12,13 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Gallery.Activities.FullScreenActivity"></activity>
-        <activity android:name=".Gallery.Activities.DisplayImage"
-            android:theme="@style/AppTheme2"/>
-        <activity android:name=".Gallery.Activities.DisplayYear"
-            android:theme="@style/AppTheme2"/>
-        <activity android:name=".Gallery.Activities.DisplayEventName"
-            android:theme="@style/AppTheme2"/>
+        <activity android:name=".mActivityManager.praposal_recycler"></activity>
+        <activity android:name=".Gallery.Activities.FullScreenActivity" />
+        <activity
+            android:name=".Gallery.Activities.DisplayImage"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".Gallery.Activities.DisplayYear"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".Gallery.Activities.DisplayEventName"
+            android:theme="@style/AppTheme2" />
         <activity android:name=".mActivityManager.Technical_form" />
         <activity android:name=".mActivityManager.Creative_form" />
         <activity android:name=".mActivityManager.Report" />
@@ -26,8 +30,9 @@
         <activity android:name=".mActivityManager.Technical" />
         <activity android:name=".mActivityManager.Publicity" />
         <activity android:name=".mActivityManager.Creative" />
-        <activity android:name=".mActivityManager.Proposal"
-            android:theme="@style/AppTheme2"/>
+        <activity
+            android:name=".mActivityManager.Proposal"
+            android:theme="@style/AppTheme2" />
         <activity android:name=".Prompts.ProfileEdit" />
         <activity
             android:name=".Prompts.Manager"

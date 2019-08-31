@@ -23,6 +23,7 @@ import com.example.csi.mActivityManager.Proposal;
 import com.example.csi.mActivityManager.Publicity;
 import com.example.csi.mActivityManager.Report;
 import com.example.csi.mActivityManager.Technical;
+import com.example.csi.mActivityManager.praposal_recycler;
 
 import java.util.TimerTask;
 
@@ -156,7 +157,7 @@ public class ActivityManager extends Fragment  {
                 public void onClick(View v) {
                     //Toast.makeText(getActivity(), "Clicked at index "+ finalI, Toast.LENGTH_SHORT).show();
                     switch (finalI){
-                        case 0: startActivity(new Intent(getActivity(), Proposal.class));
+                        case 0: startActivity(new Intent(getActivity(), praposal_recycler.class));
                                 break;
                         case 1: startActivity(new Intent(getActivity(), Creative.class));
                             break;
