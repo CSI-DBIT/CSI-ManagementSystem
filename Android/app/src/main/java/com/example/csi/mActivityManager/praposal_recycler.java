@@ -131,7 +131,7 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
         PraposalItem clickedItem = mPraposalList.get(position);
         Toast.makeText(praposal_recycler.this,clickedItem.getmEid() , Toast.LENGTH_SHORT).show();
 //        Intent technical_form = new Intent(praposal_recycler.this,Technical_form.class);
-//        startActivity(technical_form);
+//        startActivity(technical_form);  //here sbc head can approve the praposal that info should show in this
 
     }
 }
