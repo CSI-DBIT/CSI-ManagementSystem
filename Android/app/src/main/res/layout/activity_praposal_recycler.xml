@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mActivityManager.praposal_recycler">
+
+
+
+    <!--<Button-->
+        <!--android:id="@+id/praposal_add"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginRight="26dp"-->
+        <!--android:layout_marginBottom="44dp"-->
+        <!--android:background="@drawable/circular_button"-->
+        <!--android:text="+"-->
+        <!--android:textSize="25dp"-->
+        <!--android:textColor="@color/colorPrimary"-->
+        <!--android:textStyle="bold" />-->
+</android.support.constraint.ConstraintLayout>
