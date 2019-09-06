@@ -3,6 +3,7 @@ package com.example.csi.mActivityManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,27 +24,59 @@ import java.io.UnsupportedEncodingException;
 
 public class proposal_desc extends AppCompatActivity {
     String eid;
-    Button ap =findViewById(R.id.approve_pd);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proposal_desc);
 
+        Button ap =findViewById(R.id.approve_pd);
+        Button rej =findViewById(R.id.reject_pd);
+        Button edit = findViewById(R.id.edit_pd);
+
+        Log.i("volleyABC" ,"123");
+
         eid = getIntent().getStringExtra(praposal_recycler.eid);
+        Log.i("volleyABC" ,"123");
 //        Toast.makeText(proposal_desc.this,eid , Toast.LENGTH_SHORT).show();
-        get_data();
+        get_data("http://159.65.144.246:8081/proposal/viewproposal","0","0");
+
+        ap.setOnClickListener(new View.OnClickListener() {
+                                  @Override
+                                  public void onClick(View v) {
+                                      get_data("http://159.65.144.246:8081/proposal/status","1","1" );//if sbc then 1 if hod 2
+                                      finish();
+                                  }
+                              }
+        );
+
+        rej.setOnClickListener(new View.OnClickListener() {
+                                  @Override
+                                  public void onClick(View v) {
+                                      get_data("http://159.65.144.246:8081/proposal/status","1","-1" );//if sbc then -1 if hod -2
+                                      finish();
+                                  }
+                              }
+        );
 
 
 
     }
 
 
-    void get_data() {
+
+
+    void get_data(String url , String flag , String status) {
         JSONObject jsonObject = new JSONObject();
 
         try {
             jsonObject.put("eid",eid); //actual value shud be id_s
+            if(flag.equals("1")){
+                jsonObject.put("status",status);
+
+            }
+
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -52,16 +85,21 @@ public class proposal_desc extends AppCompatActivity {
         final String requestBody = jsonObject.toString();
         Log.i("volleyABC ", requestBody);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://159.65.144.246:8081/proposal/viewproposal", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
                 Log.i("volleyABC response", response);
 //                Toast.makeText(proposal_desc.this,response, Toast.LENGTH_SHORT).show();
+                if(flag.equals("0")){
                 try {
                     set(response);
                 } catch (JSONException e) {
                     e.printStackTrace();
+                }}
+
+                else {
+                    Toast.makeText(proposal_desc.this,"Response Recorded", Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
@@ -70,7 +108,7 @@ public class proposal_desc extends AppCompatActivity {
                 try{
                     //String statusCode = String.valueOf(error.networkResponse.statusCode);
                     Log.i("volleyABC" ,Integer.toString(error.networkResponse.statusCode));
-                    Toast.makeText(proposal_desc.this,"Invalid Username or Password",Toast.LENGTH_SHORT).show();//it will not occur as authenticating at start
+                    Toast.makeText(proposal_desc.this,error.networkResponse.statusCode,Toast.LENGTH_SHORT).show();//it will not occur as authenticating at start
                     error.printStackTrace();}
                 catch (Exception e)
                 {
