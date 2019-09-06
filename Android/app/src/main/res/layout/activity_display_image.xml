@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
-            android:src="@drawable/add_to_photos"
+            android:src="@drawable/"
             />
 
     </android.support.design.widget.CoordinatorLayout>
