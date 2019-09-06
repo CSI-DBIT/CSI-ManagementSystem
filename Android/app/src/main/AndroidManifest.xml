@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".mActivityManager.proposal_desc"></activity>
+        <activity android:name=".mActivityManager.edit_proposal"></activity>
+        <activity android:name=".mActivityManager.proposal_desc" />
         <activity android:name=".mActivityManager.praposal_recycler" />
         <activity android:name=".Gallery.Activities.FullScreenActivity" />
         <activity

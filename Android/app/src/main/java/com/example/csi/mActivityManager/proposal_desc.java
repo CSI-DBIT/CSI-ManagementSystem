@@ -1,5 +1,6 @@
 package com.example.csi.mActivityManager;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,6 +59,15 @@ public class proposal_desc extends AppCompatActivity {
                                       finish();
                                   }
                               }
+        );
+
+        edit.setOnClickListener(new View.OnClickListener() {
+                                   @Override
+                                   public void onClick(View v) {
+                                       Intent edit_proposal = new Intent(proposal_desc.this,edit_proposal.class);
+                                       startActivity(edit_proposal);
+                                   }
+                               }
         );
 
 
