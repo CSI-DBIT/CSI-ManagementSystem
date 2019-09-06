@@ -155,7 +155,6 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
                 }
                 //startActivity(manager);
                 manager.putExtra(EXTRA_UID, uid);
-                Log.i("entered re baba","say"+uid);
                 manager.putExtra(EXTRA_UNAME, USERNAME);
                 manager.putExtra(EXTRA_UROLE, UROLE);
                 manager.putExtra(EXTRA_URL, ProfileURL);

@@ -47,16 +47,16 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
     }
 
     public void parseJSON() {
-        server_url = "http://159.65.144.246:8081/creative/viewListEvents";   //Main Server URL
+        server_url = "http://159.65.144.246:8081/creative/listcreative";   //Main Server URL
         //server_url = "http://192.168.43.110:8081/creative/viewListEvents";
 
         mPraposalList.clear();
 
-        StringRequest stringRequest =new StringRequest(Request.Method.POST,server_url,new Response.Listener<String>(){
+        StringRequest stringRequest =new StringRequest(Request.Method.GET,server_url,new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
                 Log.i("volleyABC" ,"got response    "+response);
-                Toast.makeText(Technical.this,response ,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Technical.this,response ,Toast.LENGTH_SHORT).show();
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
@@ -64,18 +64,17 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
                         JSONObject minutes = jsonArray.getJSONObject(i);
 
                         String eid = minutes.getString("eid");
-                        String date = minutes.getString("p_date");
+                        String date = minutes.getString("event_date");
                         String Name = minutes.getString("name");
-                        Log.i("color status",Name);
-                        String status = minutes.getString("status");
-                        Log.i("color status",status);
+//                        String status = minutes.getString("status");
+                        String theme =minutes.getString("theme");
                         //String points = minutes.getString("minute");
 
                         //in the above variable date we are not getting date in DD:MM:YYYYY
                         //so we are creating new variable date1 to get our desire format
                         String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
 
-                        mPraposalList.add(new PraposalItem(eid, date1, Name, status, "No extra"));
+                        mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name,"0","Theme: "+ theme));
 
                     }
 

@@ -4,10 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mActivityManager.proposal_desc">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="hello"/>
+        android:text="Name :"
+        android:id="@+id/name_pd"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Theme :"
+        android:id="@+id/theme_pd"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description :"
+        android:id="@+id/desc_pd"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Event Date :"
+        android:id="@+id/ed_pd"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="creative budget :"
+        android:id="@+id/cb_pd"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="publicity budget :"
+        android:id="@+id/pb_pd"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="guest budget :"
+        android:id="@+id/gb_pd"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="approve"
+        android:id="@+id/approve_pd"
+        android:textColor="@color/_light_green"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="reject"
+        android:id="@+id/reject_pd"
+        android:textColor="@color/red"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_pd"
+        android:text="edit"
+        android:textColor="@color/blue"/>
+
+
 
 </LinearLayout>

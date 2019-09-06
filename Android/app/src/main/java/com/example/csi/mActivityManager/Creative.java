@@ -70,39 +70,37 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
             @Override
             public void onResponse(String response) {
                 Log.i("volleyABC" ,"got response    "+response);
-                Toast.makeText(Creative.this,response ,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Creative.this,response ,Toast.LENGTH_SHORT).show();
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
                     for(int i=0; i< jsonArray.length(); i++) {
-//                        JSONObject minutes = jsonArray.getJSONObject(i);
-//
-//                        String eid = minutes.getString("eid");
-//                        String date = minutes.getString("p_date");
-//                        String Name = minutes.getString("name");
-//                        Log.i("color status",Name);
-//                        String status = minutes.getString("status");
-//                        Log.i("color status",status);
-//                        //String points = minutes.getString("minute");
-//
-//                        //in the above variable date we are not getting date in DD:MM:YYYYY
-//                        //so we are creating new variable date1 to get our desire format
-//                        String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
-//
-//                        mPraposalList.add(new PraposalItem(eid, date1, Name, status, "No extra"));
-
                         JSONObject minutes = jsonArray.getJSONObject(i);
 
                         String eid = minutes.getString("eid");
+                        String date = minutes.getString("event_date");
                         String Name = minutes.getString("name");
 //                        String status = minutes.getString("status");
-                        String theme = minutes.getString("theme");
+                        String theme =minutes.getString("theme");
+                        //String points = minutes.getString("minute");
+
+                        //in the above variable date we are not getting date in DD:MM:YYYYY
+                        //so we are creating new variable date1 to get our desire format
+                        String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
+
+                        mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name,"0","Theme: "+ theme));
+//                        JSONObject minutes = jsonArray.getJSONObject(i);
+//
+//                        String eid = minutes.getString("eid");
+//                        String Name = minutes.getString("name");
+////                        String status = minutes.getString("status");
+//                        String theme = minutes.getString("theme");
 
                         //in the above variable date we are not getting date in DD:MM:YYYYY
                         //so we are creating new variable date1 to get our desire format
 //                        String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
 
-                        mPraposalList.add(new PraposalItem(eid,null, Name, theme, "No extra"));
+//                        mPraposalList.add(new PraposalItem(eid,null, Name, theme, "No extra"));
 
                     }
 

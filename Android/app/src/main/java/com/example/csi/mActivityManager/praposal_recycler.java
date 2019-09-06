@@ -32,6 +32,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class praposal_recycler extends AppCompatActivity implements  PraposalAdapter.OnItemClickedListener  {
+    public static String eid ="hello";
     private Button add_praposal;
     private RecyclerView rv;
     private PraposalAdapter mPraposalAdapter;
@@ -39,6 +40,9 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
     private RequestQueue mRequestQueue;
     private String server_url;
     SwipeRefreshLayout swipeRefreshLayout;
+//    public static final String UROLE = "com.example.csimanagementsystem.EXTRA_UROLE"; //setting this data is remaining
+//    public static final String eid_e = "com.example.csimanagementsystem.EXTRA_eid_e";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,8 +135,11 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
     @Override
     public void onItemClick(int position) {
         PraposalItem clickedItem = mPraposalList.get(position);
-        Toast.makeText(praposal_recycler.this,clickedItem.getmEid() , Toast.LENGTH_SHORT).show();
+         eid =clickedItem.getmEid();
+//        Toast.makeText(praposal_recycler.this,eid , Toast.LENGTH_SHORT).show();
         Intent proposal_desc = new Intent(praposal_recycler.this,proposal_desc.class);
+        proposal_desc.putExtra("role","role");
+        proposal_desc.putExtra(eid,eid);
         startActivity(proposal_desc);  //here sbc head can approve the praposal that info should show in this
 
     }
