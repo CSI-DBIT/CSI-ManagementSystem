@@ -1,6 +1,7 @@
 package com.example.csi.mAdapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -58,13 +59,19 @@ public class PraposalAdapter extends RecyclerView.Adapter<PraposalAdapter.Exampl
         //Edited By Afif
         exampleViewHolder.container.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.fade_scale_animation_recycler));
 
-        exampleViewHolder.mTextViewAgenda.setText("Event Name: " +Name);
-        exampleViewHolder.mTextViewDate.setText("Date: " + date);
-        exampleViewHolder.mTextViewTime.setText("Eid: " +Eid);
+        exampleViewHolder.mTextViewAgenda.setText(Name);
+        exampleViewHolder.mTextViewDate.setText(date);
+        exampleViewHolder.mTextViewTime.setText(extra);
         Log.i("color status",status);
-       // if(status.equals("-1"))
-        //exampleViewHolder.mTextViewAgenda.setTextColor(@);
-        exampleViewHolder.mTextViewPoints.setText("Extra Points: " +extra );
+        if(status.equals("1"))
+        exampleViewHolder.mTextViewAgenda.setTextColor(Color.parseColor("#7CFC00")); //light green
+        else if(status.equals("2"))
+            exampleViewHolder.mTextViewAgenda.setTextColor(Color.parseColor("#008000")); //dark green
+        else if(status.equals("-1"))
+            exampleViewHolder.mTextViewAgenda.setTextColor(Color.parseColor("#FF4500")); //light red
+        else if(status.equals("-2"))
+            exampleViewHolder.mTextViewAgenda.setTextColor(Color.parseColor("#FF0000")); //dark red
+        exampleViewHolder.mTextViewPoints.setText(extra );
     }
 
     @Override

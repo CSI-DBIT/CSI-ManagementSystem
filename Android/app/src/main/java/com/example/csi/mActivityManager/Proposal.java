@@ -43,6 +43,7 @@ import java.util.List;
 
 public class Proposal extends AppCompatActivity {
     String date = null;
+    String edate = null;
     EditText description;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,17 @@ public class Proposal extends AppCompatActivity {
             public void onClick(View v) {
                 datePickerFrag nf = new datePickerFrag();
                 nf.setCallBack(onDate);
+                nf.show(getSupportFragmentManager(),"datepicker");
+
+            }
+        });
+
+        Button dateOfevent = findViewById(R.id.dateOfevent);
+        dateOfevent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerFrag nf = new datePickerFrag();
+                nf.setCallBack(onEDate);
                 nf.show(getSupportFragmentManager(),"datepicker");
 
             }
@@ -118,6 +130,22 @@ public class Proposal extends AppCompatActivity {
             // outputDate.setText(date);
             Log.i("info1234", date);
             sendDate(date);
+        }
+    };
+
+
+    DatePickerDialog.OnDateSetListener onEDate = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+
+
+            edate = String.valueOf(year) + "-" + String.valueOf(monthOfYear+1)
+                    + "-" + String.valueOf(dayOfMonth);
+
+            //TextView outputDate = rootView.findViewById(R.id.date);
+            // outputDate.setText(date);
+            Log.i("info1234", edate+"event");
         }
     };
 
@@ -275,6 +303,7 @@ public class Proposal extends AppCompatActivity {
 
         if(pnames.length() <1){Toast.makeText(Proposal.this,"Enter Name ",Toast.LENGTH_SHORT).show();}
         else if(pthemes.length() <1){Toast.makeText(Proposal.this,"Enter Theme",Toast.LENGTH_SHORT).show();}
+        else if(edate.length() <1){Toast.makeText(Proposal.this,"Enter Event date",Toast.LENGTH_SHORT).show();}
         else if(pdescs.length() <1){Toast.makeText(Proposal.this,"Enter Description",Toast.LENGTH_SHORT).show();}
         else if(pcbs.length() <1){Toast.makeText(Proposal.this,"Enter Creative Budget",Toast.LENGTH_SHORT).show();}
         else if(ppbs.length() <1){Toast.makeText(Proposal.this,"Enter Publicity Budget ",Toast.LENGTH_SHORT).show();}
@@ -320,6 +349,8 @@ public class Proposal extends AppCompatActivity {
                 preview+="Name : "+pnames;
                 jsonobject.put("theme",pthemes);
                 preview+="\nTheme : "+pthemes;
+                jsonobject.put("e_date",edate);
+                preview+="\nEvent date : "+edate;
                 jsonobject.put("description",pdescs);
                 preview+="\nDescription : "+pdescs;
                 jsonobject.put("agenda",agendas);
@@ -370,6 +401,7 @@ public class Proposal extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
 
                         sendData("http://159.65.144.246:8081/proposal/createproposal",jsonobject,1);
+                        finish();
 
                     }
                 });

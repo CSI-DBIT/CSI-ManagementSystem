@@ -2,12 +2,15 @@ package com.example.csi.mActivityManager;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -35,6 +38,7 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
     private ArrayList<PraposalItem> mPraposalList;
     private RequestQueue mRequestQueue;
     private String server_url;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,18 +71,18 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
 
 //        praposal add button finishes here
 
-
     }
 
+
     public void parseJSON() {
-        server_url = "http://159.65.144.246:8081/creative/viewListEvents";   //Main Server URl
+        server_url = "http://159.65.144.246:8081/proposal/viewlistproposal/";   //Main Server URl
         mPraposalList.clear();
 
-        StringRequest stringRequest =new StringRequest(Request.Method.POST,server_url,new Response.Listener<String>(){
+        StringRequest stringRequest =new StringRequest(Request.Method.GET,server_url,new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
                 Log.i("volleyABC" ,"got response    "+response);
-                Toast.makeText(praposal_recycler.this,response ,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(praposal_recycler.this,response ,Toast.LENGTH_SHORT).show();
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
@@ -86,18 +90,16 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
                         JSONObject minutes = jsonArray.getJSONObject(i);
 
                         String eid = minutes.getString("eid");
-                        String date = minutes.getString("p_date");
                         String Name = minutes.getString("name");
-                        Log.i("color status",Name);
                         String status = minutes.getString("status");
-                        Log.i("color status",status);
-                        //String points = minutes.getString("minute");
+                        String theme = minutes.getString("theme");
+                        String date = minutes.getString("p_date");
 
                         //in the above variable date we are not getting date in DD:MM:YYYYY
                         //so we are creating new variable date1 to get our desire format
-                        String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
+                       String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
 
-                        mPraposalList.add(new PraposalItem(eid, date1, Name, status, "No extra"));
+                        mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name, status,"Theme: "+ theme));
 
                     }
 
@@ -130,8 +132,9 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
     public void onItemClick(int position) {
         PraposalItem clickedItem = mPraposalList.get(position);
         Toast.makeText(praposal_recycler.this,clickedItem.getmEid() , Toast.LENGTH_SHORT).show();
-//        Intent technical_form = new Intent(praposal_recycler.this,Technical_form.class);
-//        startActivity(technical_form);  //here sbc head can approve the praposal that info should show in this
+        Intent proposal_desc = new Intent(praposal_recycler.this,proposal_desc.class);
+        startActivity(proposal_desc);  //here sbc head can approve the praposal that info should show in this
 
     }
+
 }

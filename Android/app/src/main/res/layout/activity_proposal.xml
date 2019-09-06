@@ -75,6 +75,30 @@
                     android:textColor="@color/colorPrimary"
                     android:paddingLeft="10dp"/>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="Event Date:   "
+                    android:textColor="@color/colorPrimary"/>
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="Pick Date"
+                    android:id="@+id/dateOfevent"
+                    android:textColor="@color/white"
+                    android:background="@drawable/ripple_effect"/>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
