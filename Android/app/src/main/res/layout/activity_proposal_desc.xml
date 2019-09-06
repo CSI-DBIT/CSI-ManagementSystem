@@ -2,64 +2,233 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginTop="1dp"
+    android:padding="5dp"
     tools:context=".mActivityManager.proposal_desc">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="5dp">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name :"
+        android:paddingLeft="20sp"
+        android:text="Name"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:text="Name  "
+        android:textSize="17sp"
+        android:textColor="@color/colorAccent"
         android:id="@+id/name_pd"/>
-    <TextView
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="0dp"
+        android:background="#EDEDED" />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Theme :"
+        android:orientation="vertical"
+        android:background="#fff"
+        android:padding="5dp">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20sp"
+        android:text="Theme"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:text="Theme"
+        android:textSize="17sp"
+        android:textColor="@color/colorAccent"
         android:id="@+id/theme_pd"/>
-    <TextView
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="0dp"
+        android:background="#EDEDED" />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Description :"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="5dp">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20sp"
+        android:text="Description"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:textSize="17sp"
+        android:textColor="@color/colorAccent"
+        android:text="Description "
         android:id="@+id/desc_pd"/>
-    <TextView
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="0dp"
+        android:background="#EDEDED" />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Event Date :"
+        android:orientation="vertical"
+        android:background="#fff"
+        android:padding="5dp">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20sp"
+        android:text="Event Date"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:textSize="17sp"
+        android:textColor="@color/colorAccent"
+        android:text="Event Date"
         android:id="@+id/ed_pd"/>
-    <TextView
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="0dp"
+        android:background="#EDEDED" />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="creative budget :"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="5dp">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20sp"
+        android:text="Creative Budget"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:text="Creative Budget."
+        android:textSize="17sp"
+        android:textColor="@color/colorAccent"
         android:id="@+id/cb_pd"/>
-    <TextView
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="0dp"
+        android:background="#EDEDED" />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="publicity budget :"
+        android:orientation="vertical"
+        android:background="#fff"
+        android:padding="5dp">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20sp"
+        android:text="Publicity Budget"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:textSize="17sp"
+        android:textColor="@color/colorAccent"
+        android:text="publicity budget "
         android:id="@+id/pb_pd"/>
-    <TextView
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="0dp"
+        android:background="#EDEDED" />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="guest budget :"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="5dp">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20sp"
+        android:text="Guest Budget"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:textSize="17sp"
+        android:textColor="@color/colorAccent"
+        android:text="guest budget:"
         android:id="@+id/gb_pd"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="5dp"
+        android:layout_gravity="center">
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="approve"
         android:id="@+id/approve_pd"
-        android:textColor="@color/_light_green"/>
+        android:background="@drawable/ripple_effect"
+        android:textColor="@color/_light_green"
+        android:layout_marginTop="10dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="reject"
         android:id="@+id/reject_pd"
-        android:textColor="@color/red"/>
+        android:background="@drawable/ripple_effect"
+        android:textColor="@color/red"
+        android:layout_marginTop="10dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edit_pd"
         android:text="edit"
-        android:textColor="@color/blue"/>
-
-
-
+        android:background="@drawable/ripple_effect"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"/>
+    </LinearLayout>
 </LinearLayout>
