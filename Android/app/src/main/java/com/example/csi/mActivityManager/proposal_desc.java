@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,13 +30,12 @@ public class proposal_desc extends AppCompatActivity {
 
     private SharedPreferenceConfig preferenceConfig;
     String eid;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proposal_desc);
-
+        getSupportActionBar().setTitle("Proposal Description");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Button ap =findViewById(R.id.approve_pd);
         Button rej =findViewById(R.id.reject_pd);
         Button edit = findViewById(R.id.edit_pd);
@@ -50,6 +50,7 @@ public class proposal_desc extends AppCompatActivity {
 //        Toast.makeText(proposal_desc.this,eid , Toast.LENGTH_SHORT).show();
         get_data("http://159.65.144.246:8081/proposal/viewproposal","0","0");
 
+<<<<<<< HEAD
         if(urole1.equals("HOD") || urole1.equals("SBC")){
             ap.setVisibility(View.VISIBLE);
             rej.setVisibility(View.VISIBLE);
@@ -65,33 +66,26 @@ public class proposal_desc extends AppCompatActivity {
                                       finish();
                                   }
                               }
+=======
+        ap.setOnClickListener(v -> {
+            get_data("http://159.65.144.246:8081/proposal/status","1","1" );//if sbc then 1 if hod 2
+            finish();
+        }
+>>>>>>> 9321aa622e2bd1fc176f05bf4bdc1cbbe2572b52
         );
 
-        rej.setOnClickListener(new View.OnClickListener() {
-                                  @Override
-                                  public void onClick(View v) {
-                                      get_data("http://159.65.144.246:8081/proposal/status","1","-1" );//if sbc then -1 if hod -2
-                                      finish();
-                                  }
-                              }
+        rej.setOnClickListener(v -> {
+            get_data("http://159.65.144.246:8081/proposal/status","1","-1" );//if sbc then -1 if hod -2
+            finish();
+        }
         );
 
-        edit.setOnClickListener(new View.OnClickListener() {
-                                   @Override
-                                   public void onClick(View v) {
-                                       Intent edit_proposal = new Intent(proposal_desc.this,edit_proposal.class);
-                                       startActivity(edit_proposal);
-                                   }
-                               }
+        edit.setOnClickListener(v -> {
+            Intent edit_proposal = new Intent(proposal_desc.this,edit_proposal.class);
+            startActivity(edit_proposal);
+        }
         );
-
-
-
     }
-
-
-
-
     void get_data(String url , String flag , String status) {
         JSONObject jsonObject = new JSONObject();
 
@@ -183,6 +177,15 @@ public class proposal_desc extends AppCompatActivity {
         g.setText(res.getString("guest_budget"));
 
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
