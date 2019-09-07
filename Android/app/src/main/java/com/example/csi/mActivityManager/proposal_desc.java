@@ -16,7 +16,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.csi.Prompts.MainActivity;
 import com.example.csi.R;
+import com.example.csi.SharedPreferenceConfig;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,6 +26,8 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 
 public class proposal_desc extends AppCompatActivity {
+
+    private SharedPreferenceConfig preferenceConfig;
     String eid;
 
 
@@ -36,12 +40,23 @@ public class proposal_desc extends AppCompatActivity {
         Button rej =findViewById(R.id.reject_pd);
         Button edit = findViewById(R.id.edit_pd);
 
-        Log.i("volleyABC" ,"123");
+
+        preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
+        String urole1=preferenceConfig.readRoleStatus();
+      Toast.makeText(proposal_desc.this,urole1,Toast.LENGTH_SHORT).show();
 
         eid = getIntent().getStringExtra(praposal_recycler.eid);
         Log.i("volleyABC" ,"123");
 //        Toast.makeText(proposal_desc.this,eid , Toast.LENGTH_SHORT).show();
         get_data("http://159.65.144.246:8081/proposal/viewproposal","0","0");
+
+        if(urole1.equals("HOD") || urole1.equals("SBC")){
+            ap.setVisibility(View.VISIBLE);
+            rej.setVisibility(View.VISIBLE);
+        }
+        else if(urole1.equals("Technical Head")){
+            edit.setVisibility(View.VISIBLE);
+        }
 
         ap.setOnClickListener(new View.OnClickListener() {
                                   @Override

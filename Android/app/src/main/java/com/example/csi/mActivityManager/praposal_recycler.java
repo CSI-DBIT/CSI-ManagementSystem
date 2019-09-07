@@ -21,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.csi.Prompts.AddMinute;
+import com.example.csi.Prompts.MainActivity;
 import com.example.csi.R;
 import com.example.csi.mAdapter.PraposalAdapter;
 import com.example.csi.mAdapter.PraposalItem;
@@ -40,8 +41,6 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
     private RequestQueue mRequestQueue;
     private String server_url;
     SwipeRefreshLayout swipeRefreshLayout;
-//    public static final String UROLE = "com.example.csimanagementsystem.EXTRA_UROLE"; //setting this data is remaining
-//    public static final String eid_e = "com.example.csimanagementsystem.EXTRA_eid_e";
 
 
     @Override
@@ -59,6 +58,8 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
         Log.i("info123","p4");
         rv.setAdapter(new PraposalAdapter(praposal_recycler.this,mPraposalList));
         Log.i("info123","p5");
+
+
 
 //        praposal add button
 
@@ -136,7 +137,7 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
     public void onItemClick(int position) {
         PraposalItem clickedItem = mPraposalList.get(position);
          eid =clickedItem.getmEid();
-//        Toast.makeText(praposal_recycler.this,eid , Toast.LENGTH_SHORT).show();
+
         Intent proposal_desc = new Intent(praposal_recycler.this,proposal_desc.class);
         proposal_desc.putExtra("role","role");
         proposal_desc.putExtra(eid,eid);

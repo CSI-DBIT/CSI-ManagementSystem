@@ -144,6 +144,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
                     SharedPreferences.Editor editor=mpref.edit();
                     editor.putString("username",uid);
                     editor.putString("password",pstring);
+                    editor.putString("urole",UROLE);
                     editor.apply();
                     finish();
 
