@@ -24,6 +24,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.csi.Prompts.AddMinute;
 import com.example.csi.Prompts.MainActivity;
 import com.example.csi.R;
+import com.example.csi.SharedPreferenceConfig;
 import com.example.csi.mAdapter.PraposalAdapter;
 import com.example.csi.mAdapter.PraposalItem;
 
@@ -35,6 +36,9 @@ import java.util.ArrayList;
 
 public class praposal_recycler extends AppCompatActivity implements  PraposalAdapter.OnItemClickedListener  {
     public static String eid ="hello";
+    public static String st=null;
+    private SharedPreferenceConfig preferenceConfig;
+    String urole1=null;
     private Button add_praposal;
     private RecyclerView rv;
     private PraposalAdapter mPraposalAdapter;
@@ -50,6 +54,8 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
         setContentView(R.layout.activity_praposal_recycler);
         getSupportActionBar().setTitle("Proposal");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
+        urole1=preferenceConfig.readRoleStatus();
         mPraposalList = new ArrayList<>();
         rv=findViewById(R.id.recycler_view_praposal);
         Log.i("info123","p2");
@@ -66,6 +72,9 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
 //        praposal add button
 
         add_praposal = (Button) findViewById(R.id.praposal_add);
+        if(urole1.equals("Technical Head")) {
+            add_praposal.setVisibility(View.VISIBLE);
+        }
         add_praposal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +115,15 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
                         //so we are creating new variable date1 to get our desire format
                        String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
 
-                        mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name, status,"Theme: "+ theme));
+                        if(urole1.equals("HOD")){
+                            if(status.equals("1")){
+                                mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name, status,"Theme: "+ theme));
+
+                            }
+
+                        }
+
+                        else mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name, status,"Theme: "+ theme));
 
                     }
 
@@ -139,9 +156,10 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
     public void onItemClick(int position) {
         PraposalItem clickedItem = mPraposalList.get(position);
          eid =clickedItem.getmEid();
+         st = clickedItem.getmStatus();
 
         Intent proposal_desc = new Intent(praposal_recycler.this,proposal_desc.class);
-        proposal_desc.putExtra("role","role");
+        proposal_desc.putExtra(st,st);
         proposal_desc.putExtra(eid,eid);
         startActivity(proposal_desc);  //here sbc head can approve the praposal that info should show in this
 

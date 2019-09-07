@@ -1,5 +1,6 @@
 package com.example.csi.mActivityManager;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,15 +44,21 @@ public class proposal_desc extends AppCompatActivity {
 
         preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
         String urole1=preferenceConfig.readRoleStatus();
-      Toast.makeText(proposal_desc.this,urole1,Toast.LENGTH_SHORT).show();
+//      Toast.makeText(proposal_desc.this,urole1,Toast.LENGTH_SHORT).show();
 
         eid = getIntent().getStringExtra(praposal_recycler.eid);
+        String st = getIntent().getStringExtra(praposal_recycler.st);
+
         Log.i("volleyABC" ,"123");
 //        Toast.makeText(proposal_desc.this,eid , Toast.LENGTH_SHORT).show();
         get_data("http://159.65.144.246:8081/proposal/viewproposal","0","0");
 
 
-        if(urole1.equals("HOD") || urole1.equals("SBC")){
+        if(urole1.equals("HOD") && st.equals("1")){
+            ap.setVisibility(View.VISIBLE);
+            rej.setVisibility(View.VISIBLE);
+        }
+        else if(urole1.equals("SBC") && st.equals("0")){
             ap.setVisibility(View.VISIBLE);
             rej.setVisibility(View.VISIBLE);
         }
@@ -62,15 +69,24 @@ public class proposal_desc extends AppCompatActivity {
         ap.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
-                                      get_data("http://159.65.144.246:8081/proposal/status","1","1" );//if sbc then 1 if hod 2
-                                      finish();
+                                      if(urole1.equals("HOD")) {
+                                          customDialog("The Proposal will be Submitted","2");
+
+//                                          get_data("http://159.65.144.246:8081/proposal/status", "1", "2");//if sbc then 1 if hod 2
+                                      }
+                                      else if(urole1.equals("SBC")) customDialog("The Proposal will be Forwarded to HOD","1");
+//                                          get_data("http://159.65.144.246:8081/proposal/status","1","1" );//if sbc then 1 if hod 2
+
                                   }
                               });
 
 
         rej.setOnClickListener(v -> {
-            get_data("http://159.65.144.246:8081/proposal/status","1","-1" );//if sbc then -1 if hod -2
-            finish();
+                    if(urole1.equals("HOD")) customDialog("The Proposal will be Removed","-2");
+//                        get_data("http://159.65.144.246:8081/proposal/status","1","-2" );//if sbc then 1 if hod 2
+                    else if(urole1.equals("SBC")) customDialog("The Proposal will be Removed","-2");
+//                        get_data("http://159.65.144.246:8081/proposal/status","1","-1" );//if sbc then 1 if hod 2
+//            finish();
         }
         );
 
@@ -180,6 +196,36 @@ public class proposal_desc extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void customDialog(String message , String st){
+        final android.support.v7.app.AlertDialog.Builder builderSingle = new android.support.v7.app.AlertDialog.Builder(proposal_desc.this);
+        //builderSingle.setIcon(R.drawable.ic_notification);
+        builderSingle.setTitle("NOTE");
+        builderSingle.setMessage(message);
+
+        builderSingle.setNegativeButton(
+                "Cancel",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+        builderSingle.setPositiveButton(
+                "OK",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        get_data("http://159.65.144.246:8081/proposal/status","1",st );
+
+                        finish();
+
+                    }
+                });
+
+        builderSingle.show();
     }
 
 }
