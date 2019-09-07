@@ -50,7 +50,7 @@ public class proposal_desc extends AppCompatActivity {
 //        Toast.makeText(proposal_desc.this,eid , Toast.LENGTH_SHORT).show();
         get_data("http://159.65.144.246:8081/proposal/viewproposal","0","0");
 
-<<<<<<< HEAD
+
         if(urole1.equals("HOD") || urole1.equals("SBC")){
             ap.setVisibility(View.VISIBLE);
             rej.setVisibility(View.VISIBLE);
@@ -65,14 +65,8 @@ public class proposal_desc extends AppCompatActivity {
                                       get_data("http://159.65.144.246:8081/proposal/status","1","1" );//if sbc then 1 if hod 2
                                       finish();
                                   }
-                              }
-=======
-        ap.setOnClickListener(v -> {
-            get_data("http://159.65.144.246:8081/proposal/status","1","1" );//if sbc then 1 if hod 2
-            finish();
-        }
->>>>>>> 9321aa622e2bd1fc176f05bf4bdc1cbbe2572b52
-        );
+                              });
+
 
         rej.setOnClickListener(v -> {
             get_data("http://159.65.144.246:8081/proposal/status","1","-1" );//if sbc then -1 if hod -2
