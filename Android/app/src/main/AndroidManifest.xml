@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".mActivityManager.edit_proposal"
-            android:theme="@style/AppTheme2"></activity>
+            android:theme="@style/AppTheme2"/>
         <activity android:name=".mActivityManager.proposal_desc"
             android:theme="@style/AppTheme2"/>
         <activity android:name=".mActivityManager.praposal_recycler"
