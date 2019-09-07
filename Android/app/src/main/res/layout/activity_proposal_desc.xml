@@ -213,7 +213,8 @@
         android:id="@+id/approve_pd"
         android:background="@drawable/ripple_effect"
         android:textColor="@color/_light_green"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -221,7 +222,8 @@
         android:id="@+id/reject_pd"
         android:background="@drawable/ripple_effect"
         android:textColor="@color/red"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -229,6 +231,7 @@
         android:text="edit"
         android:background="@drawable/ripple_effect"
         android:textColor="@color/white"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
     </LinearLayout>
 </LinearLayout>

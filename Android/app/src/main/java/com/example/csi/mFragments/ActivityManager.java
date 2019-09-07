@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
@@ -14,9 +15,13 @@ import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.csi.Gallery.Activities.DisplayEventName;
+import com.example.csi.Prompts.MainActivity;
+import com.example.csi.Prompts.Manager;
 import com.example.csi.R;
+import com.example.csi.SharedPreferenceConfig;
 import com.example.csi.ViewPagerAdapter;
 import com.example.csi.mActivityManager.Creative;
 import com.example.csi.mActivityManager.Proposal;
@@ -61,7 +66,12 @@ public class ActivityManager extends Fragment  {
         //set Event
         setSingleEvent(mainGrid);
 
+
+
         return rootView;
+
+
+
     }
 
     private void imageSlider() {
@@ -157,7 +167,8 @@ public class ActivityManager extends Fragment  {
                 public void onClick(View v) {
                     //Toast.makeText(getActivity(), "Clicked at index "+ finalI, Toast.LENGTH_SHORT).show();
                     switch (finalI){
-                        case 0: startActivity(new Intent(getActivity(), praposal_recycler.class));
+                        case 0:
+                            startActivity(new Intent(getActivity(), praposal_recycler.class));
                                 break;
                         case 1: startActivity(new Intent(getActivity(), Creative.class));
                             break;

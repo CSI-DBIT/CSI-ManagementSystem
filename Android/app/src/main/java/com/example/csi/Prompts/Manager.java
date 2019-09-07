@@ -33,6 +33,7 @@ import com.squareup.picasso.Picasso;
 public class Manager extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private SharedPreferenceConfig preferenceConfig; //....6/6/2019
+    public static final String EXTRA_UROLE = "com.example.csimanagementsystem.EXTRA_UROLE";
 
     String uid, uname, urole, uProfile;
 
@@ -51,7 +52,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //get data sent by Mainactivity.java starts
+        //get data sent by Mainactivity.java startsact
         Intent intent = getIntent();
         uid = intent.getStringExtra(MainActivity.EXTRA_UID);
         Log.i("tracking uid","manager when received "+uid);
