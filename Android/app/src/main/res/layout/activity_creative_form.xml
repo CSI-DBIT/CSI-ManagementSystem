@@ -37,13 +37,14 @@
                     android:textSize="15dp"
                     android:text="NAME"
                     android:textColor="@color/colorPrimary"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@drawable/buts"
-                    android:textColor="@color/colorPrimary"
-                    android:paddingLeft="10dp"
-                    android:id="@+id/praposal_name"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:text="Name  "
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/name"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,19 +59,21 @@
                     android:textSize="15dp"
                     android:text="THEME"
                     android:textColor="@color/colorPrimary"/>
-                <EditText
-                    android:id="@+id/ptheme"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@drawable/buts"
-                    android:textColor="@color/colorPrimary"
-                    android:paddingLeft="10dp"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:text="Theme"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/theme"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_gravity="left"
+                android:orientation="vertical"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp">
@@ -80,14 +83,14 @@
                     android:textSize="15dp"
                     android:text="EVENT DATE:   "
                     android:textColor="@color/colorPrimary"/>
-                <Button
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Pick Date"
-                    android:id="@+id/dateOfevent"
-                    android:textColor="@color/white"
-                    android:background="@drawable/ripple_effect"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Event Date"
+                    android:id="@+id/ed"/>
             </LinearLayout>
 
             <LinearLayout
@@ -103,22 +106,14 @@
                     android:textSize="15dp"
                     android:text="DESCRIPTION"
                     android:textColor="@color/colorPrimary"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:id="@+id/pdescription"
-                    android:background="@drawable/buts"
-                    android:textColor="@color/colorPrimary"
-                    android:isScrollContainer="true"
-                    android:paddingStart="10dp"
-                    android:paddingLeft="10dp"
-                    android:inputType="textMultiLine"
-                    android:singleLine="false"
-                    android:overScrollMode="always"
-                    android:scrollbarStyle="insideInset"
-                    android:scrollbars="vertical"
-                    android:scrollbarSize="5dp"
-                    android:paddingRight="15dp"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Description "
+                    android:id="@+id/desc_pd"/>
             </LinearLayout>
         </LinearLayout>
         <View
@@ -157,14 +152,14 @@
                     android:textSize="15dp"
                     android:text="CREATIVE"
                     android:textColor="@color/colorPrimary"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:id="@+id/creativebudget"
-                    android:inputType="number"
-                    android:background="@drawable/buts"
-                    android:textColor="@color/colorPrimary"
-                    android:paddingLeft="10dp"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="40dp"
+                    android:text="Creative Budget."
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/cb"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -179,14 +174,14 @@
                     android:textSize="15dp"
                     android:text="PUBLICITY"
                     android:textColor="@color/colorPrimary"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:inputType="number"
-                    android:id="@+id/publicitybdget"
-                    android:background="@drawable/buts"
-                    android:textColor="@color/colorPrimary"
-                    android:paddingLeft="10dp"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="40dp"
+                    android:text="Publicity Budget."
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/pb"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -201,14 +196,14 @@
                     android:textSize="15dp"
                     android:text="GUEST"
                     android:textColor="@color/colorPrimary"/>
-                <EditText
-                    android:id="@+id/guestp"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:inputType="number"
-                    android:background="@drawable/buts"
-                    android:textColor="@color/colorPrimary"
-                    android:paddingLeft="10dp"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="guest budget:"
+                    android:id="@+id/gb"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -216,8 +211,6 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp">
-
-
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -229,7 +222,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp">
-                <EditText
+                <TextView
                     android:layout_width="80dp"
                     android:layout_height="30dp"
                     android:hint="other"
@@ -237,7 +230,7 @@
                     android:id="@+id/other1F"
                     android:paddingLeft="10dp"
                     android:textColor="@color/colorPrimary"/>
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:inputType="number"
@@ -256,7 +249,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp">
-                <EditText
+                <TextView
                     android:layout_width="80dp"
                     android:layout_height="30dp"
                     android:hint="other"
@@ -264,7 +257,7 @@
                     android:id="@+id/other2F"
                     android:paddingLeft="10dp"
                     android:textColor="@color/colorPrimary"/>
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:inputType="number"
@@ -283,7 +276,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp">
-                <EditText
+                <TextView
                     android:layout_width="80dp"
                     android:layout_height="30dp"
                     android:hint="other"
@@ -291,7 +284,7 @@
                     android:id="@+id/other3F"
                     android:paddingLeft="10dp"
                     android:textColor="@color/colorPrimary"/>
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:inputType="number"
@@ -309,14 +302,14 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp">
-                <EditText
+                <TextView
                     android:layout_width="80dp"
                     android:layout_height="30dp"
                     android:background="@drawable/buts"
                     android:hint="other"
                     android:paddingLeft="10dp"
                     android:textColor="@color/colorPrimary"/>
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:inputType="number"
@@ -326,13 +319,6 @@
                     android:paddingLeft="10dp"
                     android:textColor="@color/colorPrimary"/>
             </LinearLayout>
-            <Button
-                android:id="@+id/addField"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/ic_add_circle_activity"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/colorPrimary"/>
         </LinearLayout>
         <View
             android:layout_width="10000dp"
@@ -360,18 +346,15 @@
             <LinearLayout
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
-                <Button
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Pick Date"
-                    android:id="@+id/dateOfMeeting"
-                    android:textColor="@color/white"
-                    android:background="@drawable/ripple_effect"/>
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Event Date"
+                    android:id="@+id/meeting_date"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -386,12 +369,15 @@
                     android:textSize="20dp"
                     android:text="Agenda:"
                     android:textColor="@color/colorPrimary"/>
-                <Spinner
-                    android:id="@+id/agendaSpinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:textColor="@color/colorPrimary"
-                    android:paddingLeft="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:text="Agenda:"
+                    android:id="@+id/agenda"
+                    android:textColor="@color/colorPrimary"/>
+
             </LinearLayout>
             <View
                 android:layout_width="10000dp"
@@ -402,8 +388,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="20dp"
-                android:textSize="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 android:text="UPLOAD:"
                 android:textColor="@color/colorPrimary"/>
             <LinearLayout
@@ -416,8 +402,8 @@
                 android:layout_marginRight="5dp">
             <Button
                 style="?android:attr/borderlessButtonStyle"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:id="@+id/upload"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_insert_photo_black_24dp"

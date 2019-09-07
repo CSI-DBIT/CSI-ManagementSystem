@@ -59,7 +59,6 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
 
     }
 
-
     public void parseJSON() {
         server_url = "http://159.65.144.246:8081/creative/listcreative";   //Main Server URL
        // server_url = "http://192.168.43.110:8081/creative/viewListEvents";
@@ -103,11 +102,9 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
 //                        mPraposalList.add(new PraposalItem(eid,null, Name, theme, "No extra"));
 
                     }
-
                     mPraposalAdapter = new PraposalAdapter(Creative.this, mPraposalList);
                     rv.setAdapter(mPraposalAdapter);
                     mPraposalAdapter.setOnItemClickListener(Creative.this);
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -128,17 +125,12 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
         });
         mRequestQueue.add(stringRequest);
     }
-
-
     @Override
     public void onItemClick(int position) {
         PraposalItem clickedItem = mPraposalList.get(position);
         Toast.makeText(Creative.this,clickedItem.getmEid() , Toast.LENGTH_SHORT).show();
         Intent creative_form = new Intent(Creative.this,Creative_form.class);
         startActivity(creative_form);
-
-
         //write here code when press back
-
     }
 }
