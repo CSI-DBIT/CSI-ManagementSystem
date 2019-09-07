@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -48,7 +49,8 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_praposal_recycler);
-
+        getSupportActionBar().setTitle("Proposal");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mPraposalList = new ArrayList<>();
         rv=findViewById(R.id.recycler_view_praposal);
         Log.i("info123","p2");
@@ -143,5 +145,13 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
         startActivity(proposal_desc);  //here sbc head can approve the praposal that info should show in this
 
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

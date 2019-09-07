@@ -116,7 +116,8 @@
                     android:singleLine="false"
                     android:overScrollMode="always"
                     android:scrollbarStyle="insideInset"
-                    android:scrollbars="vertical"                  android:scrollbarSize="5dp"
+                    android:scrollbars="vertical"
+                    android:scrollbarSize="5dp"
                     android:paddingRight="15dp"/>
             </LinearLayout>
         </LinearLayout>

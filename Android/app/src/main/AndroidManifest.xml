@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".mActivityManager.edit_proposal"></activity>
-        <activity android:name=".mActivityManager.proposal_desc" />
-        <activity android:name=".mActivityManager.praposal_recycler" />
+        <activity android:name=".mActivityManager.edit_proposal"
+            android:theme="@style/AppTheme2"></activity>
+        <activity android:name=".mActivityManager.proposal_desc"
+            android:theme="@style/AppTheme2"/>
+        <activity android:name=".mActivityManager.praposal_recycler"
+            android:theme="@style/AppTheme2"/>
         <activity android:name=".Gallery.Activities.FullScreenActivity" />
         <activity
             android:name=".Gallery.Activities.DisplayImage"

@@ -53,7 +53,7 @@ public class Proposal extends AppCompatActivity {
         description.setMaxLines(5);
         description.setVerticalScrollBarEnabled(true);
         description.setMovementMethod(new ScrollingMovementMethod());
-        getSupportActionBar().setTitle("Proposal");
+        getSupportActionBar().setTitle("Create Proposal");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Button submit = findViewById(R.id.submit_praposal);
         submit.setOnClickListener(new View.OnClickListener() {
