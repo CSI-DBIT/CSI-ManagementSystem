@@ -22,8 +22,8 @@
             android:title="Attendance" />
         <item
             android:id="@+id/nav_history"
-            android:icon="@drawable/ic_history_black"
-            android:title="History" />
+            android:icon="@drawable/ic_coder_head"
+            android:title="Developers" />
     </group>
 
     <item android:title="Others">
@@ -35,7 +35,7 @@
             <item
                 android:id="@+id/nav_help"
                 android:icon="@drawable/ic_help_outline_black"
-                android:title="Help" />
+                android:title="About us" />
             <item
                 android:id="@+id/log_out"
                 android:icon="@drawable/ic_exit_to_app_black_24dp"
