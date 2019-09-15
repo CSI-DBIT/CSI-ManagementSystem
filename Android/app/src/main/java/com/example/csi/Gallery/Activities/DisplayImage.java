@@ -61,8 +61,6 @@ public class DisplayImage extends AppCompatActivity {
     private RequestQueue mRequestQueue;
 
     //updated variables use to upload images only
-    Button button;
-    TextView tv;
     ProgressDialog progress;
     Uri selectedImage;
     OkHttpClient client;
