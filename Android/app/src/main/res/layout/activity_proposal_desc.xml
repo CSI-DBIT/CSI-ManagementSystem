@@ -203,6 +203,52 @@
         android:text="guest budget:"
         android:id="@+id/gb_pd"/>
     </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Comments"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/comment_e"
+                android:background="@drawable/buts"
+                android:textColor="@color/colorPrimary"
+                android:isScrollContainer="true"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                android:overScrollMode="always"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:scrollbarSize="5dp"
+                android:paddingRight="15dp"
+                android:visibility="gone"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textSize="17sp"
+                android:textColor="@color/colorAccent"
+                android:text="comments"
+                android:id="@+id/comment_t"
+                android:visibility="gone"/>
+        </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

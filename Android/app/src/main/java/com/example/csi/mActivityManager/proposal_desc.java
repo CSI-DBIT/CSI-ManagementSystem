@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,10 @@ import java.io.UnsupportedEncodingException;
 
 public class proposal_desc extends AppCompatActivity {
 
+    String extra="";
+    EditText comment_e;
+    TextView comment_t;
+
     private SharedPreferenceConfig preferenceConfig;
     String eid;
     @Override
@@ -40,6 +45,8 @@ public class proposal_desc extends AppCompatActivity {
         Button ap =findViewById(R.id.approve_pd);
         Button rej =findViewById(R.id.reject_pd);
         Button edit = findViewById(R.id.edit_pd);
+         comment_e = findViewById(R.id.comment_e);
+         comment_t = findViewById(R.id.comment_t);
 
 
         preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
@@ -57,13 +64,16 @@ public class proposal_desc extends AppCompatActivity {
         if(urole1.equals("HOD") && st.equals("1")){
             ap.setVisibility(View.VISIBLE);
             rej.setVisibility(View.VISIBLE);
+            comment_e.setVisibility(View.VISIBLE);
         }
         else if(urole1.equals("SBC") && st.equals("0")){
             ap.setVisibility(View.VISIBLE);
             rej.setVisibility(View.VISIBLE);
+            comment_e.setVisibility(View.VISIBLE);
         }
         else if(urole1.equals("Technical Head")){
             edit.setVisibility(View.VISIBLE);
+            comment_t.setVisibility(View.VISIBLE);
         }
 
         ap.setOnClickListener(new View.OnClickListener() {
@@ -72,10 +82,10 @@ public class proposal_desc extends AppCompatActivity {
                                       if(urole1.equals("HOD")) {
                                           customDialog("The Proposal will be Submitted","2");
 
-//                                          get_data("http://159.65.144.246:8081/proposal/status", "1", "2");//if sbc then 1 if hod 2
+//                                          //if sbc then 1 if hod 2
                                       }
                                       else if(urole1.equals("SBC")) customDialog("The Proposal will be Forwarded to HOD","1");
-//                                          get_data("http://159.65.144.246:8081/proposal/status","1","1" );//if sbc then 1 if hod 2
+//                                          //if sbc then 1 if hod 2
 
                                   }
                               });
@@ -83,15 +93,17 @@ public class proposal_desc extends AppCompatActivity {
 
         rej.setOnClickListener(v -> {
                     if(urole1.equals("HOD")) customDialog("The Proposal will be Removed","-2");
-//                        get_data("http://159.65.144.246:8081/proposal/status","1","-2" );//if sbc then 1 if hod 2
+//                        //if sbc then 1 if hod 2
                     else if(urole1.equals("SBC")) customDialog("The Proposal will be Removed","-2");
-//                        get_data("http://159.65.144.246:8081/proposal/status","1","-1" );//if sbc then 1 if hod 2
+//                        //if sbc then 1 if hod 2
 //            finish();
         }
         );
 
         edit.setOnClickListener(v -> {
             Intent edit_proposal = new Intent(proposal_desc.this,edit_proposal.class);
+            edit_proposal.putExtra("data",extra);
+            edit_proposal.putExtra("eid",eid);
             startActivity(edit_proposal);
         }
         );
@@ -103,6 +115,7 @@ public class proposal_desc extends AppCompatActivity {
             jsonObject.put("eid",eid); //actual value shud be id_s
             if(flag.equals("1")){
                 jsonObject.put("status",status);
+                jsonObject.put("comment",comment_e.getText().toString());
 
             }
 
@@ -122,6 +135,7 @@ public class proposal_desc extends AppCompatActivity {
 //                Toast.makeText(proposal_desc.this,response, Toast.LENGTH_SHORT).show();
                 if(flag.equals("0")){
                 try {
+                    extra=response;
                     set(response);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -185,17 +199,16 @@ public class proposal_desc extends AppCompatActivity {
         c.setText(res.getString("creative_budget"));
         p.setText(res.getString("publicity_budget"));
         g.setText(res.getString("guest_budget"));
+        comment_t.setText(res.getString("comment"));
 
 
     }
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        // TODO Auto-generated method sub
-        int id= item.getItemId();
-        if (id == android.R.id.home){
-            finish();
-        }
-        return super.onOptionsItemSelected(item);
+    public void onResume()
+    {  // After a pause OR at startup
+        super.onResume();
+        //Refresh your stuff here
+        get_data("http://159.65.144.246:8081/proposal/viewproposal","0","0");
     }
 
     public void customDialog(String message , String st){

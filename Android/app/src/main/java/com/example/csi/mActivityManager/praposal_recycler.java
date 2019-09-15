@@ -98,6 +98,7 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
             @Override
             public void onResponse(String response) {
                 Log.i("volleyABC" ,"got response    "+response);
+                mPraposalList.clear();
 //                Toast.makeText(praposal_recycler.this,response ,Toast.LENGTH_SHORT).show();
                 try {
                     JSONArray jsonArray = new JSONArray(response);
@@ -172,5 +173,12 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public void onResume()
+    {  // After a pause OR at startup
+        super.onResume();
+        //Refresh your stuff here
+        parseJSON();
     }
 }
