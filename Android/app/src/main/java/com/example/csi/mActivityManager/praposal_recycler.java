@@ -46,8 +46,6 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
     private RequestQueue mRequestQueue;
     private String server_url;
     SwipeRefreshLayout swipeRefreshLayout;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

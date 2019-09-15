@@ -86,7 +86,7 @@
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:textSize="14sp"
                     android:textColor="@color/colorAccent"
                     android:text="Event Date"
@@ -155,8 +155,8 @@
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="40dp"
-                    android:text="Creative Budget."
+                    android:paddingLeft="20dp"
+                    android:text="Creative Budget"
                     android:textSize="14sp"
                     android:textColor="@color/colorAccent"
                     android:id="@+id/cb"/>
@@ -177,8 +177,8 @@
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="40dp"
-                    android:text="Publicity Budget."
+                    android:paddingLeft="20dp"
+                    android:text="Publicity Budget"
                     android:textSize="14sp"
                     android:textColor="@color/colorAccent"
                     android:id="@+id/pb"/>
@@ -202,7 +202,7 @@
                     android:paddingLeft="20dp"
                     android:textSize="14sp"
                     android:textColor="@color/colorAccent"
-                    android:text="guest budget:"
+                    android:text="guest budget"
                     android:id="@+id/gb"/>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -350,8 +350,8 @@
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
                     android:textColor="@color/colorAccent"
                     android:text="Event Date"
                     android:id="@+id/meeting_date"/>
@@ -374,7 +374,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:textSize="15dp"
-                    android:text="Agenda:"
+                    android:text="Agenda"
                     android:id="@+id/agenda"
                     android:textColor="@color/colorPrimary"/>
 
@@ -390,7 +390,7 @@
                 android:layout_marginLeft="5dp"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:text="UPLOAD:"
+                android:text="UPLOAD"
                 android:textColor="@color/colorPrimary"/>
             <LinearLayout
                 android:layout_width="match_parent"

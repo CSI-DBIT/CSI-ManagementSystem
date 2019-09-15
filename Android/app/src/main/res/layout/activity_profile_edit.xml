@@ -292,8 +292,11 @@
                 <Button
                     style="?android:attr/borderlessButtonStyle"
                     android:id="@+id/save_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_width="251dp"
+                    android:layout_height="49dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
                     android:text="SAVE"
                     android:textColor="@color/white"
                     android:textSize="20sp"

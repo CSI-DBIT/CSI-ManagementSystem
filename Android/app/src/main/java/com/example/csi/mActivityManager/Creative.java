@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,7 +48,8 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creative);
-
+        getSupportActionBar().setTitle("Creative");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mPraposalList = new ArrayList<>();
         rv=findViewById(R.id.recycler_view_P);
         rv.setLayoutManager(new LinearLayoutManager(Creative.this));
@@ -132,5 +134,14 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
         Intent creative_form = new Intent(Creative.this,Creative_form.class);
         startActivity(creative_form);
         //write here code when press back
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -29,12 +29,14 @@
             android:name=".Gallery.Activities.DisplayEventName"
             android:theme="@style/AppTheme2" />
         <activity android:name=".mActivityManager.Technical_form" />
-        <activity android:name=".mActivityManager.Creative_form" />
+        <activity android:name=".mActivityManager.Creative_form"
+            android:theme="@style/AppTheme2"/>
         <activity android:name=".mActivityManager.Report" />
         <activity android:name=".mActivityManager.Gallery" />
         <activity android:name=".mActivityManager.Technical" />
         <activity android:name=".mActivityManager.Publicity" />
-        <activity android:name=".mActivityManager.Creative" />
+        <activity android:name=".mActivityManager.Creative"
+            android:theme="@style/AppTheme2"/>
         <activity
             android:name=".mActivityManager.Proposal"
             android:theme="@style/AppTheme2" />

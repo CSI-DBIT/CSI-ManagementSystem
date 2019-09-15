@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -55,7 +56,8 @@ public class Creative_form extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creative_form);
-
+        getSupportActionBar().setTitle("Creative Form");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         uploadImage = (Button) findViewById(R.id.uploadImage);
         uploadVideo = (Button) findViewById(R.id.uploadVideo);
 
@@ -295,5 +297,14 @@ public class Creative_form extends AppCompatActivity {
         String extention = path.substring(path.lastIndexOf("."));
         String mimeTypeMap = MimeTypeMap.getFileExtensionFromUrl(extention);
         return MimeTypeMap.getSingleton().getMimeTypeFromExtension(mimeTypeMap);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
