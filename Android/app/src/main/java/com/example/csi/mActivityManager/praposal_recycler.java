@@ -60,6 +60,7 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
         rv.setLayoutManager(new LinearLayoutManager(praposal_recycler.this));
         mRequestQueue = Volley.newRequestQueue(praposal_recycler.this);
         Log.i("info123","p3");
+        swipe();
         parseJSON(); //This method is used to get list of Agendas from server
         Log.i("info123","p4");
         rv.setAdapter(new PraposalAdapter(praposal_recycler.this,mPraposalList));
@@ -87,6 +88,28 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
 
     }
 
+    void swipe() {
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresher_P);
+        //swipeRefreshLayout.setColorSchemeResources(R.color.Red,R.color.OrangeRed,R.color.Yellow,R.color.GreenYellow,R.color.BlueViolet);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                swipeRefreshLayout.setRefreshing(true);
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipeRefreshLayout.setRefreshing(false);
+
+                        int min = 65;
+                        int max = 95;
+
+                        parseJSON();
+                    }
+                }, 1000);
+            }
+        });
+    }
 
     public void parseJSON() {
         server_url = "http://159.65.144.246:8081/proposal/viewlistproposal/";   //Main Server URl
@@ -95,6 +118,7 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
         StringRequest stringRequest =new StringRequest(Request.Method.GET,server_url,new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
+                swipeRefreshLayout.setRefreshing(false);
                 Log.i("volleyABC" ,"got response    "+response);
                 mPraposalList.clear();
 //                Toast.makeText(praposal_recycler.this,response ,Toast.LENGTH_SHORT).show();

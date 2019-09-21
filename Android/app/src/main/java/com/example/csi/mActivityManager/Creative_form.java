@@ -2,7 +2,9 @@ package com.example.csi.mActivityManager;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
@@ -18,15 +20,20 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.csi.Gallery.Activities.DisplayImage;
 import com.example.csi.Gallery.ImageFilePath;
+import com.example.csi.Prompts.MainActivity;
+import com.example.csi.Prompts.Manager;
 import com.example.csi.R;
 
 import org.json.JSONException;
@@ -45,17 +52,37 @@ import okhttp3.RequestBody;
 
 public class Creative_form extends AppCompatActivity {
 
-    public String mediaType = "Image";
+    public String mediaType = "Image", eid;
+    public String server_url = "http://159.65.144.246:8081/creative/viewpropdetail";
+    String name, theme, eventDate, description, creativeBudget;
+
+    TextView eventName, eventTheme, event_date, eventDescription, creative_budget;
+
     Button uploadImage, uploadVideo;
     Uri selectedImage;
     OkHttpClient client;
     RequestBody request_body;
     ArrayList<RequestBody> images;
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creative_form);
+
+        eventName = (TextView)findViewById(R.id.name);
+        eventTheme = (TextView)findViewById(R.id.theme);
+        event_date = (TextView)findViewById(R.id.ed);
+        eventDescription = (TextView)findViewById(R.id.desc_pd);
+        creative_budget = (TextView)findViewById(R.id.cb);
+
+        Intent intent = getIntent();
+        eid = intent.getStringExtra(Creative.EXTRA_EID);
+
+        insertSrv();
+
+        progress = new ProgressDialog(Creative_form.this);
+
         getSupportActionBar().setTitle("Creative Form");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         uploadImage = (Button) findViewById(R.id.uploadImage);
@@ -79,6 +106,96 @@ public class Creative_form extends AppCompatActivity {
             }
         });
     }
+
+    private void insertSrv()
+    {
+        //creating jsonobject starts
+        final JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("eid", eid);
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+        //creating jsonobject ends
+
+        //checking data inserted into json object
+        final String requestBody = jsonObject.toString();
+        Log.i("volleyABC", requestBody);
+
+        //getting response from server starts
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,server_url,new Response.Listener<String>(){
+            @Override
+            public void onResponse(String response) {
+
+                Log.i("volleyABC" ,"got response    "+response);
+                Toast.makeText(Creative_form.this, "Logged IN", Toast.LENGTH_SHORT).show();
+
+                Intent manager = new Intent(Creative_form.this, Manager.class);
+
+                try {
+                    JSONObject jsonObject1 = new JSONObject(response);
+                    // Log.i("tracking uid","main Activity "+UID);
+                    name = jsonObject1.getString("name");
+                    theme = jsonObject1.getString("theme");
+                    eventDate = jsonObject1.getString("event_date");
+                    description = jsonObject1.getString("description");
+                    creativeBudget = jsonObject1.getString("creative_budget");
+                    Log.i("sexa", name);
+
+                    //Send data to Manager.java starts
+                    // Call manager.java file i.e. Activity with navigation drawer activity
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                eventName.setText(name);
+                eventTheme.setText(theme);
+                event_date.setText(eventDate);
+                eventDescription.setText(description);
+                creative_budget.setText(creativeBudget);
+
+            }
+        },new Response.ErrorListener()  {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                try{
+                    Log.i("volleyABC" ,Integer.toString(error.networkResponse.statusCode));
+                    Toast.makeText(Creative_form.this, "Invalid Credentials", Toast.LENGTH_SHORT).show(); //This method is used to show pop-up on the screen if user gives wrong uid
+
+
+                    error.printStackTrace();}
+                catch (Exception e)
+                {
+                    Toast.makeText(Creative_form.this,"Check Network",Toast.LENGTH_SHORT).show();}
+            }
+        }){
+            //sending JSONOBJECT String to server starts
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                try {
+                    return requestBody.getBytes("utf-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+        };
+        //sending JSONOBJECT String to server ends
+
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest); // get response from server
+    }
+
+
 
     private void UploadPosters() {
 
@@ -144,6 +261,10 @@ public class Creative_form extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+
+            progress.setTitle("Uploading");
+            progress.setMessage("Please wait...");
+            progress.show();
 
             Thread t = new Thread(new Runnable() {
                 @Override
@@ -278,7 +399,7 @@ public class Creative_form extends AppCompatActivity {
                                     throw new IOException("Error : " + response);
                                 }
 
-                                //progress.dismiss();
+                                progress.dismiss();
 
                             } catch (IOException e) {
                                 e.printStackTrace();

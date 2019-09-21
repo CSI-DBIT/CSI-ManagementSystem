@@ -21,7 +21,7 @@
             android:icon="@drawable/ic_check_circle_attend"
             android:title="Attendance" />
         <item
-            android:id="@+id/nav_history"
+            android:id="@+id/nav_developers"
             android:icon="@drawable/ic_coder_head"
             android:title="Developers" />
     </group>
@@ -33,7 +33,7 @@
                 android:icon="@drawable/ic_feedback_black"
                 android:title="Feedback" />
             <item
-                android:id="@+id/nav_help"
+                android:id="@+id/nav_about_us"
                 android:icon="@drawable/ic_help_outline_black"
                 android:title="About us" />
             <item

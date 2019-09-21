@@ -154,5 +154,13 @@ public class edit_proposal extends AppCompatActivity {
         RequestQueue requestQueue= Volley.newRequestQueue(edit_proposal.this);
         requestQueue.add(stringRequest);
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

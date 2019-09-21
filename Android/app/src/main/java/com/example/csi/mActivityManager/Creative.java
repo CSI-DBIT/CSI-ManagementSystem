@@ -38,11 +38,13 @@ import java.util.ArrayList;
 
 public class Creative extends AppCompatActivity implements PraposalAdapter.OnItemClickedListener {
 
+    public static final String EXTRA_EID = "com.example.csimanagementsystem.EXTRA_EID";
+
     private RecyclerView rv;
     private PraposalAdapter mPraposalAdapter;
     private ArrayList<PraposalItem> mPraposalList;
     private RequestQueue mRequestQueue;
-    private String server_url;
+    private String server_url, eid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +80,7 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
                     for(int i=0; i< jsonArray.length(); i++) {
                         JSONObject minutes = jsonArray.getJSONObject(i);
 
-                        String eid = minutes.getString("eid");
+                        eid = minutes.getString("eid");
                         String date = minutes.getString("event_date");
                         String Name = minutes.getString("name");
 //                        String status = minutes.getString("status");
@@ -132,6 +134,7 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
         PraposalItem clickedItem = mPraposalList.get(position);
         Toast.makeText(Creative.this,clickedItem.getmEid() , Toast.LENGTH_SHORT).show();
         Intent creative_form = new Intent(Creative.this,Creative_form.class);
+        creative_form.putExtra("eid", eid);
         startActivity(creative_form);
         //write here code when press back
     }

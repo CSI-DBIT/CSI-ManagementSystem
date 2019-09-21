@@ -20,9 +20,11 @@ import android.widget.Toast;
 
 import com.example.csi.R;
 import com.example.csi.SharedPreferenceConfig;
+import com.example.csi.mFragments.About_us;
 import com.example.csi.mFragments.ActivityManager;
 import com.example.csi.mFragments.Attendance;
 import com.example.csi.mFragments.AttendancePR;
+import com.example.csi.mFragments.Developers;
 import com.example.csi.mFragments.MinuteManager;
 import com.example.csi.mFragments.Profile;
 import com.squareup.picasso.Picasso;
@@ -230,17 +232,29 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
             }
             //Toast.makeText(Manager.this,"Not yet implemented",Toast.LENGTH_SHORT).show();
 
-        } else if (id == R.id.nav_history) {
-            Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
-            Toast.makeText(Manager.this,"Not yet implemented",Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_developers) {
+            Developers developers = new Developers();
+
+            if(getSupportFragmentManager().getBackStackEntryCount() > 1){
+                getSupportFragmentManager().popBackStack();
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.containerID, developers).addToBackStack(null).commit();
+            //Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Manager.this,"Not yet implemented",Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_Feedback) {
             Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
             Toast.makeText(Manager.this,"Not yet implemented",Toast.LENGTH_SHORT).show();
 
-        } else if (id == R.id.nav_help) {
-            Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, preferenceConfig.readLoginStatus(), Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_about_us) {
+            About_us about_us = new About_us();
+
+            if(getSupportFragmentManager().getBackStackEntryCount() > 1){
+                getSupportFragmentManager().popBackStack();
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.containerID, about_us).addToBackStack(null).commit();
+            //Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, preferenceConfig.readLoginStatus(), Toast.LENGTH_SHORT).show();
             //Toast.makeText(Manager.this,"Not yet implemented",Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.log_out) {

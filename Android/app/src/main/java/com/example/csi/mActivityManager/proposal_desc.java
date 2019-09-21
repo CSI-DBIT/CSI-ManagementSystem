@@ -240,5 +240,13 @@ public class proposal_desc extends AppCompatActivity {
 
         builderSingle.show();
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

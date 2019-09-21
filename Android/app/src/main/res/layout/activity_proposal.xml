@@ -143,12 +143,12 @@
                     android:text="VENUE"
                     android:textColor="@color/colorPrimary"/>
                 <EditText
-                    android:id="@+id/adate"
+                    android:id="@+id/venue"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:visibility="invisible"
+                    android:background="@drawable/buts"
                     android:textColor="@color/colorPrimary"
-                    android:layout_marginLeft="10dp"/>
+                    android:paddingLeft="10dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
