@@ -49,6 +49,7 @@ public class Proposal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proposal);
+
         description = findViewById(R.id.pdescription);
         description.setMaxLines(5);
         description.setVerticalScrollBarEnabled(true);
@@ -129,6 +130,8 @@ public class Proposal extends AppCompatActivity {
             //TextView outputDate = rootView.findViewById(R.id.date);
             // outputDate.setText(date);
             Log.i("info1234", date);
+            TextView show_date_P_m = findViewById(R.id.date_P_m);
+            show_date_P_m.setText(date);
             sendDate(date);
         }
     };
@@ -146,6 +149,9 @@ public class Proposal extends AppCompatActivity {
             //TextView outputDate = rootView.findViewById(R.id.date);
             // outputDate.setText(date);
             Log.i("info1234", edate+"event");
+            TextView edate_s = findViewById(R.id.showdate);
+            edate_s.setText((String) edate);
+            edate_s.setVisibility(View.VISIBLE);
         }
     };
 
@@ -279,6 +285,23 @@ public class Proposal extends AppCompatActivity {
         EditText pguest= findViewById(R.id.guestp);
         String pguests = pguest.getText().toString();
 
+//        21sep
+        EditText speaker_e= findViewById(R.id.speaker_p);
+        String speaker_s = speaker_e.getText().toString();
+
+        EditText venue_e= findViewById(R.id.venue_p);
+        String  venue_s= venue_e.getText().toString();
+
+        EditText csi_f = findViewById(R.id.fee_csi);
+        String csi_s = csi_f.getText().toString();
+
+        EditText ncsi_f= findViewById(R.id.fee_non_csi);
+        String  ncsi_s= ncsi_f.getText().toString();
+
+        EditText prize_e= findViewById(R.id.prize_p);
+        String  prize_s= prize_e.getText().toString();
+//        21sep
+
         EditText poth1= findViewById(R.id.other1B);
         String poths1 = poth1.getText().toString();
         EditText pothF1= findViewById(R.id.other1F);
@@ -304,6 +327,11 @@ public class Proposal extends AppCompatActivity {
         if(pnames.length() <1){Toast.makeText(Proposal.this,"Enter Name ",Toast.LENGTH_SHORT).show();}
         else if(pthemes.length() <1){Toast.makeText(Proposal.this,"Enter Theme",Toast.LENGTH_SHORT).show();}
         else if(edate.length() <1){Toast.makeText(Proposal.this,"Enter Event date",Toast.LENGTH_SHORT).show();}
+        else if(speaker_s.length() <1){Toast.makeText(Proposal.this,"Enter Speaker's Detail",Toast.LENGTH_SHORT).show();}
+        else if(venue_s.length() <1){Toast.makeText(Proposal.this,"Enter Venue",Toast.LENGTH_SHORT).show();}
+        else if(csi_s.length() <1){Toast.makeText(Proposal.this,"Enter CSI Members Fee",Toast.LENGTH_SHORT).show();}
+        else if(ncsi_s.length() <1){Toast.makeText(Proposal.this,"Enter Non-CSI Members Fee",Toast.LENGTH_SHORT).show();}
+        else if(prize_s.length() <1){Toast.makeText(Proposal.this,"Enter Prize Money",Toast.LENGTH_SHORT).show();}
         else if(pdescs.length() <1){Toast.makeText(Proposal.this,"Enter Description",Toast.LENGTH_SHORT).show();}
         else if(pcbs.length() <1){Toast.makeText(Proposal.this,"Enter Creative Budget",Toast.LENGTH_SHORT).show();}
         else if(ppbs.length() <1){Toast.makeText(Proposal.this,"Enter Publicity Budget ",Toast.LENGTH_SHORT).show();}
@@ -347,6 +375,20 @@ public class Proposal extends AppCompatActivity {
             try {
                 jsonobject.put("name",pnames);
                 preview+="Name : "+pnames;
+//                21sep
+
+
+                preview+="\nSpeaker : "+speaker_s;jsonobject.put("speaker",speaker_s);
+
+                preview+="\nVenue : "+venue_s;jsonobject.put("venue",venue_s);
+
+                preview+="\nRegistration Fee \n CSI Member : "+csi_s;jsonobject.put("reg_fee",csi_s);
+
+                preview+="\nNon-CSI member : "+ncsi_s;jsonobject.put("reg_fee_n",ncsi_s);
+
+                preview+="\nWorth Prize : "+prize_s;jsonobject.put("prize",prize_s);
+
+
                 jsonobject.put("theme",pthemes);
                 preview+="\nTheme : "+pthemes;
                 jsonobject.put("e_date",edate);

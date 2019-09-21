@@ -74,7 +74,7 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
                         //so we are creating new variable date1 to get our desire format
                         String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
 
-                        mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name,"0","Theme: "+ theme));
+                        mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name,"T","Theme: "+ theme));
 
                     }
 

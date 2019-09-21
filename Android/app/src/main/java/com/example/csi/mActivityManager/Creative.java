@@ -91,7 +91,7 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
                         //so we are creating new variable date1 to get our desire format
                         String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
 
-                        mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name,"0","Theme: "+ theme));
+                        mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name,"C","Theme: "+ theme));
 //                        JSONObject minutes = jsonArray.getJSONObject(i);
 //
 //                        String eid = minutes.getString("eid");
