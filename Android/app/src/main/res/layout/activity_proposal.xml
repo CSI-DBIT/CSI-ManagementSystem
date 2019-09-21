@@ -93,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:text=""
                     android:visibility="invisible"
                     android:textColor="@color/colorPrimary"/>
@@ -122,7 +122,7 @@
                     android:text="SPEAKER"
                     android:textColor="@color/colorPrimary"/>
                 <EditText
-                    android:id="@+id/speaker"
+                    android:id="@+id/speaker_p"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:background="@drawable/buts"
@@ -143,12 +143,12 @@
                     android:text="VENUE"
                     android:textColor="@color/colorPrimary"/>
                 <EditText
-                    android:id="@+id/adate"
+                    android:id="@+id/venue_p"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:visibility="invisible"
+                    android:background="@drawable/buts"
                     android:textColor="@color/colorPrimary"
-                    android:layout_marginLeft="10dp"/>
+                    android:paddingLeft="10dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -188,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <EditText
-                        android:id="@+id/fee"
+                        android:id="@+id/fee_csi"
                         android:layout_width="100dp"
                         android:layout_height="30dp"
                         android:background="@drawable/buts"
@@ -196,7 +196,7 @@
                         android:paddingLeft="10dp"
                         android:inputType="number" />
                     <EditText
-                        android:id="@+id/edate"
+                        android:id="@+id/fee_non_csi"
                         android:layout_width="100dp"
                         android:layout_height="30dp"
                         android:background="@drawable/buts"
@@ -220,7 +220,7 @@
                     android:text="WORTH PRIZE"
                     android:textColor="@color/colorPrimary"/>
                 <EditText
-                    android:id="@+id/prize"
+                    android:id="@+id/prize_p"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:background="@drawable/buts"
@@ -512,8 +512,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
-                    android:text="ajsdasjd"
+                    android:text=""
                     android:layout_marginLeft="10dp"
+                    android:id="@+id/date_P_m"
                     android:textColor="@color/colorPrimary"/>
             </LinearLayout>
             <LinearLayout

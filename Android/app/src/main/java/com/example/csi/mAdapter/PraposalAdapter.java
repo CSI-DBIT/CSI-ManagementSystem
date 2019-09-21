@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.csi.R;
@@ -23,6 +24,10 @@ public class PraposalAdapter extends RecyclerView.Adapter<PraposalAdapter.Exampl
     private Context mContext;
     private ArrayList<PraposalItem> mPraposalList;
     private OnItemClickedListener mListener;
+    private String AS="Approved By SBC";
+    private String RS="Rejected By SBC";
+    private String AH="Approved By HOD";
+    private String RH="Rejected By HOD";
 
 
     public interface OnItemClickedListener {
@@ -64,13 +69,15 @@ public class PraposalAdapter extends RecyclerView.Adapter<PraposalAdapter.Exampl
         exampleViewHolder.mTextViewTime.setText(extra);
         Log.i("color status",status);
         if(status.equals("1"))
-        exampleViewHolder.mTextViewAgenda.setTextColor(Color.parseColor("#7CFC00")); //light green
+        {exampleViewHolder.mTextViewE1.setText(AS); exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#69A74E"));} //light green
         else if(status.equals("2"))
-            exampleViewHolder.mTextViewAgenda.setTextColor(Color.parseColor("#008000")); //dark green
+        {exampleViewHolder.mTextViewE1.setText(AH);exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#00A400"));} //dark green
         else if(status.equals("-1"))
-            exampleViewHolder.mTextViewAgenda.setTextColor(Color.parseColor("#FF4500")); //light red
+        {exampleViewHolder.mTextViewE1.setText(RS);exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#FA3E3E")); }//light red
         else if(status.equals("-2"))
-            exampleViewHolder.mTextViewAgenda.setTextColor(Color.parseColor("#FF0000")); //dark red
+        {exampleViewHolder.mTextViewE1.setText(RH);exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#AC002B"));} //dark red
+        else if(status.equals("0"))
+        {exampleViewHolder.mTextViewE1.setText("Latest Submitted");exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#ffffff"));} //dark red
         exampleViewHolder.mTextViewPoints.setText(extra );
     }
 
@@ -81,7 +88,8 @@ public class PraposalAdapter extends RecyclerView.Adapter<PraposalAdapter.Exampl
     }
 
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTextViewAgenda, mTextViewDate, mTextViewTime, mTextViewCreator, mTextViewPoints;
+        public TextView mTextViewAgenda, mTextViewDate, mTextViewTime, mTextViewPoints,mTextViewE1;
+        LinearLayout ll;
         CardView container;
         public ExampleViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -89,8 +97,9 @@ public class PraposalAdapter extends RecyclerView.Adapter<PraposalAdapter.Exampl
             mTextViewAgenda = itemView.findViewById(R.id.text_view_agenda);
             mTextViewDate = itemView.findViewById(R.id.text_view_date);
             mTextViewTime = itemView.findViewById(R.id.text_view_time);
-            mTextViewCreator = itemView.findViewById(R.id.text_view_creator);
             mTextViewPoints = itemView.findViewById(R.id.text_view_points);
+            mTextViewE1=itemView.findViewById(R.id.text_view_creator);
+            ll=itemView.findViewById(R.id.example_item_LL);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
