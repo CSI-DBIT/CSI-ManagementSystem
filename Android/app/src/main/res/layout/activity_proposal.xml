@@ -86,18 +86,147 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="Event Date:   "
+                    android:text="EVENT DATE:"
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:id="@+id/showdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:text=""
+                    android:visibility="invisible"
                     android:textColor="@color/colorPrimary"/>
                 <Button
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:text="Pick Date"
+                    android:layout_marginLeft="10dp"
                     android:id="@+id/dateOfevent"
                     android:textColor="@color/white"
                     android:background="@drawable/ripple_effect"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="SPEAKER"
+                    android:textColor="@color/colorPrimary"/>
+                <EditText
+                    android:id="@+id/speaker"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/buts"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="VENUE"
+                    android:textColor="@color/colorPrimary"/>
+                <EditText
+                    android:id="@+id/venue"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/buts"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="REGISTRATION FEE"
+                    android:textColor="@color/colorPrimary"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="0dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:text="CSI Member"
+                        android:textColor="@color/colorPrimary"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="59dp"
+                        android:textSize="15dp"
+                        android:text="Non CSI Member"
+                        android:textColor="@color/colorPrimary"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/fee"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/buts"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:inputType="number" />
+                    <EditText
+                        android:id="@+id/edate"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/buts"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:layout_marginLeft="40dp"
+                        android:inputType="date"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="WORTH PRIZE"
+                    android:textColor="@color/colorPrimary"/>
+                <EditText
+                    android:id="@+id/prize"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/buts"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"/>
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
