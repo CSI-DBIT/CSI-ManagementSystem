@@ -13,6 +13,20 @@
     <string name="title_activity_attendance">Attendance</string>
     <string name="title_activity_minute_manager">MinuteManager</string>
 
+    <string-array name="csi_members_name">
+        <item>Prasad Padalkar</item>
+        <item>Sushree Satapathy</item>
+        <item>Mushira Shaikh</item>
+        <item>Sanket Deshmukh</item>
+        <item>Gaurav Jain</item>
+        <item>Jevina Verghese</item>
+        <item>Afif Shaikh</item>
+        <item>Sanika Bhagwat</item>
+        <item>Saurabh Yadav</item>
+        <item>Viraj Tandel</item>
+        <item>Ishmeet Kaur</item>
+    </string-array>
+
     <string name="login_preference">com.example.csi_login_preference</string>
     <string name="login_status_preference">ccom.example.csi_login_status_preference</string>
 

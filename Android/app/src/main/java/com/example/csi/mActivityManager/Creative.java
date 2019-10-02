@@ -134,7 +134,9 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
         PraposalItem clickedItem = mPraposalList.get(position);
         Toast.makeText(Creative.this,clickedItem.getmEid() , Toast.LENGTH_SHORT).show();
         Intent creative_form = new Intent(Creative.this,Creative_form.class);
-        creative_form.putExtra("eid", eid);
+        String id = clickedItem.getmEid();
+        creative_form.putExtra(EXTRA_EID, id);
+        Log.i("testing",id);
         startActivity(creative_form);
         //write here code when press back
     }

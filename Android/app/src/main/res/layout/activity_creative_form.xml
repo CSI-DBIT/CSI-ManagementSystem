@@ -176,13 +176,13 @@
                     android:orientation="horizontal"
                     android:layout_marginLeft="20dp">
                     <TextView
-                        android:id="@+id/fee"
+                        android:id="@+id/fee_csi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimary"
                          android:text="0000"/>
                     <TextView
-                        android:id="@+id/edate"
+                        android:id="@+id/fee_non_csi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimary"

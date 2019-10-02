@@ -54,9 +54,11 @@ public class Creative_form extends AppCompatActivity {
 
     public String mediaType = "Image", eid;
     public String server_url = "http://159.65.144.246:8081/creative/viewpropdetail";
-    String name, theme, eventDate, description, creativeBudget;
+    String name, theme, eventDate, description, creativeBudget, date1;
+    String dSpeaker, dVenue, dFeeCSI, dFeeNonCSI, dPrize, dPublicityBudget, dGuestBudget;
 
     TextView eventName, eventTheme, event_date, eventDescription, creative_budget;
+    TextView speaker, venue, fee_csi, fee_non_csi, prize, publicity_budget, guest_budget;
 
     Button uploadImage, uploadVideo;
     Uri selectedImage;
@@ -70,14 +72,24 @@ public class Creative_form extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creative_form);
 
+        Log.i("sanket testing", "entered");
+        //Toast.makeText(this, "creative form", Toast.LENGTH_SHORT).show();
         eventName = (TextView)findViewById(R.id.name);
         eventTheme = (TextView)findViewById(R.id.theme);
         event_date = (TextView)findViewById(R.id.ed);
+        speaker = (TextView) findViewById(R.id.speaker);
+        venue = (TextView) findViewById(R.id.venue);
+        fee_csi = (TextView) findViewById(R.id.fee_csi);
+        fee_non_csi = (TextView) findViewById(R.id.fee_non_csi);
+        prize = (TextView) findViewById(R.id.prize);
         eventDescription = (TextView)findViewById(R.id.desc_pd);
         creative_budget = (TextView)findViewById(R.id.cb);
+        publicity_budget = (TextView) findViewById(R.id.pb);
+        guest_budget = (TextView) findViewById(R.id.gb);
 
         Intent intent = getIntent();
         eid = intent.getStringExtra(Creative.EXTRA_EID);
+        Log.i("eid",eid);
 
         insertSrv();
 
@@ -121,14 +133,14 @@ public class Creative_form extends AppCompatActivity {
 
         //checking data inserted into json object
         final String requestBody = jsonObject.toString();
-        Log.i("volleyABC", requestBody);
+        Log.i("volleyABC123", requestBody);
 
         //getting response from server starts
         StringRequest stringRequest = new StringRequest(Request.Method.POST,server_url,new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
 
-                Log.i("volleyABC" ,"got response    "+response);
+                Log.i("volleyABC4985" ,"got response    "+response);
                 Toast.makeText(Creative_form.this, "Logged IN", Toast.LENGTH_SHORT).show();
 
                 Intent manager = new Intent(Creative_form.this, Manager.class);
@@ -139,9 +151,18 @@ public class Creative_form extends AppCompatActivity {
                     name = jsonObject1.getString("name");
                     theme = jsonObject1.getString("theme");
                     eventDate = jsonObject1.getString("event_date");
+                    dSpeaker = jsonObject1.getString("speaker");
+                    dVenue = jsonObject1.getString("venue");
+                    dFeeCSI = jsonObject1.getString("reg_fee_c");
+                    dFeeNonCSI = jsonObject1.getString("reg_fee_nc");
+                    dPrize = jsonObject1.getString("prize");
                     description = jsonObject1.getString("description");
                     creativeBudget = jsonObject1.getString("creative_budget");
+                    dPublicityBudget = jsonObject1.getString("publicity_budget");
+                    dGuestBudget = jsonObject1.getString("guest_budget");
                     Log.i("sexa", name);
+
+                    date1 = eventDate.substring(8,10) + "/" + eventDate.substring(5,7) + "/" + eventDate.substring(0,4);
 
                     //Send data to Manager.java starts
                     // Call manager.java file i.e. Activity with navigation drawer activity
@@ -152,10 +173,16 @@ public class Creative_form extends AppCompatActivity {
 
                 eventName.setText(name);
                 eventTheme.setText(theme);
-                event_date.setText(eventDate);
+                event_date.setText(date1);
+                speaker.setText(dSpeaker);
+                venue.setText(dVenue);
+                fee_csi.setText(dFeeCSI);
+                fee_non_csi.setText(dFeeNonCSI);
+                prize.setText(dPrize);
                 eventDescription.setText(description);
                 creative_budget.setText(creativeBudget);
-
+                publicity_budget.setText(dPublicityBudget);
+                guest_budget.setText(dGuestBudget);
             }
         },new Response.ErrorListener()  {
 

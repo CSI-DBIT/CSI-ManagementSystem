@@ -5,10 +5,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -24,13 +30,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
+import java.util.List;
 
 public class AddMinute extends AppCompatActivity {
 
     AutoCompleteTextView mCreateAgenda;
-    Button mAddMinute;
+    Button mAddMinute, mAddTask;
     String Agenda, Points, Creator, server_url;
     EditText  mCreatePoints;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +52,98 @@ public class AddMinute extends AppCompatActivity {
 
         server_url="http://159.65.144.246:8081/minutes/create";  //Main Server URL
         //server_url="http://192.168.43.84:8080/minutes/create";
+
+        spinner = findViewById(R.id.csi_members);
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.csi_members_name, android.R.layout.simple_spinner_item);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
+        //spinnerAdapter.add("Sanket Deshmukh");
+        //spinnerAdapter.add("Afif Shaikh");
+        //spinnerAdapter.notifyDataSetChanged();
+
+        mAddTask = findViewById(R.id.add_task);
+        mCreatePoints = findViewById(R.id.create_points);
+
+        mAddTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TableRow tablerow;
+                TableLayout tableLayout = findViewById(R.id.table);
+                TextView tv1, tv2;
+
+                tablerow = new TableRow(AddMinute.this);
+                tablerow.setClickable(true);
+                /*tablerow.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        editbtn.setVisibility(View.VISIBLE);
+
+                        final TextView sample1 = (TextView) tablerow.getChildAt(0);
+                        final TextView sample2 = (TextView) tablerow.getChildAt(1);
+
+                        et1.setText(sample1.getText());
+                        et2.setText(sample2.getText());
+
+                        editbtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                sample1.setText(et1.getText());
+                                sample2.setText(et2.getText());
+
+                                et1.setText("");
+                                et2.setText("");
+
+                                editbtn.setVisibility(View.GONE);
+                            }
+                        });
+                        //Toast.makeText(MainActivity.this, sample.getText().toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });*/
+
+                tv1 = new TextView(AddMinute.this);
+                tv2 = new TextView(AddMinute.this);
+
+                String sam = mCreatePoints.getText().toString();
+                mCreatePoints.setText("");
+                tv1.setText(sam);
+
+                tv1.setGravity(Gravity.CENTER);
+                tv1.setBackgroundColor(getResources().getColor(R.color.white));
+
+
+
+                TableRow.LayoutParams param = new TableRow.LayoutParams(
+                        TableRow.LayoutParams.WRAP_CONTENT,
+                        TableRow.LayoutParams.WRAP_CONTENT,
+                        0.1f
+                );
+                param.setMargins(1, 0, 1, 1);
+                tv1.setLayoutParams(param);
+
+                sam = spinner.getSelectedItem().toString();
+                spinner.setSelection(0);
+                tv2.setText(sam);
+
+                tv2.setGravity(Gravity.CENTER);
+                tv2.setBackgroundColor(getResources().getColor(R.color.white));
+
+                TableRow.LayoutParams param1 = new TableRow.LayoutParams(
+                        TableRow.LayoutParams.WRAP_CONTENT,
+                        TableRow.LayoutParams.WRAP_CONTENT,
+                        0.1f
+                );
+                param1.setMargins(0, 0, 1, 1);
+                tv2.setLayoutParams(param1);
+
+                tablerow.addView(tv1);
+                tablerow.addView(tv2);
+
+                tableLayout.addView(tablerow);
+                //tablerow = (TableRow) tableLayout.getChildAt(1);
+                //tablerow.setClickable(true);
+                Toast.makeText(AddMinute.this, (CharSequence) spinner.getSelectedItem(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         mCreateAgenda = findViewById(R.id.create_agenda);
         mCreatePoints = findViewById(R.id.create_points);
