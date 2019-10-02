@@ -26,6 +26,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.csi.R;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -38,8 +39,9 @@ public class AddMinute extends AppCompatActivity {
     AutoCompleteTextView mCreateAgenda;
     Button mAddMinute, mAddTask;
     String Agenda, Points, Creator, server_url;
-    EditText  mCreatePoints;
+    EditText  mCreatePoints, mTask;
     Spinner spinner;
+    TableLayout tableLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,12 +65,13 @@ public class AddMinute extends AppCompatActivity {
 
         mAddTask = findViewById(R.id.add_task);
         mCreatePoints = findViewById(R.id.create_points);
+        mTask = findViewById(R.id.task);
 
         mAddTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TableRow tablerow;
-                TableLayout tableLayout = findViewById(R.id.table);
+                tableLayout = findViewById(R.id.table);
                 TextView tv1, tv2;
 
                 tablerow = new TableRow(AddMinute.this);
@@ -103,14 +106,12 @@ public class AddMinute extends AppCompatActivity {
                 tv1 = new TextView(AddMinute.this);
                 tv2 = new TextView(AddMinute.this);
 
-                String sam = mCreatePoints.getText().toString();
-                mCreatePoints.setText("");
+                String sam = mTask.getText().toString();
+                mTask.setText("");
                 tv1.setText(sam);
 
                 tv1.setGravity(Gravity.CENTER);
                 tv1.setBackgroundColor(getResources().getColor(R.color.white));
-
-
 
                 TableRow.LayoutParams param = new TableRow.LayoutParams(
                         TableRow.LayoutParams.WRAP_CONTENT,
@@ -159,6 +160,7 @@ public class AddMinute extends AppCompatActivity {
                 Agenda = mCreateAgenda.getText().toString();
                 Points = mCreatePoints.getText().toString();
 
+                //createMinuteTesting();
                 createNewMinute(); //sending new created minute to server
 
                 finish();
@@ -168,19 +170,46 @@ public class AddMinute extends AppCompatActivity {
 
     public void createNewMinute() {
         Log.i("i234","Create Minute");
+        JSONArray jsonArray = new JSONArray();
+
+        for (int i=1;i<tableLayout.getChildCount();i++) {
+            TableRow tableRow = (TableRow) tableLayout.getChildAt(i);
+            Toast.makeText(this, tableRow.toString(), Toast.LENGTH_SHORT).show();
+
+            TextView textView1 = (TextView) tableRow.getChildAt(0);
+            TextView textView2 = (TextView) tableRow.getChildAt(1);
+
+            JSONObject jsonObject1 = new JSONObject();
+            try {
+                jsonObject1.put("task", textView1.getText());
+                jsonObject1.put("person", textView2.getText());
+
+                jsonArray.put(jsonObject1);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        final JSONObject jsonObject1 = new JSONObject();
+        try {
+            jsonObject1.put("minutes",jsonArray);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         final JSONObject jsonObject = new JSONObject();
         try {
             Log.i("i234","Send JSON");
             jsonObject.put("id",Creator);
             jsonObject.put("agenda", Agenda);
             jsonObject.put("points", Points);
+            jsonObject.put("work", jsonObject1);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        final String Temp = jsonObject.toString();
-        Log.i("i234",Temp);
         final String requestBody = jsonObject.toString();
+        Log.i("i234",requestBody);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST,server_url,new Response.Listener<String>(){
             @Override
