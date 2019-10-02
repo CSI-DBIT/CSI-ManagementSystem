@@ -69,13 +69,13 @@ public class PraposalAdapter extends RecyclerView.Adapter<PraposalAdapter.Exampl
         exampleViewHolder.mTextViewTime.setText(extra);
         Log.i("color status",status);
         if(status.equals("1"))
-        {exampleViewHolder.mTextViewE1.setText(AS); exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#4000FF00"));} //light green
+        {exampleViewHolder.mTextViewE1.setText(AS); exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#3300FF00"));} //light green
         else if(status.equals("2"))
-        {exampleViewHolder.mTextViewE1.setText(AH);exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#8000FF00"));} //dark green
+        {exampleViewHolder.mTextViewE1.setText(AH);exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#D900FF00"));} //dark green
         else if(status.equals("-1"))
-        {exampleViewHolder.mTextViewE1.setText(RS);exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#40FF0000")); }//light red
+        {exampleViewHolder.mTextViewE1.setText(RS);exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#33FF0000")); }//light red
         else if(status.equals("-2"))
-        {exampleViewHolder.mTextViewE1.setText(RH);exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#99FF0000"));} //dark red
+        {exampleViewHolder.mTextViewE1.setText(RH);exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#D9FF0000"));} //dark red
         else if(status.equals("0"))
         {exampleViewHolder.mTextViewE1.setText("Latest Submitted");exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#80ffffff"));} //white
 

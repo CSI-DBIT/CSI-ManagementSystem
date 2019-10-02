@@ -36,6 +36,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:text="NAME"
+                    android:textStyle="bold"
                     android:textColor="@color/colorPrimary"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -58,6 +59,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:text="THEME"
+                    android:textStyle="bold"
                     android:textColor="@color/colorPrimary"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -82,6 +84,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:text="EVENT DATE"
+                    android:textStyle="bold"
                     android:textColor="@color/colorPrimary"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -103,6 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
+                    android:textStyle="bold"
                     android:text="SPEAKER"
                     android:textColor="@color/colorPrimary"/>
                 <TextView
@@ -126,7 +130,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="VENUE:"
+                    android:textStyle="bold"
+                    android:text="VENUE"
                     android:textColor="@color/colorPrimary"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -149,6 +154,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
+                    android:textStyle="bold"
                     android:text="REGISTRATION FEE"
                     android:textColor="@color/colorPrimary"/>
                 <LinearLayout
@@ -159,14 +165,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="15dp"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
                         android:text="CSI Member"
                         android:textColor="@color/colorPrimary"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="59dp"
-                        android:textSize="15dp"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
                         android:text="Non CSI Member"
                         android:textColor="@color/colorPrimary"/>
                 </LinearLayout>
@@ -201,7 +209,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
                     android:text="WORTH PRIZE"
                     android:textColor="@color/colorPrimary"/>
                 <TextView
@@ -223,7 +232,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
                     android:text="DESCRIPTION"
                     android:textColor="@color/colorPrimary"/>
                 <TextView
@@ -269,7 +279,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
                     android:text="CREATIVE"
                     android:textColor="@color/colorPrimary"/>
                 <TextView
@@ -291,7 +302,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
                     android:text="PUBLICITY"
                     android:textColor="@color/colorPrimary"/>
                 <TextView
@@ -313,7 +325,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
                     android:text="GUEST"
                     android:textColor="@color/colorPrimary"/>
                 <TextView
@@ -471,6 +484,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:layout_marginLeft="5dp"
                     android:textColor="@color/colorAccent"
                     android:text="Event Date"
@@ -486,7 +500,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     android:text="Agenda:"
                     android:textColor="@color/colorPrimary"/>
                 <TextView
