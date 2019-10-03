@@ -65,9 +65,6 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
     CharSequence search="";
     SwipeRefreshLayout swipeRefreshLayout;
 
-    ArrayList<String> tasks = new ArrayList<String>();
-    ArrayList<String> person = new ArrayList<String>();
-
     public  static MinuteManager newInstance()
     {
         return new MinuteManager();
@@ -162,8 +159,9 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
                         JSONObject obj = new JSONObject(work);
                         JSONArray obj1 = obj.getJSONArray("minutes");
 
-                        tasks.clear();
-                        person.clear();
+                        ArrayList<String> tasks = new ArrayList<String>();
+                        ArrayList<String> person = new ArrayList<String>();
+
                         for (int j=0;j<obj1.length();j++) {
                             JSONObject obj2 = obj1.getJSONObject(j);
 
@@ -171,7 +169,7 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
                             person.add(obj2.getString("person"));
                         }
 
-                        Log.i("sam", tasks.toString() + " " + person.toString());
+                        //Log.i("sam", tasks.toString() + " " + person.toString());
 
                         //in the above variable date we are not getting date in DD:MM:YYYYY
                         //so we are creating new variable date1 to get our desire format
@@ -179,7 +177,7 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
 
                         Log.i("finaltesting", tasks.toString() + " " + person.toString());
                         mExampleList.add(new ExampleItem(agenda, date1, time, creator, points, tasks, person));
-                        Log.i("displaying", mExampleList.get(0).getTime().toString() + " " +mExampleList.get(0).getTask().toString() + " " + mExampleList.get(0).getPerson().toString());
+                        Log.i("displaying", mExampleList.get(0).getTime() + " " +mExampleList.get(0).getTask().toString() + " " + mExampleList.get(0).getPerson().toString());
                     }
 
                     mExampleAdapter.notifyDataSetChanged();
