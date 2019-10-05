@@ -8,14 +8,14 @@
     tools:context=".Prompts.attendance_list">
 
     <TableLayout
-        android:id="@+id/table"
+        android:id="@+id/display_table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/add_task"
+        app:layout_constraintTop_toBottomOf="@id/final_points"
         android:layout_marginTop="30dp"
         android:background="#f1f1f1"
         >
@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hours spent"
+                android:text="Hours Spent"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"/>
@@ -44,42 +44,6 @@
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"/>
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sanket Deshmukh"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:layout_marginBottom="1dp"
-                android:layout_marginHorizontal="1dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="25"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="1dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10%"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="1dp"
-                />
         </TableRow>
 
     </TableLayout>
