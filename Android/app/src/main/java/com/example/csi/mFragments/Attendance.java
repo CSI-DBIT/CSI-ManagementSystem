@@ -32,6 +32,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Objects;
 
 public class Attendance extends Fragment {
 
@@ -160,6 +161,8 @@ public class Attendance extends Fragment {
 
                 else  customDialog("Date:  "+date+"\n"+"Slots: "+slots+"\n"+"Reason: "+rsn+"\n");
 
+
+
             }
         });
 
@@ -232,8 +235,7 @@ public class Attendance extends Fragment {
                 Log.i("info123" ,"got response    "+response);
                 Toast.makeText(getActivity(),"Submitted ",Toast.LENGTH_SHORT).show();
                 //on ok response take back to respective page
-
-
+                Objects.requireNonNull(getActivity()).getSupportFragmentManager().popBackStack();
 
             }
         },new Response.ErrorListener()  {

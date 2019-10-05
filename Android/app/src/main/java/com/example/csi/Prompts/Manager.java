@@ -24,6 +24,7 @@ import com.example.csi.mFragments.About_us;
 import com.example.csi.mFragments.ActivityManager;
 import com.example.csi.mFragments.Attendance;
 import com.example.csi.mFragments.AttendancePR;
+import com.example.csi.mFragments.AttendanceSBC;
 import com.example.csi.mFragments.Developers;
 import com.example.csi.mFragments.MinuteManager;
 import com.example.csi.mFragments.Profile;
@@ -210,12 +211,18 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
 
         } else if (id == R.id.nav_attendance) {
             Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
-            if(urole.equals("PR Head") || urole.equals("SBC"))
+            if(urole.equals("PR Head"))
             {
                 if(getSupportFragmentManager().getBackStackEntryCount() > 1){
                     getSupportFragmentManager().popBackStack();
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.containerID, AttendancePR.newInstance()).addToBackStack(null).commit();
+            }
+            else if (urole.equals("SBC")) {
+                if(getSupportFragmentManager().getBackStackEntryCount() > 1){
+                    getSupportFragmentManager().popBackStack();
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.containerID, AttendanceSBC.newInstance()).addToBackStack(null).commit();
             }
             else
             {
