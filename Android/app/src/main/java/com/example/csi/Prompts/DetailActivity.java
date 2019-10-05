@@ -3,6 +3,7 @@ package com.example.csi.Prompts;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -73,6 +74,9 @@ public class DetailActivity extends Fragment {
             tv1.setText(task.get(i));
             tv1.setGravity(Gravity.CENTER);
             tv1.setBackgroundColor(getResources().getColor(R.color.white));
+            tv1.setTextColor(getResources().getColor(R.color.colorPrimary));
+            tv1.setTextSize(17);
+           // tv1.setBackground(getResources().getDrawable(R.drawable.tableborder)); //this will apply border
 
             TableRow.LayoutParams param = new TableRow.LayoutParams(
                     TableRow.LayoutParams.WRAP_CONTENT,
@@ -85,6 +89,8 @@ public class DetailActivity extends Fragment {
             tv2.setText(person.get(i));
             tv2.setGravity(Gravity.CENTER);
             tv2.setBackgroundColor(getResources().getColor(R.color.white));
+            tv2.setTextColor(getResources().getColor(R.color.colorPrimary));
+            tv2.setTextSize(17);
 
             TableRow.LayoutParams param1 = new TableRow.LayoutParams(
                     TableRow.LayoutParams.WRAP_CONTENT,
