@@ -12,12 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".mActivityManager.edit_proposal"
-            android:theme="@style/AppTheme2"/>
-        <activity android:name=".mActivityManager.proposal_desc"
-            android:theme="@style/AppTheme2"/>
-        <activity android:name=".mActivityManager.praposal_recycler"
-            android:theme="@style/AppTheme2"/>
+        <activity android:name=".Prompts.attendance_list"></activity>
+        <activity
+            android:name=".mActivityManager.edit_proposal"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".mActivityManager.proposal_desc"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".mActivityManager.praposal_recycler"
+            android:theme="@style/AppTheme2" />
         <activity android:name=".Gallery.Activities.FullScreenActivity" />
         <activity
             android:name=".Gallery.Activities.DisplayImage"
@@ -29,14 +33,16 @@
             android:name=".Gallery.Activities.DisplayEventName"
             android:theme="@style/AppTheme2" />
         <activity android:name=".mActivityManager.Technical_form" />
-        <activity android:name=".mActivityManager.Creative_form"
-            android:theme="@style/AppTheme2"/>
+        <activity
+            android:name=".mActivityManager.Creative_form"
+            android:theme="@style/AppTheme2" />
         <activity android:name=".mActivityManager.Report" />
         <activity android:name=".mActivityManager.Gallery" />
         <activity android:name=".mActivityManager.Technical" />
         <activity android:name=".mActivityManager.Publicity" />
-        <activity android:name=".mActivityManager.Creative"
-            android:theme="@style/AppTheme2"/>
+        <activity
+            android:name=".mActivityManager.Creative"
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".mActivityManager.Proposal"
             android:theme="@style/AppTheme2" />

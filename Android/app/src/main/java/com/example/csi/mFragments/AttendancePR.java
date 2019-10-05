@@ -101,6 +101,7 @@ public class AttendancePR extends Fragment {
                         String name = request.getString("Name");
                         Log.i("AttPR","got response"+name);
                         String date = request.getString("date");
+                        String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
                         Log.i("AttPR","got response"+date);
                         int lec1 = request.getInt("s1");
                         int lec2 = request.getInt("s2");
@@ -131,7 +132,7 @@ public class AttendancePR extends Fragment {
                         if(lec7== 1)
                             timeSlot = timeSlot + "04:00PM - 05:00PM ";
 
-                        mRequestList.add(new RequestListItem(requestId, name, date, timeSlot, reason));
+                        mRequestList.add(new RequestListItem(requestId, name, date1, timeSlot, reason));
                     }
 
                     mRequestListAdapter = new RequestListAdapter(getActivity(), mRequestList);

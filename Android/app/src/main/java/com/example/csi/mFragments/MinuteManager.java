@@ -51,6 +51,8 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
     public static final String EXTRA_TIME = "time";
     public static final String EXTRA_CREATOR = "creator";
     public static final String EXTRA_POINTS = "points";
+    public static final String EXTRA_TASK = "task";
+    public static final String EXTRA_PERSON = "person";
 
     private RecyclerView rv;
     private ExampleAdapter mExampleAdapter;
@@ -152,12 +154,30 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
                         String time = minutes.getString("ti_me");
                         String creator = minutes.getString("creator");
                         String points = minutes.getString("minute");
+                        String work = minutes.getString("work");
+
+                        JSONObject obj = new JSONObject(work);
+                        JSONArray obj1 = obj.getJSONArray("minutes");
+
+                        ArrayList<String> tasks = new ArrayList<String>();
+                        ArrayList<String> person = new ArrayList<String>();
+
+                        for (int j=0;j<obj1.length();j++) {
+                            JSONObject obj2 = obj1.getJSONObject(j);
+
+                            tasks.add(obj2.getString("task"));
+                            person.add(obj2.getString("person"));
+                        }
+
+                        //Log.i("sam", tasks.toString() + " " + person.toString());
 
                         //in the above variable date we are not getting date in DD:MM:YYYYY
                         //so we are creating new variable date1 to get our desire format
                         String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
 
-                        mExampleList.add(new ExampleItem(agenda, date1, time, creator, points));
+                        Log.i("finaltesting", tasks.toString() + " " + person.toString());
+                        mExampleList.add(new ExampleItem(agenda, date1, time, creator, points, tasks, person));
+                        Log.i("displaying", mExampleList.get(0).getTime() + " " +mExampleList.get(0).getTask().toString() + " " + mExampleList.get(0).getPerson().toString());
                     }
 
                     mExampleAdapter.notifyDataSetChanged();
@@ -194,11 +214,18 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
         Bundle bundle = new Bundle();
         ExampleItem clickedItem = mExampleList.get(position);
 
+        Log.i("display list 0", mExampleList.get(0).getTask().toString() + " " + mExampleList.get(0).getPerson().toString());
+        Log.i("display list 1", mExampleList.get(1).getTask().toString() + " " + mExampleList.get(1).getPerson().toString());
+        Log.i("display list 2", mExampleList.get(2).getTask().toString() + " " + mExampleList.get(2).getPerson().toString());
+
         bundle.putString(EXTRA_AGENDA,clickedItem.getAgenda());
         bundle.putString(EXTRA_DATE,clickedItem.getDate());
         bundle.putString(EXTRA_TIME,clickedItem.getTime());
         bundle.putString(EXTRA_CREATOR,clickedItem.getCreator());
         bundle.putString(EXTRA_POINTS,clickedItem.getPoints());
+        bundle.putStringArrayList(EXTRA_TASK, clickedItem.getTask());
+        bundle.putStringArrayList(EXTRA_PERSON, clickedItem.getPerson());
+        Toast.makeText(getContext(), clickedItem.getTask().toString() + " " + clickedItem.getPerson().toString(), Toast.LENGTH_SHORT).show();
 
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

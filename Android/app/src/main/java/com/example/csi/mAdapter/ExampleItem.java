@@ -1,5 +1,7 @@
 package com.example.csi.mAdapter;
 
+import java.util.ArrayList;
+
 public class ExampleItem {
 
     private String mAgenda;
@@ -7,14 +9,18 @@ public class ExampleItem {
     private String mTime;
     private String mCreator;
     private String mPoints;
+    private ArrayList<String> mTask;
+    private ArrayList<String> mPerson;
 
-    public ExampleItem(String agenda, String date, String time, String creator, String points) {
+    public ExampleItem(String agenda, String date, String time, String creator, String points, ArrayList<String> task, ArrayList<String> person) {
 
         mAgenda = agenda;
         mDate = date;
         mTime = time;
         mCreator = creator;
         mPoints = points;
+        mTask = task;
+        mPerson = person;
     }
 
     public String getAgenda() {
@@ -35,5 +41,13 @@ public class ExampleItem {
 
     public String getPoints() {
         return mPoints;
+    }
+
+    public ArrayList<String> getTask() {
+        return mTask;
+    }
+
+    public ArrayList<String> getPerson() {
+        return mPerson;
     }
 }

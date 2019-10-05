@@ -66,7 +66,7 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
                         String eid = minutes.getString("eid");
                         String date = minutes.getString("event_date");
                         String Name = minutes.getString("name");
-//                        String status = minutes.getString("status");
+                        //String status = minutes.getString("status");
                         String theme =minutes.getString("theme");
                         //String points = minutes.getString("minute");
 

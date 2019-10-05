@@ -1,480 +1,314 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".mActivityManager.Technical_form"
-android:orientation="vertical">
-<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="15dp">
+    android:layout_height="match_parent"
+    tools:context=".mActivityManager.Proposal"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="40dp"
-            android:paddingBottom="30dp"
-            android:text="CREATIVE"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
-            android:textColor="@color/colorPrimary"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="EVENT DETAILS"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="EVENT ID:"
-                android:textColor="@color/colorPrimary"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:layout_marginLeft="30dp"
-                android:text="id"
-                android:id="@+id/id"
-                android:textColor="@color/colorPrimary"/>
-        </LinearLayout>
+        android:padding="15dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="NAME"
+                android:textSize="20sp"
+                android:text="EVENT DETAILS"
+                android:textStyle="bold"
                 android:textColor="@color/colorPrimary"/>
-            <EditText
-                android:id="@+id/name"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/buts"
-                android:textColor="@color/colorPrimary"
-                android:paddingLeft="10dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="THEME"
-                android:textColor="@color/colorPrimary"/>
-            <EditText
-                android:id="@+id/theme"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="NAME"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:text="Name  "
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/name"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/buts"
-                android:textColor="@color/colorPrimary"
-                android:paddingLeft="10dp"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="THEME"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:text="Theme"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/theme"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="EVENT DATE"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Event Date"
+                    android:id="@+id/ed"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:text="SPEAKER"
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Speaker"
+                    android:id="@+id/speaker"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:text="VENUE"
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Venue"
+                    android:id="@+id/venue"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:text="REGISTRATION FEE"
+                    android:textColor="@color/colorPrimary"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:text="CSI Member"
+                        android:textColor="@color/colorPrimary"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="59dp"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:text="Non CSI Member"
+                        android:textColor="@color/colorPrimary"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp">
+                    <TextView
+                        android:id="@+id/fee_csi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:text="0000"/>
+                    <TextView
+                        android:id="@+id/fee_non_csi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginLeft="112dp"
+                        android:text="0000"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="WORTH PRIZE"
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Worth Prize"
+                    android:id="@+id/prize"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="DESCRIPTION"
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Description "
+                    android:id="@+id/desc_pd"/>
+            </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+        <View
+            android:layout_width="10000dp"
+            android:layout_height="2dp"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="DESCRIPTION"
-                android:textColor="@color/colorPrimary"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:id="@+id/description"
-                android:background="@drawable/buts"
-                android:textColor="@color/colorPrimary"
-                android:isScrollContainer="true"
-                android:paddingStart="10dp"
-                android:paddingLeft="10dp"
-                android:inputType="textMultiLine"
-                android:singleLine="false"
-                android:overScrollMode="always"
-                android:scrollbarStyle="insideInset"
-                android:scrollbars="vertical"
-                android:scrollbarSize="5dp"
-                android:paddingRight="15dp"/>
-        </LinearLayout>
+            android:background="@color/colorPrimary" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_gravity="center_horizontal">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="0dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="FEE"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:textSize="15dp"
-                    android:text="EVENT DATE"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="15dp"
-                    android:text="EVENT TIME"
-                    android:textColor="@color/colorPrimary"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <EditText
-                    android:id="@+id/fee"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/buts"
-                    android:textColor="@color/colorPrimary"
-                    android:paddingLeft="10dp"
-                    android:inputType="number" />
-                <EditText
-                    android:id="@+id/edate"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/buts"
-                    android:textColor="@color/colorPrimary"
-                    android:paddingLeft="10dp"
-                    android:layout_marginLeft="5dp"
-                    android:inputType="date"/>
-                <EditText
-                    android:id="@+id/etime"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/buts"
-                    android:textColor="@color/colorPrimary"
-                    android:paddingLeft="10dp"
-                    android:layout_marginLeft="5dp"
-                    android:inputType="time"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="VENUE"
-                android:textColor="@color/colorPrimary"/>
-            <EditText
-                android:id="@+id/venue"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/buts"
-                android:textColor="@color/colorPrimary"
-                android:paddingLeft="10dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="SPEAKER"
-                android:textColor="@color/colorPrimary"/>
-            <EditText
-                android:id="@+id/speaker"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/buts"
-                android:textColor="@color/colorPrimary"
-                android:paddingLeft="10dp" />
-        </LinearLayout>
-    </LinearLayout>
-    <View
-        android:layout_width="10000dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="15dp"
-        android:background="@color/colorPrimary" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:paddingTop="5dp"
+            >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="BUDGET DETAILS"
+                android:text="Task"
                 android:textStyle="bold"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:textColor="@color/colorPrimary"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <TextView
-                android:layout_width="wrap_content"
+            <CheckBox
+                android:id="@+id/question"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="CREATIVE"
+                android:text="Question Setting"
+                android:enabled="false"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="20sp"
                 android:textColor="@color/colorPrimary"/>
-            <EditText
+            <CheckBox
+                android:id="@+id/internet"
+                android:enabled="false"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:id="@+id/creative"
-                android:inputType="number"
-                android:background="@drawable/buts"
-                android:textColor="@color/colorPrimary"
-                android:paddingLeft="10dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="PUBLICITY"
+                android:text="Internet Availability"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="20sp"
                 android:textColor="@color/colorPrimary"/>
-            <EditText
+            <CheckBox
+                android:id="@+id/software"
+                android:enabled="false"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:inputType="number"
-                android:id="@+id/publicity"
-                android:background="@drawable/buts"
-                android:textColor="@color/colorPrimary"
-                android:paddingLeft="10dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="GUEST"
-                android:textColor="@color/colorPrimary"/>
-            <EditText
-                android:id="@+id/guest"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:inputType="number"
-                android:background="@drawable/buts"
-                android:textColor="@color/colorPrimary"
-                android:paddingLeft="10dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:id="@+id/otherL1"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:hint="other"
-                android:background="@drawable/buts"
-                android:id="@+id/other1F"
-                android:paddingLeft="10dp"
-                android:textColor="@color/colorPrimary"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:inputType="number"
-                android:id="@+id/other1B"
-                android:background="@drawable/buts"
-                android:layout_marginTop="5dp"
-                android:paddingLeft="10dp"
-                android:textColor="@color/colorPrimary"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:id="@+id/otherL2"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:hint="other"
-                android:background="@drawable/buts"
-                android:id="@+id/other2F"
-                android:paddingLeft="10dp"
-                android:textColor="@color/colorPrimary"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:inputType="number"
-                android:background="@drawable/buts"
-                android:id="@+id/other2B"
-                android:layout_marginTop="5dp"
-                android:paddingLeft="10dp"
-                android:textColor="@color/colorPrimary"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:id="@+id/otherL3"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:hint="other"
-                android:background="@drawable/buts"
-                android:id="@+id/other3F"
-                android:paddingLeft="10dp"
-                android:textColor="@color/colorPrimary"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:inputType="number"
-                android:background="@drawable/buts"
-                android:id="@+id/other3B"
-                android:layout_marginTop="5dp"
-                android:paddingLeft="10dp"
-                android:textColor="@color/colorPrimary"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:background="@drawable/buts"
-                android:hint="other"
-                android:paddingLeft="10dp"
-                android:textColor="@color/colorPrimary"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:inputType="number"
-                android:background="@drawable/buts"
-                android:id="@+id/other3"
-                android:layout_marginTop="5dp"
-                android:paddingLeft="10dp"
+                android:text="Softwares Installed"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="20sp"
                 android:textColor="@color/colorPrimary"/>
         </LinearLayout>
         <Button
-            android:id="@+id/addField"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/ic_add_circle_activity"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/colorPrimary"/>
+            android:id="@+id/updateTech"
+            android:layout_width="250dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:textSize="20sp"
+            android:background="@drawable/ripple_effect"
+            android:textColor="@color/white"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"/>
     </LinearLayout>
-    <View
-        android:layout_width="10000dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary" />
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-        <Button
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:background="@drawable/ripple_effect"
-            android:text="Submit"
-            android:textColor="@color/white" />
-        <Button
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="Accept"
-            android:visibility="visible"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/ripple_effect"
-            android:textColor="@color/white"/>
-        <Button
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="Reject"
-            android:visibility="visible"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/ripple_effect"
-            android:textColor="@color/white"/>
-    </LinearLayout>
-</LinearLayout>
 </ScrollView>

@@ -85,6 +85,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         String time = currentItem.getTime();
         String creator = currentItem.getCreator();
         String points = currentItem.getPoints();
+        String task = currentItem.getTask().toString();
+        String person = currentItem.getPerson().toString();
         //Edited By Afif
         exampleViewHolder.container.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.fade_scale_animation_recycler));
 
@@ -93,6 +95,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         exampleViewHolder.mTextViewTime.setText("Time: " + mExampleListFiltered.get(i).getTime());
         exampleViewHolder.mTextViewCreator.setText("Creator: " + mExampleListFiltered.get(i).getCreator());
         exampleViewHolder.mTextViewPoints.setText("Points: " + points);
+        exampleViewHolder.mViewTasks.setText("Task: " + task);
+        exampleViewHolder.mViewPersons.setText("Person: " + person);
     }
 
     @Override
@@ -102,7 +106,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     }
 
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTextViewAgenda, mTextViewDate, mTextViewTime, mTextViewCreator, mTextViewPoints;
+        public TextView mTextViewAgenda, mTextViewDate, mTextViewTime, mTextViewCreator, mTextViewPoints, mViewTasks, mViewPersons;
         CardView container;
         public ExampleViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -112,6 +116,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
             mTextViewTime = itemView.findViewById(R.id.text_view_time);
             mTextViewCreator = itemView.findViewById(R.id.text_view_creator);
             mTextViewPoints = itemView.findViewById(R.id.text_view_points);
+            mViewTasks = itemView.findViewById(R.id.text_task);
+            mViewPersons = itemView.findViewById(R.id.text_person);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
