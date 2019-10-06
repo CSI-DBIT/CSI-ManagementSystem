@@ -30,55 +30,26 @@
                 android:orientation="vertical"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
+                android:layout_marginRight="5dp"
+                >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="NAME"
+                    android:text="NAME :"
                     android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:text="Name  "
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:id="@+id/name"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/pr_name"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:text="THEME"
                     android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:text="Theme"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:id="@+id/theme"/>
-            </LinearLayout>
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/pr_theme"/>
 
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_gravity="left"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -86,70 +57,25 @@
                     android:text="EVENT DATE"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:text="Event Date"
-                    android:id="@+id/ed"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_gravity="left"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:textStyle="bold"
                     android:text="SPEAKER"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:text="Speaker"
-                    android:id="@+id/speaker"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_gravity="left"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/pr_speaker"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:textStyle="bold"
                     android:text="VENUE"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:text="Venue"
-                    android:id="@+id/venue"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal">
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/pr_venue"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -176,7 +102,8 @@
                         android:textSize="15sp"
                         android:textStyle="bold"
                         android:text="Non CSI Member"
-                        android:textColor="@color/colorPrimary"/>
+                        android:textColor="@color/colorPrimary"
+                        />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -184,44 +111,30 @@
                     android:orientation="horizontal"
                     android:layout_marginLeft="20dp">
                     <TextView
-                        android:id="@+id/fee_csi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimary"
-                        android:text="0000"/>
+                        android:text="0000"
+                        android:id="@+id/pr_csi_fee"/>
                     <TextView
-                        android:id="@+id/fee_non_csi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimary"
                         android:layout_marginLeft="112dp"
-                        android:text="0000"/>
+                        android:text="0000"
+                        android:id="@+id/pr_ncsi_fee"/>
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_gravity="left"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:text="WORTH PRIZE"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:text="Worth Prize"
-                    android:id="@+id/prize"/>
-            </LinearLayout>
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/pr_prize"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -243,9 +156,86 @@
                     android:textSize="14sp"
                     android:textColor="@color/colorAccent"
                     android:text="Description "
-                    android:id="@+id/desc_pd"/>
+                    android:id="@+id/pr_desc"/>
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Desk:"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <EditText
+                android:id="@+id/pr_desk"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:inputType="textEmailAddress"
+                android:textSize="17sp"
+                android:background="@drawable/buts"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="In class:"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <EditText
+                android:id="@+id/pr_inclass"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:inputType="textEmailAddress"
+                android:textSize="17sp"
+                android:background="@drawable/buts"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Target Audience:"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <EditText
+                android:id="@+id/pr_target"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:inputType="textEmailAddress"
+                android:textSize="17sp"
+                android:background="@drawable/buts"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="Comments:"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/pr_comments"
+                android:background="@drawable/buts"
+                android:textColor="@color/colorPrimary"
+                android:isScrollContainer="true"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                android:overScrollMode="always"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:scrollbarSize="5dp"
+                android:paddingRight="15dp"/>
         </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Submit"
+            />
         <View
             android:layout_width="10000dp"
             android:layout_height="2dp"
