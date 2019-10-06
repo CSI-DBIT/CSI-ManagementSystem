@@ -77,7 +77,7 @@ public class PraposalAdapter extends RecyclerView.Adapter<PraposalAdapter.Exampl
         else if(status.equals("-2"))
         {exampleViewHolder.mTextViewE1.setText(RH);exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#D9FF0000"));} //dark red
         else if(status.equals("0"))
-        {exampleViewHolder.mTextViewE1.setText("Latest Submitted");exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#80ffffff"));} //white
+        {exampleViewHolder.mTextViewE1.setText("Latest Submitted");exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#213279"));} //white
 
         //{exampleViewHolder.mTextViewE1.setText("Latest Submitted");exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#213279"));} //white
         else {

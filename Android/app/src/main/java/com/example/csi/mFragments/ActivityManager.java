@@ -29,6 +29,7 @@ import com.example.csi.mActivityManager.Publicity;
 import com.example.csi.mActivityManager.Report;
 import com.example.csi.mActivityManager.Technical;
 import com.example.csi.mActivityManager.praposal_recycler;
+import com.example.csi.mActivityManager.publcity_recycler;
 
 import java.util.TimerTask;
 
@@ -172,7 +173,7 @@ public class ActivityManager extends Fragment  {
                                 break;
                         case 1: startActivity(new Intent(getActivity(), Creative.class));
                             break;
-                        case 2: startActivity(new Intent(getActivity(), Publicity.class));
+                        case 2: startActivity(new Intent(getActivity(), publcity_recycler.class));
                             break;
                         case 3: startActivity(new Intent(getActivity(), Technical.class));
                             break;

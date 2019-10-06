@@ -13,6 +13,17 @@
     <string name="title_activity_attendance">Attendance</string>
     <string name="title_activity_minute_manager">MinuteManager</string>
 
+    <string name="login_preference">com.example.csi_login_preference</string>
+
+    <string name="login_status_preference">ccom.example.csi_login_status_preference</string>
+    <string name="What_is_csi">\t\tComputer Society of  India is the first and largest body of computer professionals in India.
+It was started on 6 March 1965 by a few computer professionals and has now grown to be the national body representing computer professionals.
+It has 72 chapters across India, 511 student branches, and 100,000 members.
+The Society also encourages and assists professionals to maintain integrity and competence of the profession and fosters a sense of partnership amongst members.
+ </string>
+    <string name="y">\t\tTo serve the student community by bridging the gap between academia and industry.To keep the students in touch with the recent advancement in Technology.To provide a conducive platform to learn, share, innovate ideas and to facilitate open source culture along with research attitude.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="csi_members_name">
         <item>Select</item>
         <item>Prasad Padalkar</item>
@@ -27,15 +38,4 @@
         <item>Viraj Tandel</item>
         <item>Ishmeet Kaur</item>
     </string-array>
-
-    <string name="login_preference">com.example.csi_login_preference</string>
-    <string name="login_status_preference">ccom.example.csi_login_status_preference</string>
-    <string name="What_is_csi">\t\tComputer Society of  India is the first and largest body of computer professionals in India.
-It was started on 6 March 1965 by a few computer professionals and has now grown to be the national body representing computer professionals.
-It has 72 chapters across India, 511 student branches, and 100,000 members.
-The Society also encourages and assists professionals to maintain integrity and competence of the profession and fosters a sense of partnership amongst members.
- </string>
-    <string name="y">\t\tTo serve the student community by bridging the gap between academia and industry.To keep the students in touch with the recent advancement in Technology.To provide a conducive platform to learn, share, innovate ideas and to facilitate open source culture along with research attitude.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

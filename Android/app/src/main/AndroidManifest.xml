@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.csi">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/csilogo"
@@ -12,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Prompts.attendance_list"></activity>
+        <activity android:name=".mActivityManager.publcity_recycler"></activity>
+        <activity android:name=".Prompts.attendance_list" />
         <activity
             android:name=".mActivityManager.edit_proposal"
             android:theme="@style/AppTheme2" />
@@ -63,5 +62,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

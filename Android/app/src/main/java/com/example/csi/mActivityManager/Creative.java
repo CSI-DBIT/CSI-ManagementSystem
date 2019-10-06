@@ -87,7 +87,7 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
                         String theme =minutes.getString("theme");
                         //String points = minutes.getString("minute");
 
-                        //in the above variable date we are not getting date in DD:MM:YYYYY
+                        //in the above variable date we are not getting date in DD:MM:YYYY
                         //so we are creating new variable date1 to get our desire format
                         String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
 
