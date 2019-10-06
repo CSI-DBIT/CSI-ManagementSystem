@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="8dp"
+    android:id="@+id/box">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/propsal_indicator_shape"
+            android:id="@+id/example_item_LL"
+
+            android:orientation="horizontal" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/text_view_agenda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agenda: "
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/text_view_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:text="Date: " />
+
+        <TextView
+            android:id="@+id/text_view_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:text="Time: " />
+
+        <TextView
+            android:id="@+id/text_view_creator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:text=""/>
+
+        <TextView
+            android:id="@+id/text_view_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creator: "
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/text_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="task"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/text_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="person"
+            android:visibility="gone"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

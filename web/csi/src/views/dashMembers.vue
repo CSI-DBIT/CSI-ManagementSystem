@@ -61,7 +61,7 @@ export default {
     }
   },
   mounted() {
-    axios.post('http://206.189.135.147:8081/profile/view', {
+    axios.post('http://159.65.144.246:8081/profile/view', {
     })
     .then((res) => {
       console.log(res);

@@ -74,7 +74,7 @@ import axios from 'axios';
           const id=this.id;
           const password=this.password;
           //this.$router.app.$emit("authenticated",true);
-          axios.post('http://206.189.135.147:8081/login', {
+          axios.post('http://159.65.144.246:8081/login', {
             id,
             password
           })

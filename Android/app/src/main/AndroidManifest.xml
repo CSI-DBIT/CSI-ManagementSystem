@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.csi">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/csilogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/csilogo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Prompts.attendance_list"></activity>
+        <activity
+            android:name=".mActivityManager.edit_proposal"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".mActivityManager.proposal_desc"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".mActivityManager.praposal_recycler"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".Gallery.Activities.FullScreenActivity" />
+        <activity
+            android:name=".Gallery.Activities.DisplayImage"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".Gallery.Activities.DisplayYear"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".Gallery.Activities.DisplayEventName"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".mActivityManager.Technical_form" />
+        <activity
+            android:name=".mActivityManager.Creative_form"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".mActivityManager.Report" />
+        <activity android:name=".mActivityManager.Gallery" />
+        <activity android:name=".mActivityManager.Technical" />
+        <activity android:name=".mActivityManager.Publicity" />
+        <activity
+            android:name=".mActivityManager.Creative"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".mActivityManager.Proposal"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".Prompts.ProfileEdit" />
+        <activity
+            android:name=".Prompts.Manager"
+            android:label="@string/title_activity_manager"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Prompts.role_intent" />
+        <activity android:name=".Prompts.AddMinute" />
+        <activity
+            android:name=".Prompts.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
