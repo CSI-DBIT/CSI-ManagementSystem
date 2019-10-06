@@ -37,7 +37,9 @@ public class datePickerFrag extends DialogFragment {
         int day = c.get(Calendar.DAY_OF_MONTH);
 
         // Create a new instance of DatePickerDialog and return it
-        return new DatePickerDialog(getActivity(), onDateSet, year, month, day);
+        DatePickerDialog date = new DatePickerDialog(getActivity(), onDateSet, year, month, day);
+        date.getDatePicker().setMaxDate(System.currentTimeMillis());
+        return date;
     }
 
     @Override
