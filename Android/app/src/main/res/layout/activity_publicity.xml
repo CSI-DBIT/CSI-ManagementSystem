@@ -162,34 +162,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20sp"
-                android:text="Desk:"
+                android:paddingTop="20dp"
+                android:text="PR requirements:"
                 android:textSize="20sp"
                 android:textColor="@color/colorAccent"/>
-            <EditText
+
+            <CheckBox
                 android:id="@+id/pr_desk"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
-                android:inputType="textEmailAddress"
                 android:textSize="17sp"
-                android:background="@drawable/buts"
+                android:text="Registration Desk"
                 android:textColor="@color/colorAccent"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20sp"
-                android:text="In class:"
-                android:textSize="20sp"
-                android:textColor="@color/colorAccent"/>
-            <EditText
+
+            <CheckBox
                 android:id="@+id/pr_inclass"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
-                android:inputType="textEmailAddress"
                 android:textSize="17sp"
-                android:background="@drawable/buts"
+                android:text="Inclass publicity"
                 android:textColor="@color/colorAccent"/>
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -202,7 +198,6 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
-                android:inputType="textEmailAddress"
                 android:textSize="17sp"
                 android:background="@drawable/buts"
                 android:textColor="@color/colorAccent"/>
@@ -229,6 +224,59 @@
                 android:scrollbars="vertical"
                 android:scrollbarSize="5dp"
                 android:paddingRight="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:paddingTop="20dp"
+                android:text="Balance Sheet:"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="Money Collected : "
+                    android:textColor="@color/colorPrimary"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/pr_m_coll"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="Money Spent : "
+                    android:textColor="@color/colorPrimary"
+                    />
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/pr_m_spent"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <Button
