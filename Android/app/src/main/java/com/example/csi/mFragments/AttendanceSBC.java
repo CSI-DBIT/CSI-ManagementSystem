@@ -47,12 +47,12 @@ public class AttendanceSBC extends Fragment {
                     switch (finalI){
                         case 0:
                             intent = new Intent(getActivity(), attendance_list.class);
-                            intent.putExtra(EXTRA_CLASS, "SE-IT");
+                            intent.putExtra(EXTRA_CLASS, "SE");
                             startActivity(intent);
                             break;
                         case 1:
                             intent = new Intent(getActivity(), attendance_list.class);
-                            intent.putExtra(EXTRA_CLASS, "TE-IT");
+                            intent.putExtra(EXTRA_CLASS, "TE");
                             startActivity(intent);
                             break;
                     }

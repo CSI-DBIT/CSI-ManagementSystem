@@ -62,7 +62,7 @@ public class DisplayYear extends AppCompatActivity implements EventNameAdapter.O
 
     private void parseJSON() {
         //String url = "http://192.168.43.84:8080/event";
-        String url = "http://159.65.144.246:8082/event";    //Main Server URL
+        String url = "http://159.65.144.246:8090/event";    //Main Server URL
         //String url = "http://192.168.42.156:8080/event";
 
         //creating jsonobject starts
@@ -85,7 +85,7 @@ public class DisplayYear extends AppCompatActivity implements EventNameAdapter.O
             public void onResponse(String response) {
 
                 Log.i("volleyABC" ,"got response    "+response);
-                Toast.makeText(DisplayYear.this, "Logged IN", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(DisplayYear.this, "Logged IN", Toast.LENGTH_SHORT).show();
 
                 //Intent manager = new Intent(MainActivity.this, Manager.class);
                 //String UROLE="", USERNAME="", ProfileURL="";
@@ -174,7 +174,7 @@ public class DisplayYear extends AppCompatActivity implements EventNameAdapter.O
     private void createDirectory(final String Directory) {
 
         //String url = "http://192.168.43.84:8080/mkdir";
-        String url = "http://159.65.144.246:8082/mkdir";    //Main Server URL
+        String url = "http://159.65.144.246:8090/mkdir";    //Main Server URL
         //String url = "http://192.168.42.156:8080/mkdir";
 
         //creating jsonobject starts

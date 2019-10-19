@@ -48,7 +48,7 @@ public class attendance_list extends AppCompatActivity {
         Intent intent = getIntent();
         sam = intent.getStringExtra(EXTRA_CLASS);
 
-        Toast.makeText(this, "Your selected " + sam, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Your selected " + sam, Toast.LENGTH_SHORT).show();
 
         parseJSON();
     }
@@ -73,7 +73,7 @@ public class attendance_list extends AppCompatActivity {
             public void onResponse(String response) {
 
                 Log.i("volleyABC", "got response    " + response);
-                Toast.makeText(attendance_list.this, "Logged IN", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(attendance_list.this, "Logged IN", Toast.LENGTH_SHORT).show();
 
                 try {
                     JSONArray jsonArray = new JSONArray(response);
@@ -86,7 +86,7 @@ public class attendance_list extends AppCompatActivity {
                         TextView tv2 = new TextView(attendance_list.this);
                         TextView tv3 = new TextView(attendance_list.this);
 
-                        tv1.setText(students.getString("name"));
+                        tv1.setText(students.getString("Name"));
                         tv1.setGravity(Gravity.CENTER);
                         tv1.setBackgroundColor(getResources().getColor(R.color.white));
 

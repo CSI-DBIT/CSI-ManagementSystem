@@ -170,6 +170,7 @@ public class AttendancePR extends Fragment {
             sb.append(rli.getRequestID());
             finalConReq.add(rli.getRequestID());
         }
+
         Gson gson = new Gson();
         confReq = gson.toJson(finalConReq);
 
@@ -234,16 +235,16 @@ public class AttendancePR extends Fragment {
         mRequestQueue.add(stringRequest);
 
         //Below if else condition is just used to display the data we are sending to server
-        if (mRequestListAdapter.mConfirmRequestList.size()>0)
-        {
-            Toast.makeText(getActivity(),sb.toString(),Toast.LENGTH_SHORT).show();
-            Toast.makeText(getActivity(),confReq, Toast.LENGTH_SHORT).show();
-            Log.i("jsonArray",confReq);
-        }
-        else
-        {
-            Toast.makeText(getActivity(),"No Request has been selected",Toast.LENGTH_SHORT).show();
-        }
+//        if (mRequestListAdapter.mConfirmRequestList.size()>0)
+//        {
+//            Toast.makeText(getActivity(),sb.toString(),Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity(),confReq, Toast.LENGTH_SHORT).show();
+//            Log.i("jsonArray",confReq);
+//        }
+//        else
+//        {
+//            Toast.makeText(getActivity(),"No Request has been selected",Toast.LENGTH_SHORT).show();
+//        }
     }
 
     public void parsejson3() {

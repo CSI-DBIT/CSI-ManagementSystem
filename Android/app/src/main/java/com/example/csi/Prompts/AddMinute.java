@@ -177,7 +177,7 @@ public class AddMinute extends AppCompatActivity {
 
         for (int i=1;i<tableLayout.getChildCount();i++) {
             TableRow tableRow = (TableRow) tableLayout.getChildAt(i);
-            Toast.makeText(this, tableRow.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, tableRow.toString(), Toast.LENGTH_SHORT).show();
 
             TextView textView1 = (TextView) tableRow.getChildAt(0);
             TextView textView2 = (TextView) tableRow.getChildAt(1);
