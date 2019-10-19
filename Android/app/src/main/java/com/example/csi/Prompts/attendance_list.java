@@ -84,7 +84,7 @@ public class attendance_list extends AppCompatActivity {
                         TextView tv2 = new TextView(attendance_list.this);
                         TextView tv3 = new TextView(attendance_list.this);
 
-                        tv1.setText(students.getString("name"));
+                        tv1.setText(students.getString("Name"));
                         tv1.setGravity(Gravity.CENTER);
                         tv1.setBackgroundColor(getResources().getColor(R.color.white));
 

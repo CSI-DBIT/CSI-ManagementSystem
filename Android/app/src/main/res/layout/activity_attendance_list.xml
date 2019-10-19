@@ -17,7 +17,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/final_points"
         android:layout_marginTop="30dp"
-        android:background="#f1f1f1"
+        android:background="#ffffff"
         >
 
         <TableRow>
@@ -25,25 +25,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/propsal_indicator_shape"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hours Spent"
+                android:text="Hours"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/propsal_indicator_shape"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Percentage"
+                android:text="Percent"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/propsal_indicator_shape"/>
         </TableRow>
 
     </TableLayout>
