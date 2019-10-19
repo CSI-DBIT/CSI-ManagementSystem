@@ -125,7 +125,7 @@ public class DisplayImage extends AppCompatActivity {
     public void initURL3() {
 
         //String url = "http://192.168.43.84:8080/view";
-        String url = "http://159.65.144.246:8082/view";    //Main Server URL
+        String url = "http://159.65.144.246:8090/view";    //Main Server URL
         //String url = "http://192.168.42.156:8080/view";
         //creating jsonobject starts
         final JSONObject jsonObject = new JSONObject();
@@ -147,7 +147,7 @@ public class DisplayImage extends AppCompatActivity {
             public void onResponse(String response) {
 
                 Log.i("volleyABC" ,"got response    "+response);
-                Toast.makeText(DisplayImage.this, "Got Event List", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(DisplayImage.this, "Got Event List", Toast.LENGTH_SHORT).show();
                 imagesUrl.clear();
 
                 try {
@@ -266,7 +266,7 @@ public class DisplayImage extends AppCompatActivity {
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
 
             //String url = "http://192.168.43.84:8080/path";
-            String url = "http://159.65.144.246:8082/path";    //Main Server URL
+            String url = "http://159.65.144.246:8090/path";    //Main Server URL
             //String url = "http://192.168.42.156:8080/path";
             //creating jsonobject starts
             final JSONObject jsonObject = new JSONObject();
@@ -288,7 +288,7 @@ public class DisplayImage extends AppCompatActivity {
                 public void onResponse(String response) {
 
                     Log.i("volleyABCPATH" ,"got response    "+response);
-                    Toast.makeText(DisplayImage.this, "Got Event List", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(DisplayImage.this, "Got Event List", Toast.LENGTH_SHORT).show();
 
                     afterActivityResult(data);
                 }
@@ -388,7 +388,7 @@ public class DisplayImage extends AppCompatActivity {
 
                         okhttp3.Request request = new okhttp3.Request.Builder()
                                 //.url("http://192.168.43.84:8080/upload")
-                                .url("http://159.65.144.246:8082/upload")    //Main Server URL)
+                                .url("http://159.65.144.246:8090/upload")    //Main Server URL)
                                 //.url("http://192.168.42.156:8080/upload")
                                 .post(requestBody)
                                 .build();
@@ -443,7 +443,7 @@ public class DisplayImage extends AppCompatActivity {
 
                         okhttp3.Request request = new okhttp3.Request.Builder()
                                 //.url("http://192.168.43.84:8080/upload")
-                                .url("http://159.65.144.246:8082/upload")
+                                .url("http://159.65.144.246:8090/upload")
                                 //.url("http://192.168.42.156:8080/upload")
                                 .post(request_body)
                                 .build();
@@ -477,19 +477,6 @@ public class DisplayImage extends AppCompatActivity {
         String extention = path.substring(path.lastIndexOf("."));
         String mimeTypeMap = MimeTypeMap.getFileExtensionFromUrl(extention);
         return MimeTypeMap.getSingleton().getMimeTypeFromExtension(mimeTypeMap);
-    }
-
-    public void initURL(){
-
-        imagesUrl.add("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
-        imagesUrl.add("https://www.radiantmediaplayer.com/media/bbb-360p.mp4");
-        imagesUrl.add("https://i.redd.it/qn7f9oqu7o501.jpg");
-        imagesUrl.add("https://i.redd.it/j6myfqglup501.jpg");
-        imagesUrl.add("https://i.redd.it/0h2gm1ix6p501.jpg");
-        imagesUrl.add("https://i.redd.it/k98uzl68eh501.jpg");
-        imagesUrl.add("https://i.redd.it/glin0nwndo501.jpg");
-        imagesUrl.add("https://i.redd.it/obx4zydshg601.jpg");
-        imagesUrl.add("https://i.imgur.com/ZcLLrkY.jpg");
     }
 
     @Override
