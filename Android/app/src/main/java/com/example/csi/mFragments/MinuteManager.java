@@ -225,7 +225,7 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
         bundle.putString(EXTRA_POINTS,clickedItem.getPoints());
         bundle.putStringArrayList(EXTRA_TASK, clickedItem.getTask());
         bundle.putStringArrayList(EXTRA_PERSON, clickedItem.getPerson());
-        Toast.makeText(getContext(), clickedItem.getTask().toString() + " " + clickedItem.getPerson().toString(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), clickedItem.getTask().toString() + " " + clickedItem.getPerson().toString(), Toast.LENGTH_SHORT).show();
 
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

@@ -104,7 +104,7 @@ public class Creative_form extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaType="Image";
-                Toast.makeText(Creative_form.this, mediaType, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Creative_form.this, mediaType, Toast.LENGTH_SHORT).show();
                 UploadPosters();
             }
         });
@@ -113,7 +113,7 @@ public class Creative_form extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaType="Video";
-                Toast.makeText(Creative_form.this, mediaType, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Creative_form.this, mediaType, Toast.LENGTH_SHORT).show();
                 UploadVideos();
             }
         });
@@ -141,7 +141,7 @@ public class Creative_form extends AppCompatActivity {
             public void onResponse(String response) {
 
                 Log.i("volleyABC4985" ,"got response    "+response);
-                Toast.makeText(Creative_form.this, "Logged IN", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Creative_form.this, "Logged IN", Toast.LENGTH_SHORT).show();
 
                 Intent manager = new Intent(Creative_form.this, Manager.class);
 

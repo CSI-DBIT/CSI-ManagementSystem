@@ -106,7 +106,7 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
     @Override
     public void onItemClick(int position) {
         PraposalItem clickedItem = mPraposalList.get(position);
-        Toast.makeText(Technical.this,clickedItem.getmEid() , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(Technical.this,clickedItem.getmEid() , Toast.LENGTH_SHORT).show();
         Intent technical_form = new Intent(Technical.this,Technical_form.class);
         startActivity(technical_form);
 

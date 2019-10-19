@@ -46,7 +46,7 @@ public class attendance_list extends AppCompatActivity {
         Intent intent = getIntent();
         sam = intent.getStringExtra(EXTRA_CLASS);
 
-        Toast.makeText(this, "Your selected " + sam, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Your selected " + sam, Toast.LENGTH_SHORT).show();
 
         parseJSON();
     }
@@ -71,7 +71,7 @@ public class attendance_list extends AppCompatActivity {
             public void onResponse(String response) {
 
                 Log.i("volleyABC", "got response    " + response);
-                Toast.makeText(attendance_list.this, "Logged IN", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(attendance_list.this, "Logged IN", Toast.LENGTH_SHORT).show();
 
                 try {
                     JSONArray jsonArray = new JSONArray(response);

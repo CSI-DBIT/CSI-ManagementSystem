@@ -167,7 +167,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_profile) {
-            Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
             Bundle bundle = new Bundle();
             bundle.putString("id",uid);
             bundle.putString("profilePic",uProfile);
@@ -182,7 +182,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
 
             getSupportFragmentManager().beginTransaction().replace(R.id.containerID, profile).addToBackStack(null).commit();
         } else if (id == R.id.nav_activity_manager) {
-            Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
             if(getSupportFragmentManager().getBackStackEntryCount() > 1){
                 getSupportFragmentManager().popBackStack();
             }
@@ -190,7 +190,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
                 getSupportFragmentManager().beginTransaction().replace(R.id.containerID, ActivityManager.newInstance()).addToBackStack(null).commit();
             }
         } else if (id == R.id.nav_minute_manager) {
-            Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
             Bundle bundle = new Bundle();
             //we are sending id to the MinuteManager.java
             //from minute manager this id will be sent to AddMinute.java
@@ -210,7 +210,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
             getSupportFragmentManager().beginTransaction().replace(R.id.containerID, minuteManager).addToBackStack(null).commit();
 
         } else if (id == R.id.nav_attendance) {
-            Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
             if(urole.equals("PR Head"))
             {
                 if(getSupportFragmentManager().getBackStackEntryCount() > 1){
@@ -250,7 +250,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
             //Toast.makeText(Manager.this,"Not yet implemented",Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_Feedback) {
-            Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
             Toast.makeText(Manager.this,"Not yet implemented",Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_about_us) {
@@ -270,7 +270,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
             startActivity(new Intent(this, MainActivity.class));
             finish();
             //....6/6/2019
-            Toast.makeText(Manager.this,"Log Out",Toast.LENGTH_SHORT).show();
+            Toast.makeText(Manager.this,"Logged Out",Toast.LENGTH_SHORT).show();
 
         }
 
