@@ -77,7 +77,7 @@ public class DetailActivity extends Fragment {
             tv1.setTextColor(getResources().getColor(R.color.colorPrimary));
             tv1.setTextSize(17);
            // tv1.setBackground(getResources().getDrawable(R.drawable.tableborder)); //this will apply border
-
+            tv1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.tableborder, 0, 0, 0);
             TableRow.LayoutParams param = new TableRow.LayoutParams(
                     TableRow.LayoutParams.WRAP_CONTENT,
                     TableRow.LayoutParams.WRAP_CONTENT,
@@ -108,6 +108,5 @@ public class DetailActivity extends Fragment {
 
         return rootView;
     }
-
 
 }

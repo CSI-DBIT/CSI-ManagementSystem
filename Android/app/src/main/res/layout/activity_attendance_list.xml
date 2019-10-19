@@ -17,14 +17,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/final_points"
         android:layout_marginTop="30dp"
-        android:background="#f1f1f1"
-        >
+        android:textColor="@color/white"
+        android:background="@drawable/propsal_indicator_shape">
 
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"/>
@@ -33,6 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hours Spent"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"/>
@@ -42,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:text="Percentage"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:gravity="center"/>
         </TableRow>
