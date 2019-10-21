@@ -114,6 +114,7 @@ public class AddMinute extends AppCompatActivity {
 
                 tv1.setGravity(Gravity.CENTER);
                 tv1.setBackgroundColor(getResources().getColor(R.color.white));
+                tv1.setTextColor(getResources().getColor(R.color.colorPrimary));
                 tv1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.tableborder, 0, 0, 0);
 
                 TableRow.LayoutParams param = new TableRow.LayoutParams(
@@ -131,7 +132,7 @@ public class AddMinute extends AppCompatActivity {
                 tv2.setGravity(Gravity.CENTER);
                 tv2.setBackgroundColor(getResources().getColor(R.color.white));
                 tv2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.tableborder, 0, 0, 0);
-
+                tv2.setTextColor(getResources().getColor(R.color.colorPrimary));
 
                 TableRow.LayoutParams param1 = new TableRow.LayoutParams(
                         TableRow.LayoutParams.WRAP_CONTENT,

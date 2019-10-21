@@ -89,6 +89,7 @@ public class attendance_list extends AppCompatActivity {
                         tv1.setText(students.getString("Name"));
                         tv1.setGravity(Gravity.CENTER);
                         tv1.setBackgroundColor(getResources().getColor(R.color.white));
+                        tv1.setTextColor(getResources().getColor(R.color.colorPrimary));
 
                         TableRow.LayoutParams param = new TableRow.LayoutParams(
                                 TableRow.LayoutParams.WRAP_CONTENT,
@@ -101,6 +102,7 @@ public class attendance_list extends AppCompatActivity {
                         tv2.setText(students.getString("total"));
                         tv2.setGravity(Gravity.CENTER);
                         tv2.setBackgroundColor(getResources().getColor(R.color.white));
+                        tv2.setTextColor(getResources().getColor(R.color.colorPrimary));
 
                         TableRow.LayoutParams param1 = new TableRow.LayoutParams(
                                 TableRow.LayoutParams.WRAP_CONTENT,
@@ -113,7 +115,7 @@ public class attendance_list extends AppCompatActivity {
                         tv3.setText(students.getString("percent"));
                         tv3.setGravity(Gravity.CENTER);
                         tv3.setBackgroundColor(getResources().getColor(R.color.white));
-
+                        tv3.setTextColor(getResources().getColor(R.color.colorPrimary));
                         TableRow.LayoutParams param2 = new TableRow.LayoutParams(
                                 TableRow.LayoutParams.WRAP_CONTENT,
                                 TableRow.LayoutParams.WRAP_CONTENT,

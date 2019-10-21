@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Prompts.attendance_list">
+    tools:context=".Prompts.attendance_list"
+    android:background="@color/white">
 
     <TableLayout
         android:id="@+id/display_table"
@@ -17,24 +18,14 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/final_points"
         android:layout_marginTop="30dp"
-<<<<<<< HEAD
-        android:textColor="@color/white"
-        android:background="@drawable/propsal_indicator_shape">
-=======
-        android:background="#ffffff"
-        >
->>>>>>> 6dc774121adb1b2ce4b9595f182872a42728d842
+        android:textColor="@color/white">
 
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name"
-<<<<<<< HEAD
-                android:textColor="@color/white"
-=======
                 android:textSize="17sp"
->>>>>>> 6dc774121adb1b2ce4b9595f182872a42728d842
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -44,17 +35,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
                 android:text="Hours Spent"
                 android:textColor="@color/white"
-=======
-                android:text="Hours"
                 android:textSize="17sp"
->>>>>>> 6dc774121adb1b2ce4b9595f182872a42728d842
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textColor="@color/white"
                 android:background="@drawable/propsal_indicator_shape"/>
 
             <TextView
@@ -63,7 +49,6 @@
                 android:text="Percent"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textColor="@color/white"
