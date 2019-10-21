@@ -13,9 +13,11 @@
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
         android:layout_weight="8"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="14dp" >
+        android:paddingBottom="14dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
 
     <!-- Row 1 -->
 
@@ -26,6 +28,7 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         app:cardElevation="8dp"
+        android:layout_marginTop="14dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
@@ -45,7 +48,7 @@
                 android:layout_width="52dp"
                 android:layout_height="56dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/ic_proposal" />
+                android:src="@drawable/ic_two" />
 
             <TextView
                 android:text="SE-IT"
@@ -87,7 +90,7 @@
                 android:layout_width="47dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/ic_creative" />
+                android:src="@drawable/ic_three" />
 
             <TextView
                 android:text="TE-IT"

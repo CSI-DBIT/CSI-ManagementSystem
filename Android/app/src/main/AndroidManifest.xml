@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".mActivityManager.publcity_recycler"></activity>
-        <activity android:name=".Prompts.attendance_list" />
+        <activity android:name=".Prompts.attendance_list"
+            android:theme="@style/AppTheme2"/>
         <activity
             android:name=".mActivityManager.edit_proposal"
             android:theme="@style/AppTheme2" />
