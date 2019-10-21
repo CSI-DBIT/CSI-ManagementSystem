@@ -1,110 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:id="@+id/detail_activity"
-    tools:context=".DetailActivity"
-    android:background="@color/white">
-
-    <TextView
-        android:id="@+id/final_agenda"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="36dp"
-        android:maxLines="1"
-        android:text="Agenda:"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:id="@+id/detail_activity"
+        tools:context=".DetailActivity"
+        android:background="@color/white">
 
-    <TextView
-        android:id="@+id/final_date"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="36dp"
-        android:maxLines="1"
-        android:text="Date:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="17sp"
-        app:layout_constraintTop_toBottomOf="@id/final_agenda"
-        tools:layout_editor_absoluteX="16dp" />
+        <TextView
+            android:id="@+id/final_agenda"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="36dp"
+            android:maxLines="1"
+            android:text="Agenda:"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
 
-    <TextView
-        android:id="@+id/final_time"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:maxLines="1"
-        android:text="Time:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="17sp"
-        app:layout_constraintTop_toBottomOf="@id/final_date"
-        tools:layout_editor_absoluteX="16dp" />
+        <TextView
+            android:id="@+id/final_date"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="36dp"
+            android:maxLines="1"
+            android:text="Date:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="17sp"
+            app:layout_constraintTop_toBottomOf="@id/final_agenda"
+            tools:layout_editor_absoluteX="16dp" />
 
-    <TextView
-        android:id="@+id/final_creator"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:maxLines="1"
-        android:textColor="@color/colorPrimary"
-        android:text="Creator:"
-        android:textSize="17sp"
-        app:layout_constraintTop_toBottomOf="@id/final_time"
-        tools:layout_editor_absoluteX="16dp" />
+        <TextView
+            android:id="@+id/final_time"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:maxLines="1"
+            android:text="Time:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="17sp"
+            app:layout_constraintTop_toBottomOf="@id/final_date"
+            tools:layout_editor_absoluteX="16dp" />
 
-    <TextView
-        android:id="@+id/final_points"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:maxLines="1"
-        android:text="Points:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="17sp"
-        android:lines="10"
-        app:layout_constraintTop_toBottomOf="@id/final_creator"
-        tools:layout_editor_absoluteX="16dp" />
+        <TextView
+            android:id="@+id/final_creator"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:maxLines="1"
+            android:textColor="@color/colorPrimary"
+            android:text="Creator:"
+            android:textSize="17sp"
+            app:layout_constraintTop_toBottomOf="@id/final_time"
+            tools:layout_editor_absoluteX="16dp" />
 
-    <TableLayout
-        android:id="@+id/display_table"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/final_points"
-        android:layout_marginTop="30dp"
-        android:background="#ffffff"
-        >
+        <TextView
+            android:id="@+id/final_points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Points:\n"
+            android:textColor="@color/colorPrimary"
+            android:textSize="17sp"
+            app:layout_constraintTop_toBottomOf="@id/final_creator"
+            tools:layout_editor_absoluteX="16dp" />
 
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Task"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:background="@drawable/propsal_indicator_shape"/>
+        <TableLayout
+            android:id="@+id/display_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/final_points"
+            android:layout_marginTop="30dp"
+            android:background="#ffffff"
+            >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Person"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:background="@drawable/propsal_indicator_shape"/>
-        </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Task"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="@drawable/propsal_indicator_shape"/>
 
-    </TableLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Person"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="@drawable/propsal_indicator_shape"/>
+            </TableRow>
 
-</android.support.constraint.ConstraintLayout>
+        </TableLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

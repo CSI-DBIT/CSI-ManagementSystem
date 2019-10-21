@@ -160,7 +160,10 @@
         android:background="#ffffff"
         >
 
-        <TableRow>
+        <TableRow
+            android:id="@+id/row1"
+            android:visibility="gone">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -185,7 +188,7 @@
 
         </TableRow>
 
-        <TableRow>
+        <!--<TableRow>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -213,7 +216,7 @@
                 android:layout_marginBottom="1dp"
                 />
 
-        </TableRow>
+        </TableRow>-->
 
     </TableLayout>
 

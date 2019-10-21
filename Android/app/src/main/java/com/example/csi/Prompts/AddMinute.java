@@ -70,6 +70,8 @@ public class AddMinute extends AppCompatActivity {
         mAddTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                TableRow mainRow = findViewById(R.id.row1);
+                mainRow.setVisibility(View.VISIBLE);
                 TableRow tablerow;
                 tableLayout = findViewById(R.id.table);
                 TextView tv1, tv2;

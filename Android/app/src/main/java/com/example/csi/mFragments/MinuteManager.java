@@ -214,9 +214,9 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
         Bundle bundle = new Bundle();
         ExampleItem clickedItem = mExampleList.get(position);
 
-        Log.i("display list 0", mExampleList.get(0).getTask().toString() + " " + mExampleList.get(0).getPerson().toString());
-        Log.i("display list 1", mExampleList.get(1).getTask().toString() + " " + mExampleList.get(1).getPerson().toString());
-        Log.i("display list 2", mExampleList.get(2).getTask().toString() + " " + mExampleList.get(2).getPerson().toString());
+        //Log.i("display list 0", mExampleList.get(0).getTask().toString() + " " + mExampleList.get(0).getPerson().toString());
+        //Log.i("display list 1", mExampleList.get(1).getTask().toString() + " " + mExampleList.get(1).getPerson().toString());
+        //Log.i("display list 2", mExampleList.get(2).getTask().toString() + " " + mExampleList.get(2).getPerson().toString());
 
         bundle.putString(EXTRA_AGENDA,clickedItem.getAgenda());
         bundle.putString(EXTRA_DATE,clickedItem.getDate());
