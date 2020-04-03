@@ -1,29 +1,33 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var cors = require('cors');
-app.use(cors());
-
-var login = require('./routes/login');
-var minutes = require('./routes/minutes');
-var profile = require('./routes/profile');
-var attendance = require('./routes/attendance');
-
+var express=require('express');
+var app=express();
+var bodyParser=require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+var cors=require('cors');
+app.use(cors());
+
+var login=require('./routes/login');
+var minutes=require('./routes/minutes');
+var profile=require('./routes/profile');
+var attendance=require('./routes/attendance');
+var proposal=require('./routes/proposal');
+var creative=require('./routes/creative');
+
 app.use('/login',login);
 app.use('/minutes',minutes);
 app.use('/profile',profile);
 app.use('/attendance',attendance);
+app.use('/proposal',proposal);
+app.use('/creative',creative);
 
-app.get("/", (req,res)=>{
+app.get("/",(req,res)=>{
 return res.send("Welcome to CSI-DBIT");
 });
 
-//port activation
-app.listen(8081, (req, res) => {
-    console.log("Listening on 8081");
+//Port Listening
+app.listen(9000,(req,res)=>{
+    console.log("Listening on 9000");
 });
