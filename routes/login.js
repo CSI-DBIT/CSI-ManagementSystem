@@ -5,9 +5,9 @@ var router=express.Router();
 var mysql=require('mysql');
 const connection = mysql.createConnection({
 	host: 'localhost',
-	user: process.env.database_user,
-	password: process.env.database_password,
-	database: 'CsiApp'
+	user: 'csi',
+	password: 'Root@Csi123',
+	database: 'csiApp'
 });
 
 connection.connect(function(err) {

@@ -6,9 +6,9 @@ var randomstring = require('randomstring');
 var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: 'localhost',
-    user: process.env.database_user,
-    password: process.env.database_password,
-    database: 'CsiApp'
+    user: 'csi',
+    password: 'Root@Csi123',
+    database: 'csiApp'
 });
 connection.connect(function(err) {
     if (!err) {
