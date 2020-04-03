@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mActivityManager.Proposal"
+    tools:context=".mActivityManager.Publicity"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,26 +30,55 @@
                 android:orientation="vertical"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                >
+                android:layout_marginRight="5dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="NAME :"
+                    android:text="NAME"
                     android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"
-                    android:id="@+id/pr_name"/>
-
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:text="Name  "
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/name_pl"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:text="THEME"
                     android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"
-                    android:id="@+id/pr_theme"/>
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:text="Theme"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/theme_pl"/>
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -57,25 +86,70 @@
                     android:text="EVENT DATE"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimary"/>
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Event Date"
+                    android:id="@+id/ed_pl"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:textStyle="bold"
                     android:text="SPEAKER"
-                    android:textColor="@color/colorPrimary"
-                    android:id="@+id/pr_speaker"/>
-
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Speaker"
+                    android:id="@+id/speaker_pl"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:textStyle="bold"
                     android:text="VENUE"
-                    android:textColor="@color/colorPrimary"
-                    android:id="@+id/pr_venue"/>
-
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Venue"
+                    android:id="@+id/venue_pl"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -102,8 +176,7 @@
                         android:textSize="15sp"
                         android:textStyle="bold"
                         android:text="Non CSI Member"
-                        android:textColor="@color/colorPrimary"
-                        />
+                        android:textColor="@color/colorPrimary"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -111,30 +184,44 @@
                     android:orientation="horizontal"
                     android:layout_marginLeft="20dp">
                     <TextView
+                        android:id="@+id/fee_csi_pl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimary"
-                        android:text="0000"
-                        android:id="@+id/pr_csi_fee"/>
+                        android:text="0000"/>
                     <TextView
+                        android:id="@+id/fee_non_csi_pl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimary"
                         android:layout_marginLeft="112dp"
-                        android:text="0000"
-                        android:id="@+id/pr_ncsi_fee"/>
+                        android:text="0000"/>
                 </LinearLayout>
             </LinearLayout>
-
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:text="WORTH PRIZE"
-                    android:textColor="@color/colorPrimary"
-                    android:id="@+id/pr_prize"/>
-
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="Worth Prize"
+                    android:id="@+id/prize_pl"/>
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -156,8 +243,19 @@
                     android:textSize="14sp"
                     android:textColor="@color/colorAccent"
                     android:text="Description "
-                    android:id="@+id/pr_desc"/>
+                    android:id="@+id/desc_pl"/>
             </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/pr_pl"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            >
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -190,6 +288,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20sp"
+                android:paddingTop="20dp"
                 android:text="Target Audience:"
                 android:textSize="20sp"
                 android:textColor="@color/colorAccent"/>
@@ -277,17 +376,15 @@
 
             </LinearLayout>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/submit_pl"
+                android:text="Submit"
+                />
+
         </LinearLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Submit"
-            />
-        <View
-            android:layout_width="10000dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/colorPrimary" />
+
     </LinearLayout>
 </ScrollView>
