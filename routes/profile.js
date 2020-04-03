@@ -17,7 +17,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: process.env.database_user,
     password: process.env.database_password,
-    database: 'CsiManagementSystem'
+    database: 'CsiApp'
 });
 connection.connect(function(err) {
     if (!err) {

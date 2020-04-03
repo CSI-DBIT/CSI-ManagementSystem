@@ -2,28 +2,22 @@
   "name": "csi-managementsystem",
   "version": "1.0.0",
   "description": "A web interface for members to CSI-DBIT to use.",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CSI-DBIT/CSI-ManagementSystem.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CSI-DBIT/CSI-ManagementSystem/issues"
-  },
-  "homepage": "https://github.com/CSI-DBIT/CSI-ManagementSystem#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.16.4",
-    "forever": "^0.15.3",
-    "generate-password": "^1.4.1",
-    "mysql": "^2.16.0",
-    "nodemailer": "^5.1.1"
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "generate-password": "^1.5.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.4.6",
+    "path": "^0.12.7",
+    "randomstring": "^1.1.5"
   }
 }
