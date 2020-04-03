@@ -35,7 +35,7 @@ import java.util.regex.Pattern;
 
 public class ProfileEdit extends AppCompatActivity {
 
-    String server_url="http://159.65.144.246:8081/profile/edit";    //Main Server URL
+    String server_url="http://tayyabali.in:9090/profile/edit";    //Main Server URL
     //String server_url="http://192.168.43.84:8080/profile/edit";
     String position_s, UProfile;
 

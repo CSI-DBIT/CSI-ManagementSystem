@@ -52,7 +52,7 @@ public class AddMinute extends AppCompatActivity {
         Intent intent = getIntent();
         Creator = intent.getStringExtra("id"); //getting User ID from MinuteManager
 
-        server_url="http://159.65.144.246:8081/minutes/create";  //Main Server URL
+        server_url="http://tayyabali.in:9090/minutes/create";  //Main Server URL
         //server_url="http://192.168.43.84:8080/minutes/create";
 
         spinner = findViewById(R.id.csi_members);

@@ -34,7 +34,7 @@ import static com.example.csi.mFragments.AttendanceSBC.EXTRA_CLASS;
 public class attendance_list extends AppCompatActivity {
 
     String sam;
-    String server_url = "http://159.65.144.246:8081/attendance/view";
+    String server_url = "http://tayyabali.in:9090/attendance/view";
     TableLayout tableLayout;
 
     @Override

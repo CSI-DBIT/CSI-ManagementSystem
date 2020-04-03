@@ -125,7 +125,7 @@ public class DisplayImage extends AppCompatActivity {
     public void initURL3() {
 
         //String url = "http://192.168.43.84:8080/view";
-        String url = "http://159.65.144.246:8090/view";    //Main Server URL
+        String url = "http://tayyabali.in:9091/view";    //Main Server URL
         //String url = "http://192.168.42.156:8080/view";
         //creating jsonobject starts
         final JSONObject jsonObject = new JSONObject();
@@ -266,7 +266,7 @@ public class DisplayImage extends AppCompatActivity {
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
 
             //String url = "http://192.168.43.84:8080/path";
-            String url = "http://159.65.144.246:8090/path";    //Main Server URL
+            String url = "http://tayyabali.in:9091/path";    //Main Server URL
             //String url = "http://192.168.42.156:8080/path";
             //creating jsonobject starts
             final JSONObject jsonObject = new JSONObject();
@@ -388,7 +388,7 @@ public class DisplayImage extends AppCompatActivity {
 
                         okhttp3.Request request = new okhttp3.Request.Builder()
                                 //.url("http://192.168.43.84:8080/upload")
-                                .url("http://159.65.144.246:8090/upload")    //Main Server URL)
+                                .url("http://tayyabali.in:9091/upload")    //Main Server URL)
                                 //.url("http://192.168.42.156:8080/upload")
                                 .post(requestBody)
                                 .build();
@@ -443,7 +443,7 @@ public class DisplayImage extends AppCompatActivity {
 
                         okhttp3.Request request = new okhttp3.Request.Builder()
                                 //.url("http://192.168.43.84:8080/upload")
-                                .url("http://159.65.144.246:8090/upload")
+                                .url("http://tayyabali.in:9091/upload")
                                 //.url("http://192.168.42.156:8080/upload")
                                 .post(request_body)
                                 .build();

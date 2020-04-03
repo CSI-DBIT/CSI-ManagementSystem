@@ -34,7 +34,7 @@ import java.io.UnsupportedEncodingException;
 
 public class Profile extends Fragment {
 
-    String server_url="http://159.65.144.246:8081/profile/";  //Main Server URL
+    String server_url="http://tayyabali.in:9090/profile/";  //Main Server URL
     //String server_url="http://192.168.43.84:8080/profile";
     //string to store position as we are not showing it in any textview
     String position_s=" ", UID, UProfile;

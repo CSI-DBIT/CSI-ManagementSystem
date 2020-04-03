@@ -112,7 +112,7 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
     }
 
     public void parseJSON() {
-        server_url = "http://159.65.144.246:8081/proposal/viewlistproposal/";   //Main Server URl
+        server_url = "http://tayyabali.in:9090/proposal/viewlistproposal/";   //Main Server URl
         mPraposalList.clear();
 
         StringRequest stringRequest =new StringRequest(Request.Method.GET,server_url,new Response.Listener<String>(){

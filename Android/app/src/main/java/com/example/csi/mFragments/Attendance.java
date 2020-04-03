@@ -40,7 +40,7 @@ public class Attendance extends Fragment {
     JSONObject jsonObject = new JSONObject();
     String checkboxData=null;
     String date=null;
-    String server_url="http://159.65.144.246:8081/attendance/request";    //Main Server URL
+    String server_url="http://tayyabali.in:9090/attendance/request";    //Main Server URL
     //String server_url="http://192.168.43.84:8080/request";
     String rsn="";
     String slots="";
