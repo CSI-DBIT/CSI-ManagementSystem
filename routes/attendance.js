@@ -6,7 +6,7 @@ var mysql=require('mysql');
 const connection=mysql.createConnection({
     	host:'localhost',
     	user:'csi',
-   	password:'Root@Csi123,
+   	password:'Root@Csi123',
     	database:'csiApp'
 });
 
