@@ -58,7 +58,7 @@ public class proposal_desc extends AppCompatActivity {
 
         Log.i("volleyABC" ,"123");
 //        Toast.makeText(proposal_desc.this,eid , Toast.LENGTH_SHORT).show();
-        get_data("http://tayyabali.in:9090/proposal/viewproposal","0","0");
+        get_data("http://tayyabali.in:9000/proposal/viewproposal","0","0");
 
 
         if(urole1.equals("HOD") && st.equals("1")){
@@ -208,7 +208,7 @@ public class proposal_desc extends AppCompatActivity {
     {  // After a pause OR at startup
         super.onResume();
         //Refresh your stuff here
-        get_data("http://tayyabali.in:9090/proposal/viewproposal","0","0");
+        get_data("http://tayyabali.in:9000/proposal/viewproposal","0","0");
     }
 
     public void customDialog(String message , String st){
@@ -231,7 +231,7 @@ public class proposal_desc extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        get_data("http://tayyabali.in:9090/proposal/status","1",st );
+                        get_data("http://tayyabali.in:9000/proposal/status","1",st );
 
                         finish();
 

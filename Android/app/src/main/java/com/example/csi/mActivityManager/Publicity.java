@@ -93,17 +93,10 @@ public class Publicity extends AppCompatActivity {
 
         //checking data inserted into json object
         final String requestBody = jsonObject.toString();
-<<<<<<< HEAD
         Log.i("volleyABC ", requestBody);
         final String[] ret = new String[1];
         ret[0]=null;
         StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9090/proposal/editproposal", new Response.Listener<String>() {
-=======
-        Log.i("volleyABC123", requestBody);
-
-        //getting response from server starts
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://159.65.144.246:8081/creative/viewpropdetail",new Response.Listener<String>(){
->>>>>>> 4aa223b1fa90079c230c737fe1e643e7f5fa73e3
             @Override
             public void onResponse(String response) {
 

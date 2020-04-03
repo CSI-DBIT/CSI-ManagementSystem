@@ -81,7 +81,7 @@ public class AttendancePR extends Fragment {
 
     private void parseJSON() {
         //String url = "http://192.168.43.84:8080/requestlist";
-        String url = "http://tayyabali.in:9090/attendance/requestlist";   //Main Server URL
+        String url = "http://tayyabali.in:9000/attendance/requestlist";   //Main Server URL
         Log.i("AttPR","ParseJSON");
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -160,7 +160,7 @@ public class AttendancePR extends Fragment {
     }
 
     public void parsejson2() {
-        String server_url = "http://tayyabali.in:9090/attendance/finallist";   //Main Server URL
+        String server_url = "http://tayyabali.in:9000/attendance/finallist";   //Main Server URL
 
         sb = new StringBuffer();
         ArrayList finalConReq = new ArrayList();
@@ -248,7 +248,7 @@ public class AttendancePR extends Fragment {
     }
 
     public void parsejson3() {
-        String server_url = "http://tayyabali.in:9090/attendance/reject";
+        String server_url = "http://tayyabali.in:9000/attendance/reject";
 
         sb = new StringBuffer();
         ArrayList finalRejReq = new ArrayList();

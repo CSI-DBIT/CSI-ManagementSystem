@@ -53,7 +53,7 @@ import okhttp3.RequestBody;
 public class Creative_form extends AppCompatActivity {
 
     public String mediaType = "Image", eid;
-    public String server_url = "http://tayyabali.in:9090/creative/viewpropdetail";
+    public String server_url = "http://tayyabali.in:9000/creative/viewpropdetail";
     String name, theme, eventDate, description, creativeBudget, date1;
     String dSpeaker, dVenue, dFeeCSI, dFeeNonCSI, dPrize, dPublicityBudget, dGuestBudget;
 
@@ -350,7 +350,7 @@ public class Creative_form extends AppCompatActivity {
 
                             okhttp3.Request request = new okhttp3.Request.Builder()
                                     //.url("http://192.168.43.84:8080/pic")
-                                    .url("http://tayyabali.in:9090/creative/upload")    //Main Server URL)
+                                    .url("http://tayyabali.in:9000/creative/upload")    //Main Server URL)
                                     //.url("http://192.168.42.156:8080/upload")
                                     .post(requestBody)
                                     .build();
@@ -410,7 +410,7 @@ public class Creative_form extends AppCompatActivity {
 
                             okhttp3.Request request = new okhttp3.Request.Builder()
                                     //.url("http://192.168.43.84:8080/pic")
-                                    .url("http://tayyabali.in:9090/creative/upload")
+                                    .url("http://tayyabali.in:9000/creative/upload")
                                     //.url("http://192.168.42.156:8080/upload")
                                     .post(request_body)
                                     .build();

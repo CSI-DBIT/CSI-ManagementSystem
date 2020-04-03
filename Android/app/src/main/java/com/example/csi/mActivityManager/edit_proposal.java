@@ -111,7 +111,7 @@ public class edit_proposal extends AppCompatActivity {
         final String requestBody = jsonObject.toString();
         Log.i("volleyABC ", requestBody);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9090/proposal/editproposal", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/proposal/editproposal", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 

@@ -127,7 +127,7 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
     }
 
     public void parseJSON() {
-        server_url = "http://tayyabali.in:9090/minutes/list";   //Main Server URL
+        server_url = "http://tayyabali.in:9000/minutes/list";   //Main Server URL
         //server_url = "http://206.189.135.147:8081/minutes/list";
         //server_url = "http://192.168.43.84:8080/minutes/list";
 

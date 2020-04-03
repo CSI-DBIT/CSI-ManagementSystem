@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
     public static final String EXTRA_UROLE = "com.example.csimanagementsystem.EXTRA_UROLE";
     public static final String EXTRA_URL = "com.example.csimanagementsystem.EXTRA_URL";
 
-    String server_url="http://tayyabali.in:9090/login"; //Main Server URL
+    String server_url="http://tayyabali.in:9000/login"; //Main Server URL
     private SharedPreferences mpref; //asdfg
     private static final String pref_name="";
 
