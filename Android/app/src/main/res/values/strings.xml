@@ -16,13 +16,16 @@
     <string name="login_preference">com.example.csi_login_preference</string>
 
     <string name="login_status_preference">ccom.example.csi_login_status_preference</string>
-    <string name="What_is_csi">\t\tComputer Society of  India is the first and largest body of computer professionals in India.
-It was started on 6 March 1965 by a few computer professionals and has now grown to be the national body representing computer professionals.
-It has 72 chapters across India, 511 student branches, and 100,000 members.
-The Society also encourages and assists professionals to maintain integrity and competence of the profession and fosters a sense of partnership amongst members.
- </string>
+    <string name="What_is_csi">\t\t\t\t\t\t\Computer Society of India is the first and largest body of computer professionals in India. It was started on 6 March 1965 by a few computer professionals and has now grown to be the national body representing computer professionals. It has 72 chapters across India, 511 student branches, and 100,000 members.The Computer Society of India is a non-profit professional meet to exchange views and information learn and share ideas.\n\nThe wide spectrum of members is committed to the advancement of theory and practice of Computer Engineering and Technology Systems, Science and Engineering, Information Processing and related Arts and Sciences.The Society also encourages and assists professionals to maintain integrity and competence of the profession and fosters a sense of partnership amongst members. Besides the activities held at the Chapters and Student Branches,the Society also conducts periodic conferences, seminars.
+</string>
+
     <string name="y">\t\tTo serve the student community by bridging the gap between academia and industry.To keep the students in touch with the recent advancement in Technology.To provide a conducive platform to learn, share, innovate ideas and to facilitate open source culture along with research attitude.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vision">To provide a conducive platform to learn , share, innovate ideas and to facilitate opensource culture along with research attitude.</string>
+    <string name="Mission">DBIT-CSI is to facilitate research, knowledge sharing, learning and career enhancement for all categories of IT professionals, while simultaneously inspiring and nurturing new entrants into the industry and helping them to integrate into the IT community.</string>
+    <string name="Objective">To serve the student community by bridging the gap between academia and industry. Outcome Students should be industry ready with latest skills required in the IT industry Developed by CSI DBIT</string>
+    <string name="GOC">\t\tDBIT-CSI Student Branch hosts an intercollegiate Online software Coding Competition under the banner of “CSI TechNext India”. The registration for the event starts in the month of August and event is conducted in the month of October. Competition have three rounds and the winner will be announced after third round. The Competition is open for Engineering Diploma, Engineering Degree, B.Sc and MCA Students. Participant have to form a team consisting of two members. Participant have an option to write the program in C/C++/Java language.\n\nEach participating team will receive participation certificate from CSI TechNext India. The prizes will be awarded to the three best teams and will be felicitated at the CSI TechNext India Annual Student Convention with the certificate and prize money. For more details visit GOC website: http://goc.dbit.in/ </string>
+    <string name="MumbaiHackathon">\t\tMumbai Hackathon is Annual Open Source Hackathon organized by FOSS United and Don Bosco Institute of Technology (DBIT). Every year, we welcome students, developers and designers from across the country to create incredible open source projects at Mumbai\'s largest Open Source Hackathon. For more details visit Mumbai Hackathon website: \nhttps://mumbaihackathon.in/</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="csi_members_name">
         <item>Select</item>

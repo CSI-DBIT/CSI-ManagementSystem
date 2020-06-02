@@ -19,11 +19,11 @@
 
             <com.joooonho.SelectableRoundedImageView
                 android:id="@+id/profile_photo_E"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:maxHeight="50dp"
                 android:maxWidth="50dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:contentDescription="@string/nav_header_desc"
                 android:paddingTop="1dp"
                 android:scaleType="centerCrop"
@@ -40,13 +40,15 @@
 
             <EditText
                 android:id="@+id/profile_name_E"
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="170dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                />
             <TextView
                 android:id="@+id/id_E"
                 android:layout_width="wrap_content"
@@ -86,7 +88,10 @@
                     android:paddingLeft="20dp"
                     android:inputType="textEmailAddress"
                     android:textSize="17sp"
-                    android:textColor="@color/colorAccent"/></LinearLayout>
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/btextfield"
+                    android:layout_margin="10dp"
+                    /></LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,7 +113,10 @@
                     android:inputType="phone"
                     android:paddingLeft="20dp"
                     android:textSize="17sp"
-                    android:textColor="@color/colorAccent"/></LinearLayout>
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/btextfield"
+                    android:layout_margin="10dp"
+                    /></LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -237,7 +245,9 @@
                     android:paddingLeft="20dp"
                     android:inputType="number"
                     android:textSize="17sp"
-                    android:textColor="@color/colorAccent"/></LinearLayout>
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/btextfield"
+                    android:layout_margin="10dp"/></LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -7,7 +7,7 @@
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_person_outline_black"
-            android:title="Profile" />
+            android:title="My Profile" />
         <item
             android:id="@+id/nav_activity_manager"
             android:icon="@drawable/ic_add_circle_activity"
