@@ -50,9 +50,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What is CSI"
+            android:text="About"
             android:textColor="@color/colorPrimary"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            />
+
 
         <me.biubiubiu.justifytext.library.JustifyTextView
             android:id="@+id/name"
@@ -61,7 +63,9 @@
             android:text="@string/What_is_csi"
             android:textColor="@color/colorAccent"
             android:textSize="16sp"
-            android:textStyle="italic" />
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -90,8 +94,7 @@
             android:layout_height="wrap_content"
             android:text="@string/y"
             android:textColor="@color/colorAccent"
-            android:textSize="16sp"
-            android:textStyle="italic" />
+            android:textSize="16sp" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
 </ScrollView>
