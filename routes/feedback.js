@@ -16,7 +16,7 @@ router.post('/',(req,res)=>{
 	var mailOptions={
 		from:'generixteam2019@gmail.com',
 		to:'generixteam2019@gmail.com',
-		subject:'Feedback',
+		subject:'CSI-App Feedback',
 		text:'UserID:'+ req.body.id+'\nName:'+req.body.name+'\nFeedback:'+req.body.feedback
 	};
 	transporter.sendMail(mailOptions,function(error,info){
