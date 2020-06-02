@@ -45,6 +45,25 @@ public class Profile extends Fragment {
         return new Profile();
     }
 
+    @Override
+    public void onResume() {
+        // TODO Auto-generated method stub
+        super.onResume();
+        final SwipeRefreshLayout swipeRefreshLayout1 = rootView.findViewById(R.id.refresher1);
+        swipeRefreshLayout1.setRefreshing(true);
+        (new Handler()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                swipeRefreshLayout1.setRefreshing(false);
+
+                int min = 65;
+                int max = 95;
+
+                get_data();
+            }
+        },1000);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {

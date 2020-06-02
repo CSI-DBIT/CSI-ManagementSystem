@@ -15,6 +15,7 @@ var profile=require('./routes/profile');
 var attendance=require('./routes/attendance');
 var proposal=require('./routes/proposal');
 var creative=require('./routes/creative');
+var feedback=require("./routes/feedback");
 
 app.use('/login',login);
 app.use('/minutes',minutes);
@@ -22,6 +23,7 @@ app.use('/profile',profile);
 app.use('/attendance',attendance);
 app.use('/proposal',proposal);
 app.use('/creative',creative);
+app.use('/feedback',feedback);
 
 app.get("/",(req,res)=>{
 return res.send("Welcome to CSI-DBIT");
