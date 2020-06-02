@@ -1,7 +1,9 @@
 package com.example.csi.Prompts;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -28,6 +30,7 @@ import com.example.csi.mFragments.AttendanceSBC;
 import com.example.csi.mFragments.Developers;
 import com.example.csi.mFragments.MinuteManager;
 import com.example.csi.mFragments.Profile;
+import com.example.csi.mFragments.feedback;
 import com.squareup.picasso.Picasso;
 
 
@@ -63,6 +66,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
         uname = intent.getStringExtra(MainActivity.EXTRA_UNAME);
         urole = intent.getStringExtra(MainActivity.EXTRA_UROLE);
         uProfile = intent.getStringExtra(MainActivity.EXTRA_URL);
+        Log.i("tracking uid","manager when received "+uid+uname+urole+uProfile);
         //get data sent by Mainactivity.java ends
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.server_url_button);
@@ -122,6 +126,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
     }
 
     //below mathod id used to close the drawer... if its is open while pressing backpress key
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -228,7 +233,8 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
             {
                 Bundle bundle = new Bundle();
                 bundle.putString("id",uid);
-                Log.i("tracking uid","in manager sending to attendence "+uid);
+                bundle.putString("name",uname);
+                Log.i("tracking uid","in manager sending to attendence "+uid+uname);
 
                 Attendance attendance = new Attendance();
                 attendance.setArguments(bundle);
@@ -251,7 +257,17 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
 
         } else if (id == R.id.nav_Feedback) {
             //Toast.makeText(Manager.this,String.valueOf(getSupportFragmentManager().getBackStackEntryCount()),Toast.LENGTH_SHORT).show();
-            Toast.makeText(Manager.this,"Not yet implemented",Toast.LENGTH_SHORT).show();
+            Bundle bundle = new Bundle();
+            bundle.putString("id",uid);
+            bundle.putString("name",uname);
+            feedback feedback = new feedback();
+            feedback.setArguments(bundle);
+            Toast.makeText(Manager.this,"Yes implemented",Toast.LENGTH_SHORT).show();
+            if(getSupportFragmentManager().getBackStackEntryCount() > 1){
+                getSupportFragmentManager().popBackStack();
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.containerID, feedback).addToBackStack(null).commit();
+
 
         } else if (id == R.id.nav_about_us) {
             About_us about_us = new About_us();
