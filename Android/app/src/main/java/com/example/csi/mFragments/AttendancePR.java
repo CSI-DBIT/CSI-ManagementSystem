@@ -37,7 +37,7 @@ public class AttendancePR extends Fragment {
 
     private View rootView;
     private RecyclerView mRecyclerView;
-    private RequestListAdapter mRequestListAdapter;
+private RequestListAdapter mRequestListAdapter;
     private ArrayList<RequestListItem> mRequestList;
     private RequestQueue mRequestQueue;
 
