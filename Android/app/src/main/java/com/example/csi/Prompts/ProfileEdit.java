@@ -68,6 +68,67 @@ public class ProfileEdit extends AppCompatActivity {
         phn.setText(getIntent().getStringExtra("phone"));
         rol.setText(getIntent().getStringExtra("rollno"));
         position_s = getIntent().getStringExtra("role");
+
+        String Year = getIntent().getStringExtra("year");
+        switch (Year) {
+            case "FE":
+                RadioButton FE = findViewById(R.id.radio_FE);
+                FE.setChecked(true);
+                break;
+            case "SE":
+                RadioButton SE = findViewById(R.id.radio_SE);
+                SE.setChecked(true);
+                break;
+            case "TE":
+                RadioButton TE = findViewById(R.id.radio_TE);
+                TE.setChecked(true);
+                break;
+            default:
+                RadioButton BE = findViewById(R.id.radio_BE);
+                BE.setChecked(true);
+                break;
+        }
+
+        String Branch = getIntent().getStringExtra("branch");
+        switch (Branch) {
+            case "IT":
+                RadioButton IT = findViewById(R.id.radio_IT);
+                IT.setChecked(true);
+                break;
+            case "COMPS":
+                RadioButton Comps = findViewById(R.id.radio_comps);
+                Comps.setChecked(true);
+                break;
+            case "MECH":
+                RadioButton MECH = findViewById(R.id.radio_mech);
+                MECH.setChecked(true);
+                break;
+            default:
+                RadioButton EXTC = findViewById(R.id.radio_extc);
+                EXTC.setChecked(true);
+                break;
+        }
+
+        String Batch = getIntent().getStringExtra("batch");
+        switch (Batch) {
+            case "A":
+                RadioButton batch_a = findViewById(R.id.radio_A);
+                batch_a.setChecked(true);
+                break;
+            case "B":
+                RadioButton batch_b = findViewById(R.id.radio_B);
+                batch_b.setChecked(true);
+                break;
+            case "C":
+                RadioButton batch_c = findViewById(R.id.radio_C);
+                batch_c.setChecked(true);
+                break;
+            default:
+                RadioButton batch_d = findViewById(R.id.radio_D);
+                batch_d.setChecked(true);
+                break;
+        }
+//        Log.i("check data incoming", getIntent().getStringExtra("year") + " " + getIntent().getStringExtra("branch") + " " + getIntent().getStringExtra("batch"));
         Log.i("volleyABC", "position value" + position_s + getIntent().getStringExtra("role"));
 
         loadImageUrl(UProfile);
@@ -164,7 +225,7 @@ public class ProfileEdit extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Log.i("volleyABC", "onResponse:edit reached ");
-                Toast.makeText(ProfileEdit.this,response ,Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileEdit.this,"Profile Updated",Toast.LENGTH_SHORT).show();
                 //Intent profile_after_edit =new Intent(ProfileEdit.this, MainActivity.class);
 
                 //startActivity(profile_after_edit);
