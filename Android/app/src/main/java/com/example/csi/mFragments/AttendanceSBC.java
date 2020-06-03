@@ -28,6 +28,7 @@ public class AttendanceSBC extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_attendance_sbc,container,false);
         GridLayout classGrid  = rootView.findViewById(R.id.classGrid);
+        getActivity().setTitle("Attendance");
 
         setSingleEvent(classGrid);
         return rootView;

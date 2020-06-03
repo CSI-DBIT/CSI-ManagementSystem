@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -48,7 +49,8 @@ public class AddMinute extends AppCompatActivity {
         Log.i("i07","Entered1");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_minute);
-
+        getSupportActionBar().setTitle("Add Minute");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
         Creator = intent.getStringExtra("id"); //getting User ID from MinuteManager
 
@@ -262,5 +264,15 @@ public class AddMinute extends AppCompatActivity {
         };
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
