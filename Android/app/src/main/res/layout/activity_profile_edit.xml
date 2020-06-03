@@ -80,6 +80,7 @@
                     android:paddingLeft="20sp"
                     android:text="Email ID: "
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <EditText
                     android:id="@+id/email_E"
@@ -105,6 +106,7 @@
                     android:paddingLeft="20dp"
                     android:text="Phone no:"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <EditText
                     android:id="@+id/phn_E"
@@ -131,6 +133,7 @@
                     android:paddingLeft="20dp"
                     android:text="Year:"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <RadioGroup
                     android:layout_width="match_parent"
@@ -184,6 +187,7 @@
                     android:paddingLeft="20dp"
                     android:text="Branch:"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <RadioGroup
                     android:id="@+id/branch_E"
@@ -237,6 +241,7 @@
                     android:paddingLeft="20dp"
                     android:text="Roll no:"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <EditText
                     android:id="@+id/rollNo_E"
@@ -261,6 +266,7 @@
                     android:paddingLeft="20dp"
                     android:text="Batch"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <RadioGroup
                     android:layout_width="match_parent"
