@@ -1,11 +1,13 @@
 package com.example.csi.mFragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -30,6 +32,7 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -75,6 +78,11 @@ public class feedback extends Fragment {
             @Override
             public void onClick(View v) {
                 feedback = feedback_text.getText().toString();
+
+                //below two lines closes keyborad input on click of save button
+                InputMethodManager inputManager = (InputMethodManager) Objects.requireNonNull(getActivity()).getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(Objects.requireNonNull(getActivity().getCurrentFocus()).getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
 //                Toast.makeText(getActivity(), "Feedback section save clicked" + feedback, Toast.LENGTH_SHORT).show();
                 setJason();
                 send_data();
@@ -128,6 +136,9 @@ public class feedback extends Fragment {
             public void onResponse(String response) {
                 Log.i("volleyABC", "got response    " + response);
                 Toast.makeText(getActivity(), "Thank you for feedback", Toast.LENGTH_SHORT).show();
+
+                //this will close feedback and return to main page
+                Objects.requireNonNull(getActivity()).getSupportFragmentManager().popBackStack();
             }
         }, new Response.ErrorListener() {
             @Override

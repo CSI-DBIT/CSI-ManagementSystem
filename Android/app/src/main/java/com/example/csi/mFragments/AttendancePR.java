@@ -32,6 +32,7 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AttendancePR extends Fragment {
 
@@ -69,6 +70,9 @@ private RequestListAdapter mRequestListAdapter;
             public void onClick(View v) {
                 parsejson2();  //Method to Confirm Requests
                 parsejson3();  //Method to Reject Requests
+
+                Toast.makeText(getActivity(), "Attendance Record Updated", Toast.LENGTH_SHORT).show();
+                Objects.requireNonNull(getActivity()).getSupportFragmentManager().popBackStack();
             }
         });
 
@@ -212,7 +216,7 @@ private RequestListAdapter mRequestListAdapter;
                     Toast.makeText(getActivity(), "Error:-" + statusCode, Toast.LENGTH_SHORT).show();
                     error.printStackTrace();
                 } catch(Exception e) {
-                    Toast.makeText(getActivity(), "Check Network",Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "Check Network",Toast.LENGTH_SHORT).show();
                 }
             }
         }){
@@ -299,7 +303,7 @@ private RequestListAdapter mRequestListAdapter;
                     Toast.makeText(getActivity(), "Error:-" + statusCode, Toast.LENGTH_SHORT).show();
                     error.printStackTrace();
                 } catch(Exception e) {
-                    Toast.makeText(getActivity(), "Check Network",Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "Check Network",Toast.LENGTH_SHORT).show();
                 }
             }
         }){
@@ -330,7 +334,8 @@ private RequestListAdapter mRequestListAdapter;
         }
         else
         {
-            Toast.makeText(getActivity(),"No Request has been selected",Toast.LENGTH_SHORT).show();
+            Log.i("volleyABC", "No request has been selected");
+//            Toast.makeText(getActivity(),"No Request has been selected",Toast.LENGTH_SHORT).show();
         }
     }
 }

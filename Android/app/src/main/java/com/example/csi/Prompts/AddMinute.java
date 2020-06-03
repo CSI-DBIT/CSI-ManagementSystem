@@ -178,22 +178,28 @@ public class AddMinute extends AppCompatActivity {
         Log.i("i234","Create Minute");
         JSONArray jsonArray = new JSONArray();
 
-        for (int i=1;i<tableLayout.getChildCount();i++) {
-            TableRow tableRow = (TableRow) tableLayout.getChildAt(i);
-            //Toast.makeText(this, tableRow.toString(), Toast.LENGTH_SHORT).show();
+        TableRow mainRow = findViewById(R.id.row1);
+        if(mainRow.getVisibility() == View.VISIBLE) {
+            for (int i = 1; i < tableLayout.getChildCount(); i++) {
+                TableRow tableRow = (TableRow) tableLayout.getChildAt(i);
+                //Toast.makeText(this, tableRow.toString(), Toast.LENGTH_SHORT).show();
 
-            TextView textView1 = (TextView) tableRow.getChildAt(0);
-            TextView textView2 = (TextView) tableRow.getChildAt(1);
+                TextView textView1 = (TextView) tableRow.getChildAt(0);
+                TextView textView2 = (TextView) tableRow.getChildAt(1);
 
-            JSONObject jsonObject1 = new JSONObject();
-            try {
-                jsonObject1.put("task", textView1.getText());
-                jsonObject1.put("person", textView2.getText());
+                JSONObject jsonObject1 = new JSONObject();
+                try {
+                    jsonObject1.put("task", textView1.getText());
+                    jsonObject1.put("person", textView2.getText());
 
-                jsonArray.put(jsonObject1);
-            } catch (JSONException e) {
-                e.printStackTrace();
+                    jsonArray.put(jsonObject1);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
+        }
+        else {
+            Toast.makeText(AddMinute.this, "Please Assign at least 1 Task", Toast.LENGTH_SHORT).show();
         }
 
         final JSONObject jsonObject1 = new JSONObject();

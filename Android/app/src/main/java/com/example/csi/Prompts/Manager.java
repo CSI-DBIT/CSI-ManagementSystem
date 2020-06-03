@@ -262,7 +262,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
             bundle.putString("name",uname);
             feedback feedback = new feedback();
             feedback.setArguments(bundle);
-            Toast.makeText(Manager.this,"Yes implemented",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(Manager.this,"Yes implemented",Toast.LENGTH_SHORT).show();
             if(getSupportFragmentManager().getBackStackEntryCount() > 1){
                 getSupportFragmentManager().popBackStack();
             }

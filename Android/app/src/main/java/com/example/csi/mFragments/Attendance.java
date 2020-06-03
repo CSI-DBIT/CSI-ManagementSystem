@@ -90,6 +90,9 @@ public class Attendance extends Fragment {
             @Override
             public void onClick(View v) {
 
+                LinearLayout l = rootView.findViewById(R.id.checkBox);
+                l.setVisibility(View.GONE);
+
                 checkboxData="";
 
                 CheckBox c1 = rootView.findViewById(R.id.checkBox1);
