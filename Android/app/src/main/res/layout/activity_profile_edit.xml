@@ -38,7 +38,7 @@
                 android:background="@color/white"
                 android:src="@drawable/ic_person_black_24dp"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/profile_name_E"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

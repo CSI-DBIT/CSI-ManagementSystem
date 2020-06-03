@@ -55,7 +55,7 @@ public class ProfileEdit extends AppCompatActivity {
         //declaring varriables
         Button save_button = findViewById(R.id.save_button);
         final TextView id = findViewById(R.id.id_E);
-        final EditText name = findViewById(R.id.profile_name_E);
+        final TextView name = findViewById(R.id.profile_name_E);
         final EditText email = findViewById(R.id.email_E);
         final EditText phn = findViewById(R.id.phn_E);
         final RadioGroup yr = findViewById(R.id.year_E);
