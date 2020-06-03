@@ -55,7 +55,8 @@
             android:label="@string/title_activity_manager"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Prompts.role_intent" />
-        <activity android:name=".Prompts.AddMinute" />
+        <activity android:name=".Prompts.AddMinute"
+            android:theme="@style/AppTheme2"/>
         <activity
             android:name=".Prompts.MainActivity"
             android:screenOrientation="portrait">
