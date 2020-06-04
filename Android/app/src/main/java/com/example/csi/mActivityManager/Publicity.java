@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -42,6 +43,8 @@ public class Publicity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publicity);
+        getSupportActionBar().setTitle("Publicity");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
         urole1=preferenceConfig.readRoleStatus();
         edit_pr=findViewById(R.id.submit_pl);
@@ -175,6 +178,16 @@ public class Publicity extends AppCompatActivity {
 
     public void sendData(){
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

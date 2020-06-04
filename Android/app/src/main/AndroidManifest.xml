@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".mActivityManager.publcity_recycler" />
+        <activity android:name=".mActivityManager.publcity_recycler"
+            android:theme="@style/AppTheme2"/>
         <activity android:name=".Prompts.attendance_list"
             android:theme="@style/AppTheme2"/>
         <activity
@@ -34,14 +35,17 @@
         <activity
             android:name=".Gallery.Activities.DisplayEventName"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".mActivityManager.Technical_form" />
+        <activity android:name=".mActivityManager.Technical_form"
+            android:theme="@style/AppTheme2"/>
         <activity
             android:name=".mActivityManager.Creative_form"
             android:theme="@style/AppTheme2" />
         <activity android:name=".mActivityManager.Report" />
         <activity android:name=".mActivityManager.Gallery" />
-        <activity android:name=".mActivityManager.Technical" />
-        <activity android:name=".mActivityManager.Publicity" />
+        <activity android:name=".mActivityManager.Technical"
+            android:theme="@style/AppTheme2"/>
+        <activity android:name=".mActivityManager.Publicity"
+            android:theme="@style/AppTheme2"/>
         <activity
             android:name=".mActivityManager.Creative"
             android:theme="@style/AppTheme2" />
