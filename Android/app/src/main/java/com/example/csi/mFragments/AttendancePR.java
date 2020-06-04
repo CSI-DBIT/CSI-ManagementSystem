@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -29,6 +30,7 @@ import com.google.gson.Gson;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -95,52 +97,71 @@ private RequestListAdapter mRequestListAdapter;
                     Log.i("AttPR","got response"+response);
                     JSONArray jsonArray = new JSONArray(response);
 
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject request = jsonArray.getJSONObject(i);
-                        Log.i("AttPR","got response"+request);
+                    if(jsonArray.length() == 0) {
+                        TextView no_att = (TextView) rootView.findViewById(R.id.no_attendance);
+                        no_att.setVisibility(View.VISIBLE);
 
-                        String requestId = request.getString("RID");
-                        Log.i("AttPR","got response"+requestId);
-                        //String requestId = request.getString("id");
-                        String name = request.getString("Name");
-                        Log.i("AttPR","got response"+name);
-                        String date = request.getString("date");
-                        String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
-                        Log.i("AttPR","got response"+date);
-                        int lec1 = request.getInt("s1");
-                        int lec2 = request.getInt("s2");
-                        int lec3 = request.getInt("s3");
-                        int lec4 = request.getInt("s4");
-                        int lec5 = request.getInt("s5");
-                        int lec6 = request.getInt("s6");
-                        int lec7 = request.getInt("s7");
-                        Log.i("AttPR","got response"+lec1+lec2+lec3+lec4+lec5+lec6+lec7);
-                        String reason = request.getString("reason");
-                        Log.i("AttPR","got response"+reason);
+                        mRecyclerView.setVisibility(View.GONE);
 
-                        //We can't display the lecture slots in the s1 s2 s3... format to PR Head
-                        //So we are using timeslot variable to send time slots in proper manner
-                        String timeSlot = "";
-                        if(lec1== 1)
-                            timeSlot = timeSlot + "09:00AM - 10:00AM, ";
-                        if(lec2== 1)
-                            timeSlot = timeSlot + "10:00AM - 11:00AM, ";
-                        if(lec3== 1)
-                            timeSlot = timeSlot + "11:15AM - 12:15PM, ";
-                        if(lec4== 1)
-                            timeSlot = timeSlot + "12:15PM - 01:15PM, ";
-                        if(lec5== 1)
-                            timeSlot = timeSlot + "02:00PM - 03:00PM, ";
-                        if(lec6== 1)
-                            timeSlot = timeSlot + "03:00PM - 04:00PM, ";
-                        if(lec7== 1)
-                            timeSlot = timeSlot + "04:00PM - 05:00PM ";
-
-                        mRequestList.add(new RequestListItem(requestId, name, date1, timeSlot, reason));
+                        Button confirm = (Button) rootView.findViewById(R.id.confirm_requests);
+                        confirm.setVisibility(View.GONE);
                     }
+                    else {
+                        TextView no_att = (TextView) rootView.findViewById(R.id.no_attendance);
+                        no_att.setVisibility(View.GONE);
 
-                    mRequestListAdapter = new RequestListAdapter(getActivity(), mRequestList);
-                    mRecyclerView.setAdapter(mRequestListAdapter);
+                        mRecyclerView.setVisibility(View.VISIBLE);
+
+                        Button confirm = (Button) rootView.findViewById(R.id.confirm_requests);
+                        confirm.setVisibility(View.VISIBLE);
+
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject request = jsonArray.getJSONObject(i);
+                            Log.i("AttPR", "got response" + request);
+
+                            String requestId = request.getString("RID");
+                            Log.i("AttPR", "got response" + requestId);
+                            //String requestId = request.getString("id");
+                            String name = request.getString("Name");
+                            Log.i("AttPR", "got response" + name);
+                            String date = request.getString("date");
+                            String date1 = date.substring(8, 10) + "/" + date.substring(5, 7) + "/" + date.substring(0, 4);
+                            Log.i("AttPR", "got response" + date);
+                            int lec1 = request.getInt("s1");
+                            int lec2 = request.getInt("s2");
+                            int lec3 = request.getInt("s3");
+                            int lec4 = request.getInt("s4");
+                            int lec5 = request.getInt("s5");
+                            int lec6 = request.getInt("s6");
+                            int lec7 = request.getInt("s7");
+                            Log.i("AttPR", "got response" + lec1 + lec2 + lec3 + lec4 + lec5 + lec6 + lec7);
+                            String reason = request.getString("reason");
+                            Log.i("AttPR", "got response" + reason);
+
+                            //We can't display the lecture slots in the s1 s2 s3... format to PR Head
+                            //So we are using timeslot variable to send time slots in proper manner
+                            String timeSlot = "";
+                            if (lec1 == 1)
+                                timeSlot = timeSlot + "09:00AM - 10:00AM, ";
+                            if (lec2 == 1)
+                                timeSlot = timeSlot + "10:00AM - 11:00AM, ";
+                            if (lec3 == 1)
+                                timeSlot = timeSlot + "11:15AM - 12:15PM, ";
+                            if (lec4 == 1)
+                                timeSlot = timeSlot + "12:15PM - 01:15PM, ";
+                            if (lec5 == 1)
+                                timeSlot = timeSlot + "02:00PM - 03:00PM, ";
+                            if (lec6 == 1)
+                                timeSlot = timeSlot + "03:00PM - 04:00PM, ";
+                            if (lec7 == 1)
+                                timeSlot = timeSlot + "04:00PM - 05:00PM ";
+
+                            mRequestList.add(new RequestListItem(requestId, name, date1, timeSlot, reason));
+                        }
+
+                        mRequestListAdapter = new RequestListAdapter(getActivity(), mRequestList);
+                        mRecyclerView.setAdapter(mRequestListAdapter);
+                    }
 
                 } catch (JSONException e) {
                     e.printStackTrace();

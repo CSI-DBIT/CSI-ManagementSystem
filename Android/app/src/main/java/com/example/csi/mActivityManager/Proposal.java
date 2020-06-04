@@ -29,6 +29,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.csi.R;
 import com.example.csi.mFragments.datePickerFrag;
+import com.example.csi.mFragments.datePickerFrag_min;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -79,7 +80,7 @@ public class Proposal extends AppCompatActivity {
         dateOfevent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                datePickerFrag nf = new datePickerFrag();
+                datePickerFrag_min nf = new datePickerFrag_min();
                 nf.setCallBack(onEDate);
                 nf.show(getSupportFragmentManager(),"datepicker");
 

@@ -7,6 +7,19 @@
     android:background="@android:color/white"
     tools:context=".Prompts.MainActivity">
 
+    <TextView
+        android:id="@+id/no_attendance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No pending Requests"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:background="@drawable/propsal_indicator_shape"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
