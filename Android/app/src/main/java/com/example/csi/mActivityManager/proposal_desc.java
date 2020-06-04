@@ -71,8 +71,11 @@ public class proposal_desc extends AppCompatActivity {
             rej.setVisibility(View.VISIBLE);
             comment_e.setVisibility(View.VISIBLE);
         }
-        else if(urole1.equals("Technical Head")){
-            edit.setVisibility(View.VISIBLE);
+        else if(urole1.equals("Technical Head" ) ){
+            if((st.equals("0") || st.equals("-1") || st.equals("-2"))){
+                edit.setVisibility(View.VISIBLE);
+            }
+
             comment_t.setVisibility(View.VISIBLE);
         }
 
@@ -104,6 +107,7 @@ public class proposal_desc extends AppCompatActivity {
             Intent edit_proposal = new Intent(proposal_desc.this,edit_proposal.class);
             edit_proposal.putExtra("data",extra);
             edit_proposal.putExtra("eid",eid);
+            edit_proposal.putExtra("status" , st);
             startActivity(edit_proposal);
         }
         );
