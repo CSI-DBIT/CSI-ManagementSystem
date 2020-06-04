@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Manager">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -78,7 +79,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20sp"
-                    android:text="Email ID: "
+                    android:text="Email ID"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
@@ -104,7 +105,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:text="Phone no:"
+                    android:text="Phone no"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
@@ -131,7 +132,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:text="Year:"
+                    android:text="Year"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
@@ -185,7 +186,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:text="Branch:"
+                    android:text="Branch"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
@@ -239,7 +240,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:text="Roll no:"
+                    android:text="Roll no"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>

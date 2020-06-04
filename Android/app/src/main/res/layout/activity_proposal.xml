@@ -16,15 +16,7 @@
             android:orientation="vertical"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="40dp"
-                android:paddingBottom="30dp"
-                android:text="PROPOSAL"
-                android:textStyle="bold"
-                android:gravity="center_horizontal"
-                android:textColor="@color/colorPrimary"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,7 +39,7 @@
                     android:textColor="@color/colorPrimary"/>
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/buts"
                     android:textColor="@color/colorPrimary"
                     android:paddingLeft="10dp"
@@ -69,7 +61,7 @@
                 <EditText
                     android:id="@+id/ptheme"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/buts"
                     android:textColor="@color/colorPrimary"
                     android:paddingLeft="10dp"/>
@@ -103,6 +95,8 @@
                     android:layout_height="45dp"
                     android:text="Pick Date"
                     android:layout_marginLeft="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:id="@+id/dateOfevent"
                     android:textColor="@color/white"
                     android:background="@drawable/ripple_effect"/>
@@ -124,7 +118,7 @@
                 <EditText
                     android:id="@+id/speaker_p"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/buts"
                     android:textColor="@color/colorPrimary"
                     android:paddingLeft="10dp"/>
@@ -145,7 +139,7 @@
                 <EditText
                     android:id="@+id/venue_p"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/buts"
                     android:textColor="@color/colorPrimary"
                     android:paddingLeft="10dp"/>
@@ -168,7 +162,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="0dp">
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -190,7 +186,7 @@
                     <EditText
                         android:id="@+id/fee_csi"
                         android:layout_width="100dp"
-                        android:layout_height="30dp"
+                        android:layout_height="40dp"
                         android:background="@drawable/buts"
                         android:textColor="@color/colorPrimary"
                         android:paddingLeft="10dp"
@@ -198,12 +194,12 @@
                     <EditText
                         android:id="@+id/fee_non_csi"
                         android:layout_width="100dp"
-                        android:layout_height="30dp"
+                        android:layout_height="40dp"
                         android:background="@drawable/buts"
                         android:textColor="@color/colorPrimary"
                         android:paddingLeft="10dp"
                         android:layout_marginLeft="40dp"
-                        android:inputType="date"/>
+                        android:inputType="number"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -222,7 +218,7 @@
                 <EditText
                     android:id="@+id/prize_p"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/buts"
                     android:textColor="@color/colorPrimary"
                     android:paddingLeft="10dp"/>
@@ -253,8 +249,12 @@
                     android:singleLine="false"
                     android:overScrollMode="always"
                     android:scrollbarStyle="insideInset"
-                    android:scrollbars="vertical"                  android:scrollbarSize="5dp"
-                    android:paddingRight="15dp"/>
+                    android:scrollbars="vertical"
+                    android:scrollbarSize="5dp"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:paddingRight="15dp"
+                    android:paddingEnd="15dp" />
             </LinearLayout>
         </LinearLayout>
         <View
@@ -295,7 +295,7 @@
                     android:textColor="@color/colorPrimary"/>
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/creativebudget"
                     android:inputType="number"
                     android:background="@drawable/buts"
@@ -317,7 +317,7 @@
                     android:textColor="@color/colorPrimary"/>
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:inputType="number"
                     android:id="@+id/publicitybdget"
                     android:background="@drawable/buts"
@@ -340,21 +340,19 @@
                 <EditText
                     android:id="@+id/guestp"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:inputType="number"
                     android:background="@drawable/buts"
                     android:textColor="@color/colorPrimary"
                     android:paddingLeft="10dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp">
-
-
-                </LinearLayout>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:layout_marginRight="5dp">-->
+<!--                </LinearLayout>-->
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -367,7 +365,7 @@
                 android:layout_marginRight="5dp">
                 <EditText
                     android:layout_width="80dp"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:hint="other"
                     android:background="@drawable/buts"
                     android:id="@+id/other1F"
@@ -375,7 +373,7 @@
                     android:textColor="@color/colorPrimary"/>
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:inputType="number"
                     android:id="@+id/other1B"
                     android:background="@drawable/buts"
@@ -394,7 +392,7 @@
                 android:layout_marginRight="5dp">
                 <EditText
                     android:layout_width="80dp"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:hint="other"
                     android:background="@drawable/buts"
                     android:id="@+id/other2F"
@@ -402,7 +400,7 @@
                     android:textColor="@color/colorPrimary"/>
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:inputType="number"
                     android:background="@drawable/buts"
                     android:id="@+id/other2B"
@@ -421,7 +419,7 @@
                 android:layout_marginRight="5dp">
                 <EditText
                     android:layout_width="80dp"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:hint="other"
                     android:background="@drawable/buts"
                     android:id="@+id/other3F"
@@ -429,7 +427,7 @@
                     android:textColor="@color/colorPrimary"/>
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:inputType="number"
                     android:background="@drawable/buts"
                     android:id="@+id/other3B"
@@ -444,17 +442,18 @@
                 android:visibility="gone"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp">
                 <EditText
                     android:layout_width="80dp"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/buts"
                     android:hint="other"
                     android:paddingLeft="10dp"
                     android:textColor="@color/colorPrimary"/>
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:inputType="number"
                     android:background="@drawable/buts"
                     android:id="@+id/other3"
@@ -489,6 +488,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
+                    android:layout_marginTop="10dp"
                     android:text="MEETING DETAILS"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"/>
@@ -507,6 +507,9 @@
                     android:text="Pick Date"
                     android:id="@+id/dateOfMeeting"
                     android:textColor="@color/white"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingHorizontal="10dp"
                     android:background="@drawable/ripple_effect"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -533,7 +536,7 @@
                 <Spinner
                     android:id="@+id/agendaSpinner"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
                     android:paddingLeft="10dp"/>
             </LinearLayout>
