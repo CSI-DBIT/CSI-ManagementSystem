@@ -97,7 +97,7 @@ public class proposal_desc extends AppCompatActivity {
         rej.setOnClickListener(v -> {
                     if(urole1.equals("HOD")) customDialog("The Proposal will be Removed","-2");
 //                        //if sbc then 1 if hod 2
-                    else if(urole1.equals("SBC")) customDialog("The Proposal will be Removed","-2");
+                    else if(urole1.equals("SBC")) customDialog("The Proposal will be Removed","-1");
 //                        //if sbc then 1 if hod 2
 //            finish();
         }
