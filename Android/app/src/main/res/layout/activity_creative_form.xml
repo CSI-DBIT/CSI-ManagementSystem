@@ -652,15 +652,17 @@
             android:layout_marginBottom="10dp">
             <Button
                 style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/submit_praposal"
                 android:layout_width="251dp"
                 android:layout_height="49dp"
                 android:text="Submit"
-                android:id="@+id/submit_praposal"
                 android:layout_gravity="center"
                 android:background="@drawable/ripple_effect"
                 android:textColor="@color/white"
                 android:clickable="true"
-                android:focusable="true" />
+                android:focusable="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"/>
 
         </LinearLayout>
     </LinearLayout>
