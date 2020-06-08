@@ -1,13 +1,15 @@
 var express=require('express');
 var router=express.Router();
+var dotenv = require('dotenv');
+dotenv.config();
 
 //Email
 var nodemailer=require('nodemailer');
 var transporter=nodemailer.createTransport({
 	service:'gmail',
 	auth:{
-		user:'csi.managementapp@gmail.com',
-		pass: 'csiapp123'
+		user:process.env.username,
+		pass: process.env.pass
 	}
 });
 

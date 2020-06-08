@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var dotenv = require('dotenv');
+dotenv.config();
 var generator = require('generate-password');
 var nodemailer = require('nodemailer');
 
@@ -15,15 +17,15 @@ var transporter = nodemailer.createTransport({
 var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: 'localhost',
-    user: 'csi',
-    password: 'Root@Csi123',
+		user: process.env.user,
+		password: process.env.password,
     database: 'csiApp'
 });
 connection.connect(function(err) {
     if (!err) {
-        //console.log('Connected to MySql!\n');
+      console.log('Connected to MySql!');
     } else {
-        console.log(err);
+      console.log('Not Connected To Mysql!');
     }
 });
 

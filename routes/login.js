@@ -1,21 +1,23 @@
 var express=require('express');
 var router=express.Router();
+var dotenv = require('dotenv');
+dotenv.config();
 
 // MySQL Connection
 var mysql=require('mysql');
 const connection = mysql.createConnection({
 	host: 'localhost',
-	user: 'csi',
-	password: 'Root@Csi123',
+	user: process.env.user,
+	password: process.env.password,
 	database: 'csiApp'
 });
 
 connection.connect(function(err) {
 	if (!err){
-        	//console.log('Connected to MySql!');
+        	console.log('Connected to MySql!');
     	}
     	else{
-        	//console.log('Not Connected To Mysql!');
+        	console.log('Not Connected To Mysql!');
     	}
 });
 
