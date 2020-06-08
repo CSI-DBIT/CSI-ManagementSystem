@@ -307,6 +307,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="20sp"
                 android:text="PR Requirements"
+                android:gravity="center_horizontal"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:textColor="@color/colorAccent"/>
@@ -366,6 +367,7 @@
                 android:text="Comments"
                 android:textStyle="bold"
                 android:textSize="20sp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/colorAccent"/>
             <EditText
                 android:id="@+id/pr_comments"
@@ -397,6 +399,7 @@
                 android:text="Balance Sheet"
                 android:textStyle="bold"
                 android:textSize="20sp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/colorAccent"/>
 
             <LinearLayout
