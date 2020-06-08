@@ -1,3 +1,5 @@
 creative/
 gallery/
 .env
+node_modules/
+images/
