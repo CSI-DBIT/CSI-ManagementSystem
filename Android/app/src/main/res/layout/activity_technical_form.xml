@@ -6,162 +6,196 @@
     android:layout_height="match_parent"
     tools:context=".mActivityManager.Proposal"
     android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:paddingBottom="10dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+            android:background="@color/white"
+            android:padding="5dp">
+            <View
+                android:layout_width="10000dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="EVENT DETAILS"
+                android:layout_gravity="center"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"/>
-            <LinearLayout
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="0dp"
+                android:background="#EDEDED" />
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="NAME"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:text="Name  "
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:id="@+id/name"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
+                android:paddingLeft="20sp"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="THEME"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:text="Theme"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:id="@+id/theme"/>
-            </LinearLayout>
+                android:paddingLeft="40dp"
+                android:text="Name  "
+                android:textSize="17sp"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/name"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#fff"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Theme"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:text="Theme"
+                android:textSize="17sp"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/theme"/>
+        </LinearLayout>
 
-            <LinearLayout
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Event Date"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textSize="17sp"
+                android:textColor="@color/colorAccent"
+                android:text="Event Date "
+                android:id="@+id/ed"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#fff"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Speaker"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textSize="17sp"
+                android:textColor="@color/colorAccent"
+                android:text="Speaker"
+                android:id="@+id/speaker"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#fff"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Venue"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textSize="17sp"
+                android:textColor="@color/colorAccent"
+                android:text="Venue"
+                android:id="@+id/venue"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#fff"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Registration Fee"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_gravity="left"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="EVENT DATE"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:text="Event Date"
-                    android:id="@+id/ed"/>
-            </LinearLayout>
-            <LinearLayout
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_gravity="left"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:text="SPEAKER"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:text="Speaker"
-                    android:id="@+id/speaker"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_gravity="left"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:text="VENUE"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:text="Venue"
-                    android:id="@+id/venue"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:text="REGISTRATION FEE"
-                    android:textColor="@color/colorPrimary"/>
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp">
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="20dp">
+                    android:orientation="vertical">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -170,103 +204,112 @@
                         android:text="CSI Member"
                         android:textColor="@color/colorPrimary"/>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="59dp"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:text="Non CSI Member"
-                        android:textColor="@color/colorPrimary"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="20dp">
-                    <TextView
                         android:id="@+id/fee_csi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimary"
                         android:text="0000"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:text="Non CSI Member"
+                        android:textColor="@color/colorPrimary"/>
+
                     <TextView
                         android:id="@+id/fee_non_csi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorPrimary"
-                        android:layout_marginLeft="112dp"
                         android:text="0000"/>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_gravity="left"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:text="WORTH PRIZE"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:text="Worth Prize"
-                    android:id="@+id/prize"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:text="DESCRIPTION"
-                    android:textColor="@color/colorPrimary"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/colorAccent"
-                    android:text="Description "
-                    android:id="@+id/desc_pd"/>
             </LinearLayout>
         </LinearLayout>
         <View
-            android:layout_width="10000dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/colorPrimary" />
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:paddingTop="5dp"
-            >
+            android:background="@color/white"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Worth Prize"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:text="Worth Prize"
+                android:textSize="17sp"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/prize"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Description"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:textSize="17sp"
+                android:textColor="@color/colorAccent"
+                android:text="Description "
+                android:id="@+id/desc_pd"/>
+        </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="5dp">
+            <View
+                android:layout_width="10000dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorPrimary" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Task"
+                android:text="TASK"
+                android:layout_gravity="center"
                 android:textStyle="bold"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
                 android:textColor="@color/colorPrimary"/>
             <CheckBox
                 android:id="@+id/question"
@@ -276,8 +319,10 @@
                 android:enabled="false"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
+                android:layout_marginStart="20dp"
                 android:textSize="20sp"
-                android:textColor="@color/colorPrimary"/>
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="20dp" />
             <CheckBox
                 android:id="@+id/internet"
                 android:enabled="false"
@@ -287,7 +332,9 @@
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:textSize="20sp"
-                android:textColor="@color/colorPrimary"/>
+                android:textColor="@color/colorPrimary"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp" />
             <CheckBox
                 android:id="@+id/software"
                 android:enabled="false"
@@ -297,18 +344,20 @@
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:textSize="20sp"
-                android:textColor="@color/colorPrimary"/>
+                android:textColor="@color/colorPrimary"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp" />
         </LinearLayout>
         <Button
             android:id="@+id/updateTech"
-            android:layout_width="250dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="251dp"
+            android:layout_height="49dp"
+            android:text="EDIT"
             android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:text="Edit"
-            android:textSize="20sp"
             android:background="@drawable/ripple_effect"
             android:textColor="@color/white"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"/>
+            android:clickable="true"
+            android:focusable="true" />
     </LinearLayout>
 </ScrollView>

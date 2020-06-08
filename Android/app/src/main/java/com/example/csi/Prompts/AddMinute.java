@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -48,7 +49,8 @@ public class AddMinute extends AppCompatActivity {
         Log.i("i07","Entered1");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_minute);
-
+        getSupportActionBar().setTitle("Add Minute");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
         Creator = intent.getStringExtra("id"); //getting User ID from MinuteManager
 
@@ -178,22 +180,28 @@ public class AddMinute extends AppCompatActivity {
         Log.i("i234","Create Minute");
         JSONArray jsonArray = new JSONArray();
 
-        for (int i=1;i<tableLayout.getChildCount();i++) {
-            TableRow tableRow = (TableRow) tableLayout.getChildAt(i);
-            //Toast.makeText(this, tableRow.toString(), Toast.LENGTH_SHORT).show();
+        TableRow mainRow = findViewById(R.id.row1);
+        if(mainRow.getVisibility() == View.VISIBLE) {
+            for (int i = 1; i < tableLayout.getChildCount(); i++) {
+                TableRow tableRow = (TableRow) tableLayout.getChildAt(i);
+                //Toast.makeText(this, tableRow.toString(), Toast.LENGTH_SHORT).show();
 
-            TextView textView1 = (TextView) tableRow.getChildAt(0);
-            TextView textView2 = (TextView) tableRow.getChildAt(1);
+                TextView textView1 = (TextView) tableRow.getChildAt(0);
+                TextView textView2 = (TextView) tableRow.getChildAt(1);
 
-            JSONObject jsonObject1 = new JSONObject();
-            try {
-                jsonObject1.put("task", textView1.getText());
-                jsonObject1.put("person", textView2.getText());
+                JSONObject jsonObject1 = new JSONObject();
+                try {
+                    jsonObject1.put("task", textView1.getText());
+                    jsonObject1.put("person", textView2.getText());
 
-                jsonArray.put(jsonObject1);
-            } catch (JSONException e) {
-                e.printStackTrace();
+                    jsonArray.put(jsonObject1);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
+        }
+        else {
+            Toast.makeText(AddMinute.this, "Please Assign at least 1 Task", Toast.LENGTH_SHORT).show();
         }
 
         final JSONObject jsonObject1 = new JSONObject();
@@ -262,5 +270,15 @@ public class AddMinute extends AppCompatActivity {
         };
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

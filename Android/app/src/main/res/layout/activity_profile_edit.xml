@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Manager">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,11 +20,11 @@
 
             <com.joooonho.SelectableRoundedImageView
                 android:id="@+id/profile_photo_E"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:maxHeight="50dp"
                 android:maxWidth="50dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:contentDescription="@string/nav_header_desc"
                 android:paddingTop="1dp"
                 android:scaleType="centerCrop"
@@ -38,15 +39,17 @@
                 android:background="@color/white"
                 android:src="@drawable/ic_person_black_24dp"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/profile_name_E"
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="170dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                />
             <TextView
                 android:id="@+id/id_E"
                 android:layout_width="wrap_content"
@@ -76,8 +79,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20sp"
-                    android:text="Email ID: "
+                    android:text="Email ID"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <EditText
                     android:id="@+id/email_E"
@@ -86,7 +90,10 @@
                     android:paddingLeft="20dp"
                     android:inputType="textEmailAddress"
                     android:textSize="17sp"
-                    android:textColor="@color/colorAccent"/></LinearLayout>
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/btextfield"
+                    android:layout_margin="10dp"
+                    /></LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -98,8 +105,9 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:text="Phone no:"
+                    android:text="Phone no"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <EditText
                     android:id="@+id/phn_E"
@@ -108,7 +116,10 @@
                     android:inputType="phone"
                     android:paddingLeft="20dp"
                     android:textSize="17sp"
-                    android:textColor="@color/colorAccent"/></LinearLayout>
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/btextfield"
+                    android:layout_margin="10dp"
+                    /></LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -121,8 +132,9 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:text="Year:"
+                    android:text="Year"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <RadioGroup
                     android:layout_width="match_parent"
@@ -174,8 +186,9 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:text="Branch:"
+                    android:text="Branch"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <RadioGroup
                     android:id="@+id/branch_E"
@@ -227,8 +240,9 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:text="Roll no:"
+                    android:text="Roll no"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <EditText
                     android:id="@+id/rollNo_E"
@@ -237,7 +251,9 @@
                     android:paddingLeft="20dp"
                     android:inputType="number"
                     android:textSize="17sp"
-                    android:textColor="@color/colorAccent"/></LinearLayout>
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/btextfield"
+                    android:layout_margin="10dp"/></LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -251,6 +267,7 @@
                     android:paddingLeft="20dp"
                     android:text="Batch"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
                 <RadioGroup
                     android:layout_width="match_parent"

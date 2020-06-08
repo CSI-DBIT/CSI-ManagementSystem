@@ -1,5 +1,6 @@
 package com.example.csi.mActivityManager;
 
+import android.app.DatePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.csi.R;
+import com.example.csi.mFragments.datePickerFrag_min;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,8 +31,9 @@ import java.io.UnsupportedEncodingException;
 public class edit_proposal extends AppCompatActivity {
 
     EditText e_name,e_theme,e_desc,e_edate,e_cb,e_pb,e_gb;
+    TextView edate_s;
     Button edit;
-    String eid;
+    String eid,date=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,7 @@ public class edit_proposal extends AppCompatActivity {
         e_theme = findViewById(R.id.theme);
         e_desc = findViewById(R.id.description);
         e_edate = findViewById(R.id.edate);
+        edate_s = findViewById(R.id.showdate_edit_p);
          e_cb = findViewById(R.id.cbudget);
          e_pb = findViewById(R.id.pbudget);
         e_gb = findViewById(R.id.gbudget);
@@ -66,7 +71,39 @@ public class edit_proposal extends AppCompatActivity {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 sendData();
+            }
+        });
+
+
+
+        DatePickerDialog.OnDateSetListener onEDate = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+
+
+                date = String.valueOf(year) + "-" + String.valueOf(monthOfYear+1)
+                        + "-" + String.valueOf(dayOfMonth);
+
+                //TextView outputDate = rootView.findViewById(R.id.date);
+                // outputDate.setText(date);
+                Log.i("info1234", date+"event");
+                TextView edate_s = findViewById(R.id.showdate_edit_p);
+                edate_s.setText((String) date);
+                edate_s.setVisibility(View.VISIBLE);
+            }
+        };
+
+        Button dateOfevent = findViewById(R.id.dateOfevent_edit_p);
+        dateOfevent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerFrag_min nf = new datePickerFrag_min();
+                nf.setCallBack(onEDate);
+                nf.show(getSupportFragmentManager(),"datepicker");
+
             }
         });
 
@@ -80,9 +117,10 @@ public class edit_proposal extends AppCompatActivity {
 
         e_name.setText(res.getString("name"));
         e_theme.setText(res.getString("theme"));
-        String date=res.getString("event_date");
-        date = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
+         date=res.getString("event_date");
+        date = date.substring(8,10) + "-" + date.substring(5,7) + "-" + date.substring(0,4);
         e_edate.setText(date);
+        edate_s.setText((String) date);
         e_desc.setText(res.getString("description"));
         e_cb.setText(res.getString("creative_budget"));
         e_pb.setText(res.getString("publicity_budget"));
@@ -97,11 +135,12 @@ public class edit_proposal extends AppCompatActivity {
         try {
             jsonObject.put("eid",eid);
             jsonObject.put("name",e_name.getText().toString());
-            jsonObject.put("event_date", e_edate.getText().toString());
+            jsonObject.put("date", date);
+            jsonObject.put("theme",e_theme.getText().toString());
             jsonObject.put("description", e_desc.getText().toString());
-            jsonObject.put("creative_budget", e_cb.getText().toString());
-            jsonObject.put("publicity_budget", e_pb.getText().toString());
-            jsonObject.put("guest_budget", e_gb.getText().toString());
+            jsonObject.put("cb", e_cb.getText().toString());
+            jsonObject.put("pb", e_pb.getText().toString());
+            jsonObject.put("gb", e_gb.getText().toString());
 
         }
         catch (JSONException e) {
@@ -109,7 +148,7 @@ public class edit_proposal extends AppCompatActivity {
         }
 
         final String requestBody = jsonObject.toString();
-        Log.i("volleyABC ", requestBody);
+        Log.i("volleyABC ", "edited request body"+requestBody);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/proposal/editproposal", new Response.Listener<String>() {
             @Override

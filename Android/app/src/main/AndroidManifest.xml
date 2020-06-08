@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.csi">
 
     <application
@@ -9,8 +10,10 @@
         android:roundIcon="@drawable/csilogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".mActivityManager.publcity_recycler"></activity>
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity android:name=".mActivityManager.publcity_recycler"
+            android:theme="@style/AppTheme2"/>
         <activity android:name=".Prompts.attendance_list"
             android:theme="@style/AppTheme2"/>
         <activity
@@ -32,27 +35,32 @@
         <activity
             android:name=".Gallery.Activities.DisplayEventName"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".mActivityManager.Technical_form" />
+        <activity android:name=".mActivityManager.Technical_form"
+            android:theme="@style/AppTheme2"/>
         <activity
             android:name=".mActivityManager.Creative_form"
             android:theme="@style/AppTheme2" />
         <activity android:name=".mActivityManager.Report" />
         <activity android:name=".mActivityManager.Gallery" />
-        <activity android:name=".mActivityManager.Technical" />
-        <activity android:name=".mActivityManager.Publicity" />
+        <activity android:name=".mActivityManager.Technical"
+            android:theme="@style/AppTheme2"/>
+        <activity android:name=".mActivityManager.Publicity"
+            android:theme="@style/AppTheme2"/>
         <activity
             android:name=".mActivityManager.Creative"
             android:theme="@style/AppTheme2" />
         <activity
             android:name=".mActivityManager.Proposal"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".Prompts.ProfileEdit" />
+        <activity android:name=".Prompts.ProfileEdit"
+            android:theme="@style/AppTheme2"/>
         <activity
             android:name=".Prompts.Manager"
             android:label="@string/title_activity_manager"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Prompts.role_intent" />
-        <activity android:name=".Prompts.AddMinute" />
+        <activity android:name=".Prompts.AddMinute"
+            android:theme="@style/AppTheme2"/>
         <activity
             android:name=".Prompts.MainActivity"
             android:screenOrientation="portrait">

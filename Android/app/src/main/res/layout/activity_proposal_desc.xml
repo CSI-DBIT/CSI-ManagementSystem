@@ -3,15 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-
+    android:layout_height="match_parent"
     android:layout_marginTop="1dp"
     android:padding="5dp"
+    android:background="@color/white"
     tools:context=".mActivityManager.proposal_desc">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:orientation="vertical">
+        <View
+            android:layout_width="10000dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="EVENT DETAILS"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -118,6 +138,19 @@
         android:textColor="@color/colorAccent"
         android:text="Event Date"
         android:id="@+id/ed_pd"/>
+        <View
+            android:layout_width="10000dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="BUDGET DETAILS"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -172,7 +205,7 @@
         android:paddingLeft="40dp"
         android:textSize="17sp"
         android:textColor="@color/colorAccent"
-        android:text="publicity budget "
+        android:text="Publicity budget "
         android:id="@+id/pb_pd"/>
     </LinearLayout>
     <View
@@ -203,9 +236,11 @@
         android:text="guest budget:"
         android:id="@+id/gb_pd"/>
     </LinearLayout>
-
-
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -222,14 +257,15 @@
                 android:textColor="@color/colorAccent"/>
 
             <EditText
+                android:id="@+id/comment_e"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:id="@+id/comment_e"
                 android:background="@drawable/buts"
                 android:textColor="@color/colorPrimary"
                 android:isScrollContainer="true"
                 android:paddingStart="10dp"
                 android:paddingLeft="10dp"
+                android:paddingTop="10dp"
                 android:inputType="textMultiLine"
                 android:singleLine="false"
                 android:overScrollMode="always"
@@ -238,6 +274,11 @@
                 android:scrollbarSize="5dp"
                 android:paddingRight="15dp"
                 android:visibility="gone"
+                android:gravity="start"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 />
             <TextView
                 android:layout_width="fill_parent"
@@ -281,6 +322,7 @@
         android:text="edit"
         android:background="@drawable/ripple_effect"
         android:textColor="@color/white"
+        android:layout_marginBottom="20dp"
         android:layout_marginTop="10dp"
         android:visibility="gone"/>
     </LinearLayout>

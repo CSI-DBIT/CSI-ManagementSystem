@@ -25,11 +25,11 @@
 
             <com.joooonho.SelectableRoundedImageView
                 android:id="@+id/profile_photo"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:maxHeight="50dp"
                 android:maxWidth="50dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:contentDescription="@string/nav_header_desc"
                 android:paddingTop="1dp"
                 android:scaleType="centerCrop"
@@ -72,7 +72,8 @@
                 android:layout_below="@+id/profile_layout"
                 android:layout_marginTop="1dp"
                 android:orientation="vertical"
-                android:padding="1dp">
+                android:padding="1dp"
+                android:background="@color/white">
 
                 <LinearLayout
                     android:layout_width="match_parent"

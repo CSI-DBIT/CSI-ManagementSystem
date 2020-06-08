@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -36,6 +37,9 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_technical);
+
+        getSupportActionBar().setTitle("Technical");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mPraposalList = new ArrayList<>();
         rv=findViewById(R.id.recycler_view_T);
@@ -110,5 +114,15 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
         Intent technical_form = new Intent(Technical.this,Technical_form.class);
         startActivity(technical_form);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

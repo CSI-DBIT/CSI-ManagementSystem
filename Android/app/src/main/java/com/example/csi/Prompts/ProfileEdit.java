@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,12 +47,15 @@ public class ProfileEdit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_edit);
 
+        getSupportActionBar().setTitle("Edit Profile");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         imageButton = findViewById(R.id.profile_photo_E);
 
         //declaring varriables
         Button save_button = findViewById(R.id.save_button);
         final TextView id = findViewById(R.id.id_E);
-        final EditText name = findViewById(R.id.profile_name_E);
+        final TextView name = findViewById(R.id.profile_name_E);
         final EditText email = findViewById(R.id.email_E);
         final EditText phn = findViewById(R.id.phn_E);
         final RadioGroup yr = findViewById(R.id.year_E);
@@ -289,4 +293,14 @@ public class ProfileEdit extends AppCompatActivity {
         a.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(a);
     }*/
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

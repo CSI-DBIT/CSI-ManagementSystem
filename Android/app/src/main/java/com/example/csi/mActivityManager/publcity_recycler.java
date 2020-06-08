@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -49,6 +50,8 @@ public class publcity_recycler extends AppCompatActivity implements  PraposalAda
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publcity_recycler);
 
+        getSupportActionBar().setTitle("Publicity");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 //        Objects.requireNonNull(getSupportActionBar()).setTitle("Proposal");
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -145,5 +148,15 @@ public class publcity_recycler extends AppCompatActivity implements  PraposalAda
         Log.i("testing",id);
         startActivity(creative_form);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

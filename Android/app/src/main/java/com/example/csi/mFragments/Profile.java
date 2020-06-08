@@ -68,7 +68,7 @@ public class Profile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
         rootView = inflater.inflate(R.layout.activity_profile,container,false);
-        getActivity().setTitle("Profile");
+        getActivity().setTitle("My Profile");
         Bundle bundle = getArguments();
         UID = this.getArguments().getString("id");
         UProfile = this.getArguments().getString("profilePic");

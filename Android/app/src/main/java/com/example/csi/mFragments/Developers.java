@@ -9,14 +9,16 @@ import android.view.ViewGroup;
 import com.example.csi.R;
 
 public class Developers extends Fragment {
-
+    View rootView;
     public static Developers newInstance() {
         return new Developers();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_developers, container, false);
+        rootView = inflater.inflate(R.layout.activity_developers, container, false);
+        getActivity().setTitle("Developers");
+        return rootView;
     }
 
 }

@@ -126,27 +126,29 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
                     JSONArray jsonArray = new JSONArray(response);
 
                     for(int i=0; i< jsonArray.length(); i++) {
-                        JSONObject minutes = jsonArray.getJSONObject(i);
+                            JSONObject minutes = jsonArray.getJSONObject(i);
 
-                        String eid = minutes.getString("eid");
-                        String Name = minutes.getString("name");
-                        String status = minutes.getString("status");
-                        String theme = minutes.getString("theme");
-                        String date = minutes.getString("p_date");
+                            String eid = minutes.getString("eid");
+                            String Name = minutes.getString("name");
+                            String status = minutes.getString("status");
+                            String theme = minutes.getString("theme");
+                            String date = minutes.getString("p_date");
 
-                        //in the above variable date we are not getting date in DD:MM:YYYYY
-                        //so we are creating new variable date1 to get our desire format
-                       String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
+                            //in the above variable date we are not getting date in DD:MM:YYYYY
+                            //so we are creating new variable date1 to get our desire format
+                           String date1 = date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
 
-                        if(urole1.equals("HOD")){
-                            if(status.equals("1")){
-                                mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name, status,"Theme: "+ theme));
+                            if(urole1.equals("HOD") && (status.equals("1") || status.equals("2"))){ //for hod
+                                    mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name, status,"Theme: "+ theme));
 
                             }
+                            else if(urole1.equals("SBC") && (status.equals("1") || status.equals("0"))) {
+                                mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name, status,"Theme: "+ theme));
+                            }
+                            else if(!urole1.equals("HOD") && !urole1.equals("SBC") ) {
+                                mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name, status,"Theme: "+ theme));
+                            }
 
-                        }
-
-                        else mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name, status,"Theme: "+ theme));
 
                     }
 

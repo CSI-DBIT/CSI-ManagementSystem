@@ -151,20 +151,20 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+ //   @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -262,7 +262,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
             bundle.putString("name",uname);
             feedback feedback = new feedback();
             feedback.setArguments(bundle);
-            Toast.makeText(Manager.this,"Yes implemented",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(Manager.this,"Yes implemented",Toast.LENGTH_SHORT).show();
             if(getSupportFragmentManager().getBackStackEntryCount() > 1){
                 getSupportFragmentManager().popBackStack();
             }
