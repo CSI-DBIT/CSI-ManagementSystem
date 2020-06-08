@@ -22,6 +22,7 @@ router.post('/',(req,res)=>{
 	transporter.sendMail(mailOptions,function(error,info){
 		if(error){
 			console.log("Mail Error");
+			console.log(error);
 			res.sendStatus(400);
 		}
 		else{

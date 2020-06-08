@@ -119,7 +119,7 @@ router.post('/view',(req,res)=>{
 	connection.query('SELECT sum(s1+s2+s3+s4+s5+s6+s7) as total,sum(s1+s2+s3+s4+s5+s6+s7)*0.38 as percent,Name FROM final_list WHERE year=? group by stud_id',[year], function (error,result){
 		if(error){
 			res.sendStatus(400);
-			console.log("Error");
+			console.log(error);
 		}
 		else{
 			res.status(200).send(result);

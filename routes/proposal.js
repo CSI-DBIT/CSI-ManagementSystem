@@ -109,16 +109,15 @@ router.post('/editproposal',(req,res)=>{
 	var name = req.body.name;
 	var theme = req.body.theme;
 	var description = req.body.description;	
-	var agenda = req.body.agenda;
 	var date = req.body.date;
 	var creative_budget = req.body.cb;
 	var publicity_budget = req.body.pb;
 	var guest_budget = req.body.gb;
-	var others_budget = JSON.stringify(req.body.ob);
 
 	//pushing into events table 
-	connection.query('UPDATE events SET name=?,theme=?,description=?,M_agenda=?,M_date=?,creative_budget=?,publicity_budget=?,guest_budget=?,others_budget=? WHERE eid=?',[name,  theme, description, agenda, date, creative_budget, publicity_budget, guest_budget, others_budget, eid],function(error,results,fields){
-		if(error){			
+	connection.query('UPDATE events SET name=?,theme=?,description=?,event_date=?,creative_budget=?,publicity_budget=?,guest_budget=?,status=0 WHERE eid=?',[name,  theme, description, date, creative_budget, publicity_budget, guest_budget, eid],function(error,results,fields){
+		if(error){
+			console.log(error);			
 			res.sendStatus(400);
 		}
 		else{
