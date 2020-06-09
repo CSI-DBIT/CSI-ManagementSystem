@@ -285,6 +285,19 @@
                 android:textColor="@color/colorAccent"
                 android:text="Description "
                 android:id="@+id/desc_pl"/>
+
+            <Button
+                android:id="@+id/edit_pr_req"
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="20dp"
+                android:background="@drawable/ripple_effect"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="edit"
+                android:visibility="gone"
+                android:textColor="@color/white" />
             </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -299,7 +312,7 @@
             android:background="@color/white"
             android:orientation="vertical"
             android:padding="5dp"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="fill_parent"

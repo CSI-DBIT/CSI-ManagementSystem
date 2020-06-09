@@ -57,6 +57,7 @@ public class publcity_recycler extends AppCompatActivity implements  PraposalAda
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
         urole1=preferenceConfig.readRoleStatus();
+//        Toast.makeText(publcity_recycler.this,"role: "+urole1,Toast.LENGTH_SHORT).show();
         mPraposalList = new ArrayList<>();
         rv=findViewById(R.id.recycler_view_publicity);
         rv.setLayoutManager(new LinearLayoutManager(publcity_recycler.this));
