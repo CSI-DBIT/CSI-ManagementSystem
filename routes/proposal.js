@@ -20,6 +20,16 @@ connection.connect(function(err) {
     }
 });
 
+//Email
+var nodemailer=require('nodemailer');
+var transporter=nodemailer.createTransport({
+	service:'gmail',
+	auth:{
+		user:process.env.username,
+		pass: process.env.pass
+	}
+});
+
 router.post('/createproposal',(req,res)=>{
 	var name = req.body.name;
 	var theme = req.body.theme;
@@ -71,12 +81,51 @@ router.post('/status',(req,res)=>{
 	var comment=req.body.comment;
 
 	//modify status
-	connection.query('UPDATE events SET status=?,comment=? WHERE eid=?',[status,comment,eid],function(error,results,fields){
+	connection.query('UPDATE events SET status=?,comment=? WHERE eid=?',[status,comment,eid],function(error){
 		if (error){
 			res.sendStatus(400);
 		}
 		else{
-			res.sendStatus(200)
+			if(status==2){
+				connection.query("SELECT email FROM profile WHERE (role='PR Head' or role='Technical Head' or role='Creative Head')",function(err,result){
+					if(err)
+					console.log("Proposal Email Extraction Error");
+					else{
+						// console.log(result[i].email);
+						for(var i=0;i<3;i++){
+							var mailOptions={
+								from:'csi.managementapp@gmail.com',
+								to: result[i].email,
+								subject:'CSI-App Event',
+								text:"Hello There!!!!! An event has been created pls fill your respective details"
+							}
+							transporter.sendMail(mailOptions,function(error,info){
+								if(error){
+									console.log("Email Error");
+									// console.log(error);
+									// res.sendStatus(400);
+								}
+								else{
+								console.log('Email sent:'+ info.response);
+								// res.sendStatus(200);
+								}
+							});
+						}
+						connection.query("INSERT INTO creative(eid,name,theme,description,event_date,speaker,venue,prize,reg_fee_c,reg_fee_nc,creative_budget,publicity_budget,guest_budget,status) SELECT eid,name,theme,description,event_date,speaker,venue,prize,reg_fee_c,reg_fee_nc,creative_budget,publicity_budget,guest_budget,status FROM events WHERE eid=?",[eid],function(error){
+							if(error){
+								console.log("Creative Insert Table Error");
+								res.sendStatus(400);
+							}
+							else
+								res.sendStatus(200);
+						});
+					}	
+				});
+					
+			}
+			else{
+				res.sendStatus(200)
+			}
 		}
 	});
 });
