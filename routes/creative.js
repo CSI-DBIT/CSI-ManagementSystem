@@ -48,8 +48,29 @@ router.post('/viewpropdetail',(req,res)=>{
 		}
 	});
 });
-var filename;
+
+//Submit Creative
+router.post('/submit',(req,res)=>{
+	var eid = req.body.eid;
+	var poster = req.body.poster;
+	var video = req.body.video;
+
+	connection.query("UPDATE creative SET poster_link=?,video_link=? WHERE eid=?",[poster,video,eid],function(error){
+		if(error){
+			console.log(error);
+			console.log("Submit Creative Error");
+			res.sendStatus(400);
+		}
+		else{
+			console.log("Creative Form Successfully Submitted");
+			res.sendStatus(200);
+		}
+	});
+});
+
+
 //Poster,video uploading
+var filename;
 var multer=require('multer');
 
 var storage=multer.diskStorage({
@@ -77,7 +98,7 @@ router.post('/upload',(req,res)=>{
 		}
 		else{
 			console.log("Succesfully Uploaded");
-			res.status(200).send({"url":"http:tayyabali.in:9091/images/"+filename});
+			res.status(200).send({"url":"http:localhost:9091/images/"+filename});
 		}
 	});
 });
