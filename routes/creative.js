@@ -48,7 +48,7 @@ router.post('/viewpropdetail',(req,res)=>{
 		}
 	});
 });
-
+var filename;
 //Poster,video uploading
 var multer=require('multer');
 
@@ -57,6 +57,7 @@ var storage=multer.diskStorage({
 		cb(null,'creative/');
 	},
 	filename:function(req,file,cb){
+		filename = file.originalname;
 		cb(null,file.originalname);
 	}
 });
@@ -76,7 +77,7 @@ router.post('/upload',(req,res)=>{
 		}
 		else{
 			console.log("Succesfully Uploaded");
-			res.sendStatus(200);
+			res.status(200).send({"url":"http:tayyabali.in:9091/images/"+filename});
 		}
 	});
 });

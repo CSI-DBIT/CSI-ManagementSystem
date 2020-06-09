@@ -111,6 +111,7 @@ app.post('/view',(req,res)=>{
        //app.use('/images', express.static(__dirname + '/images'));
 });
 app.use('/images', express.static(__dirname + '/images'));
+app.use('/images', express.static(__dirname + '/creative'));
 
 //port listening
 app.listen(9091,(req,res)=>{
