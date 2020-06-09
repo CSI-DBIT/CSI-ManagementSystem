@@ -40,7 +40,8 @@
         <activity
             android:name=".mActivityManager.Creative_form"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".mActivityManager.Report" />
+        <activity android:name=".mActivityManager.Report"
+            android:theme="@style/AppTheme2"/>
         <activity android:name=".mActivityManager.Gallery" />
         <activity android:name=".mActivityManager.Technical"
             android:theme="@style/AppTheme2"/>
