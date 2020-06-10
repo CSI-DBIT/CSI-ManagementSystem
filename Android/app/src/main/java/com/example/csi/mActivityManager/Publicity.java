@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +39,8 @@ public class Publicity extends AppCompatActivity {
     Button edit_pr,submit_pr;
     String eid;
     TextView eventName, eventTheme, event_date, eventDescription, speaker, venue, fee_csi, fee_non_csi, prize;
+    EditText target_aud,comments, money_c , money_s;
+    CheckBox reg_desk , inclass_pub;
 
 
     @Override
@@ -63,6 +67,14 @@ public class Publicity extends AppCompatActivity {
         fee_non_csi = (TextView) findViewById(R.id.fee_non_csi_pl);
         prize = (TextView) findViewById(R.id.prize_pl);
         eventDescription = (TextView)findViewById(R.id.desc_pl);
+        target_aud=findViewById(R.id.pr_target);
+        comments=findViewById(R.id.pr_comments);
+        money_c=findViewById(R.id.pr_m_coll);
+        money_s=findViewById(R.id.pr_m_spent);
+        reg_desk=findViewById(R.id.pr_desk);
+        inclass_pub=findViewById(R.id.pr_inclass);
+
+
 
 
         Bundle extras = getIntent().getExtras();
@@ -89,8 +101,7 @@ public class Publicity extends AppCompatActivity {
         submit_pr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Publicity.this,"Submitted",Toast.LENGTH_SHORT).show();
-                finish();
+                volley_send();
 
             }
         });
@@ -111,7 +122,7 @@ public class Publicity extends AppCompatActivity {
         final String requestBody = jsonObject.toString();
         Log.i("volleyABC ", requestBody);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/creative/viewpropdetail", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/publicity/viewEvent", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 //                ret[0]=response;
@@ -134,6 +145,16 @@ public class Publicity extends AppCompatActivity {
                         fee_non_csi.setText(jsonObject1.getString("reg_fee_nc"));
                         prize.setText(jsonObject1.getString("prize"));
                         eventDescription.setText(jsonObject1.getString("description"));
+                        if((int) jsonObject1.get("desk")==1)
+                            reg_desk.setChecked(true);
+                        else reg_desk.setChecked(false);
+                        if((int) jsonObject1.get("in_class")==1)
+                            inclass_pub.setChecked(true);
+                        else inclass_pub.setChecked(false);
+                        target_aud.setText(jsonObject1.getString("target"));
+                        comments.setText(jsonObject1.getString("comment"));
+                        money_c.setText(jsonObject1.getString("collected"));
+                        money_s.setText(jsonObject1.getString("spent"));
 
 
                         String eventDate=jsonObject1.getString("event_date");
@@ -196,6 +217,19 @@ public class Publicity extends AppCompatActivity {
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("eid", eid);
+            jsonObject.put("target", target_aud.getText().toString());
+//            jsonObject.put("in_class", inclass_pub.getText().toString());
+            jsonObject.put("collected", money_c.getText().toString());
+            jsonObject.put("spent", money_s.getText().toString());
+            jsonObject.put("comment",comments.getText().toString());
+            if(reg_desk.isChecked())
+                jsonObject.put("desk",1);
+            else jsonObject.put("desk",0);
+
+            if(inclass_pub.isChecked())
+                jsonObject.put("in_class",1);
+            else jsonObject.put("in_class",0);
+
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -205,10 +239,12 @@ public class Publicity extends AppCompatActivity {
         final String[] ret = new String[1];
         ret[0]=null;
         String r=null;
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/publicity/editPublicity", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                ret[0]=response;
+//                ret[0]=response;
+                Toast.makeText(Publicity.this,"Submitted",Toast.LENGTH_SHORT).show();
+                finish();
 
 
 
