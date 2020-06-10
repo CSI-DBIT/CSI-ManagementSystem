@@ -37,7 +37,7 @@ router.get('/listcreative',(req,res)=>{
 router.post('/viewpropdetail',(req,res)=>{
 	var eid=req.body.eid;
 
-	connection.query('SELECT name,theme,event_date,speaker,venue,reg_fee_c,reg_fee_nc,prize,convert(description using utf8)as description,creative_budget,publicity_budget,guest_budget FROM events WHERE eid=?',[eid],function(err,result){
+	connection.query('SELECT name,theme,event_date,speaker,venue,reg_fee_c,reg_fee_nc,prize,convert(description using utf8)as description,creative_budget,publicity_budget,guest_budget,poster_link,video_link FROM creative WHERE eid=?',[eid],function(err,result){
 		if(err){
 			console.log("Error");
 			res.sendStatus(400);
