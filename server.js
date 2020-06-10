@@ -15,6 +15,7 @@ var profile=require('./routes/profile');
 var attendance=require('./routes/attendance');
 var proposal=require('./routes/proposal');
 var creative=require('./routes/creative');
+var publicity=require('./routes/publicity')
 var feedback=require("./routes/feedback");
 
 app.use('/login',login);
@@ -23,6 +24,7 @@ app.use('/profile',profile);
 app.use('/attendance',attendance);
 app.use('/proposal',proposal);
 app.use('/creative',creative);
+app.use('/publicity',publicity);
 app.use('/feedback',feedback);
 
 app.get("/",(req,res)=>{
