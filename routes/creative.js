@@ -37,7 +37,7 @@ router.get('/listcreative',(req,res)=>{
 router.post('/viewpropdetail',(req,res)=>{
 	var eid=req.body.eid;
 
-	connection.query('SELECT name,theme,event_date,speaker,venue,reg_fee_c,reg_fee_nc,prize,convert(description using utf8)as description,creative_budget,publicity_budget,guest_budget,poster_link,video_link FROM creative WHERE eid=?',[eid],function(err,result){
+	connection.query('SELECT * FROM(SELECT creative.eid,name,theme,event_date,speaker,venue,reg_fee_c,reg_fee_nc,prize,convert(description using utf8)as description,creative_budget,publicity_budget,guest_budget,poster_link,video_link FROM events,creative WHERE events.eid=creative.eid) AS creative WHERE eid=?',[eid],function(err,result){
 		if(err){
 			console.log("Error");
 			res.sendStatus(400);
@@ -70,7 +70,6 @@ router.post('/submit',(req,res)=>{
 
 
 //Poster,video uploading
-var filename;
 var multer=require('multer');
 
 var storage=multer.diskStorage({
@@ -78,7 +77,6 @@ var storage=multer.diskStorage({
 		cb(null,'creative/');
 	},
 	filename:function(req,file,cb){
-		filename = file.originalname;
 		cb(null,file.originalname);
 	}
 });
@@ -86,20 +84,19 @@ var storage=multer.diskStorage({
 var upload=multer({
 	storage:storage,
 	limits:{
-		fileSize: 1024*1024 *20
+		fileSize: 1024*1024 *10
 	}
 }).array('file',3);
 
 router.post('/upload',(req,res)=>{
    	upload(req,res,function(err){
 		if(err){
-			console.log("Error");
+			console.log("Upload Error");
 			res.sendStatus(400);
 		}
 		else{
-			filename="http://tayyabali.in:9091/images/"+filename;
 			console.log("Succesfully Uploaded");
-			res.status(200).send(filename);
+			res.sendStatus(200);
 		}
 	});
 });
