@@ -123,8 +123,8 @@ public class ActivityManager extends Fragment  {
             }
         });
 
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new MyTimeTask(), 2000, 4000);
+//        Timer timer = new Timer();
+//        timer.scheduleAtFixedRate(new MyTimeTask(), 2000, 4000);
 
     }
 
