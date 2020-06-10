@@ -638,10 +638,11 @@
                     android:textSize="20sp"
                     android:textColor="@color/colorAccent"/>
 
-                <VideoView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/saurabh"
+                    android:text="Please Upload Video First"
+                    android:id="@+id/video_preview"
                     android:layout_marginVertical="10dp"/>
             </LinearLayout>
         <View

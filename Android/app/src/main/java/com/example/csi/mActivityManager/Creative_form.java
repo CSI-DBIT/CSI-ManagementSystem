@@ -8,10 +8,14 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.MenuItem;
@@ -19,6 +23,7 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +40,7 @@ import com.example.csi.Gallery.ImageFilePath;
 import com.example.csi.Prompts.MainActivity;
 import com.example.csi.Prompts.Manager;
 import com.example.csi.R;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,15 +58,18 @@ import okhttp3.RequestBody;
 
 public class Creative_form extends AppCompatActivity {
 
+    String poster_url = "";
+    String video_url = "";
+
     public String mediaType = "Image", eid;
     public String server_url = "http://tayyabali.in:9000/creative/viewpropdetail";
     String name, theme, eventDate, description, creativeBudget, date1;
     String dSpeaker, dVenue, dFeeCSI, dFeeNonCSI, dPrize, dPublicityBudget, dGuestBudget;
 
     TextView eventName, eventTheme, event_date, eventDescription, creative_budget;
-    TextView speaker, venue, fee_csi, fee_non_csi, prize, publicity_budget, guest_budget;
+    TextView speaker, venue, fee_csi, fee_non_csi, prize, publicity_budget, guest_budget, video_preview;
 
-    Button uploadImage, uploadVideo;
+    Button uploadImage, uploadVideo, submit;
     Uri selectedImage;
     OkHttpClient client;
     RequestBody request_body;
@@ -86,6 +95,7 @@ public class Creative_form extends AppCompatActivity {
         creative_budget = (TextView)findViewById(R.id.cb);
         publicity_budget = (TextView) findViewById(R.id.pb);
         guest_budget = (TextView) findViewById(R.id.gb);
+        video_preview = (TextView) findViewById(R.id.video_preview);
 
         Intent intent = getIntent();
         eid = intent.getStringExtra(Creative.EXTRA_EID);
@@ -99,6 +109,7 @@ public class Creative_form extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         uploadImage = (Button) findViewById(R.id.uploadImage);
         uploadVideo = (Button) findViewById(R.id.uploadVideo);
+        submit = (Button) findViewById(R.id.submit_praposal);
 
         uploadImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +128,76 @@ public class Creative_form extends AppCompatActivity {
                 UploadVideos();
             }
         });
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                submitProposal();
+            }
+        });
+    }
+
+    private void submitProposal() {
+        //creating jsonobject starts
+        final JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("eid", eid);
+            jsonObject.put("poster", poster_url);
+            jsonObject.put("video", video_url);
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+        //creating jsonobject ends
+
+        //checking data inserted into json object
+        final String requestBody = jsonObject.toString();
+        Log.i("volleyABC123", requestBody);
+
+        //getting response from server starts
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/creative/submit",new Response.Listener<String>(){
+            @Override
+            public void onResponse(String response) {
+
+                Log.i("volleyABC4985" ,"got response    "+response);
+                Toast.makeText(Creative_form.this, "Data Submitted", Toast.LENGTH_SHORT).show();
+            }
+        },new Response.ErrorListener()  {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                try{
+                    Log.i("volleyABC" ,Integer.toString(error.networkResponse.statusCode));
+                    Toast.makeText(Creative_form.this, "Invalid Credentials", Toast.LENGTH_SHORT).show(); //This method is used to show pop-up on the screen if user gives wrong uid
+
+
+                    error.printStackTrace();}
+                catch (Exception e)
+                {
+                    Toast.makeText(Creative_form.this,"Check Network",Toast.LENGTH_SHORT).show();}
+            }
+        }){
+            //sending JSONOBJECT String to server starts
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                try {
+                    return requestBody.getBytes("utf-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+        };
+        //sending JSONOBJECT String to server ends
+
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest); // get response from server
     }
 
     private void insertSrv()
@@ -160,7 +241,11 @@ public class Creative_form extends AppCompatActivity {
                     creativeBudget = jsonObject1.getString("creative_budget");
                     dPublicityBudget = jsonObject1.getString("publicity_budget");
                     dGuestBudget = jsonObject1.getString("guest_budget");
-                    Log.i("sexa", name);
+                    poster_url = jsonObject1.getString("poster_link");
+                    video_url = jsonObject1.getString("video_link");
+                    loadImageUrl();
+                    loadVideoUrl();
+                    Log.i("sanket", poster_url + " !!!!!! " + video_url);
 
                     date1 = eventDate.substring(8,10) + "/" + eventDate.substring(5,7) + "/" + eventDate.substring(0,4);
 
@@ -222,7 +307,51 @@ public class Creative_form extends AppCompatActivity {
         requestQueue.add(stringRequest); // get response from server
     }
 
+    private void loadImageUrl() {
+        ImageView imageView = (ImageView) findViewById(R.id.image_preview);
+        Log.i("please chal ja","chal gaya!!");
 
+
+        Handler uiHandler = new Handler(Looper.getMainLooper());
+        uiHandler.post(new Runnable(){
+            @Override
+            public void run() {
+                Picasso.with(getApplicationContext()).load(poster_url).placeholder(R.mipmap.ic_launcher)
+                        .error(R.mipmap.ic_launcher)
+                        .into(imageView, new com.squareup.picasso.Callback(){
+
+                            @Override
+                            public void onSuccess() {
+                                Log.i("response_poster", "SUCCESS");
+
+                            }
+
+                            @Override
+                            public void onError() {
+                                Log.i("response_poster", "error");
+                            }
+                        });
+            }
+        });
+
+
+    }
+
+    private void loadVideoUrl() {
+        runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+
+                Log.i("response_v_url", video_url);
+                // Stuff that updates the UI
+                video_preview.setText(Html.fromHtml("<a href=\""+ video_url + "\">" + "Click here to view" + "</a>"));
+
+                video_preview.setClickable(true);
+                video_preview.setMovementMethod (LinkMovementMethod.getInstance());
+            }
+        });
+    }
 
     private void UploadPosters() {
 
@@ -421,6 +550,15 @@ public class Creative_form extends AppCompatActivity {
                                 okhttp3.Response response = client.newCall(request).execute();
                                 Log.i("response", "Response" + response);
                                 //Toast.makeText(Creative_form.this, mediaType + " Uploaded Successfully", Toast.LENGTH_SHORT).show();
+
+                                Log.i("sanket", mediaType);
+                                if (mediaType.equals("Image")) {
+                                    poster_url = "http://tayyabali.in:9091/images/" + realPath.substring(realPath.lastIndexOf("/") + 1);
+                                    loadImageUrl();
+                                } else {
+                                    video_url = "http://tayyabali.in:9091/images/" + realPath.substring(realPath.lastIndexOf("/") + 1);
+                                    loadVideoUrl();
+                                }
 
                                 if (!response.isSuccessful()) {
                                     throw new IOException("Error : " + response);
