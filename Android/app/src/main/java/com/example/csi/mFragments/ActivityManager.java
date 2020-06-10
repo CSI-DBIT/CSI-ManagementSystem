@@ -31,6 +31,8 @@ import com.example.csi.mActivityManager.Technical;
 import com.example.csi.mActivityManager.praposal_recycler;
 import com.example.csi.mActivityManager.publcity_recycler;
 
+import java.util.Objects;
+import java.util.Timer;
 import java.util.TimerTask;
 
 
@@ -121,8 +123,8 @@ public class ActivityManager extends Fragment  {
             }
         });
 
-        //Timer timer = new Timer();
-        //timer.scheduleAtFixedRate(new MyTimeTask(), 2000, 4000);
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new MyTimeTask(), 2000, 4000);
 
     }
 
@@ -131,7 +133,7 @@ public class ActivityManager extends Fragment  {
         @Override
         public void run() {
 
-           getActivity().runOnUiThread(new Runnable() {
+           Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
 
