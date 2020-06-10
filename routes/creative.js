@@ -97,8 +97,9 @@ router.post('/upload',(req,res)=>{
 			res.sendStatus(400);
 		}
 		else{
+			filename="http://tayyabali.in:9091/images/"+filename;
 			console.log("Succesfully Uploaded");
-			res.status(200).send({"url":"http:localhost:9091/images/"+filename});
+			res.status(200).send(filename);
 		}
 	});
 });
