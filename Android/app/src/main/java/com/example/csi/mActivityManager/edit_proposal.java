@@ -118,7 +118,7 @@ public class edit_proposal extends AppCompatActivity {
         e_name.setText(res.getString("name"));
         e_theme.setText(res.getString("theme"));
          date=res.getString("event_date");
-        date = date.substring(8,10) + "-" + date.substring(5,7) + "-" + date.substring(0,4);
+        date = date.substring(0,4) + "-" + date.substring(5,7) + "-" + date.substring(8,10);
         e_edate.setText(date);
         edate_s.setText((String) date);
         e_desc.setText(res.getString("description"));

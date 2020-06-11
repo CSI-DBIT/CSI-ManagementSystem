@@ -31,6 +31,8 @@ import com.example.csi.mActivityManager.Technical;
 import com.example.csi.mActivityManager.praposal_recycler;
 import com.example.csi.mActivityManager.publcity_recycler;
 
+import java.util.Objects;
+import java.util.Timer;
 import java.util.TimerTask;
 
 
@@ -59,6 +61,8 @@ public class ActivityManager extends Fragment  {
         mainGrid = (GridLayout) rootView.findViewById(R.id.mainGrid);
 
         viewPager = (ViewPager) rootView.findViewById(R.id.viewPager);
+        viewPager.setPageTransformer(true, new DepthPageTransformer());
+
 
         sliderDotsPanel = (LinearLayout) rootView.findViewById(R.id.SliderDots);
 
@@ -68,12 +72,44 @@ public class ActivityManager extends Fragment  {
         setSingleEvent(mainGrid);
 
 
-
         return rootView;
 
-
-
     }
+   // image slider animation
+    public static class DepthPageTransformer implements ViewPager.PageTransformer {
+       @Override
+       public void transformPage(View page, float position) {
+
+           if (position < -1){    // [-Infinity,-1)
+               // This page is way off-screen to the left.
+               page.setAlpha(0);
+
+           }
+           else if (position <= 0){    // [-1,0]
+               page.setAlpha(1);
+               page.setTranslationX(0);
+               page.setScaleX(1);
+               page.setScaleY(1);
+
+           }
+           else if (position <= 1){    // (0,1]
+               page.setTranslationX(-position*page.getWidth());
+               page.setAlpha(1-Math.abs(position));
+               page.setScaleX(1-Math.abs(position));
+               page.setScaleY(1-Math.abs(position));
+
+           }
+           else {    // (1,+Infinity]
+               // This page is way off-screen to the right.
+               page.setAlpha(0);
+
+           }
+
+
+       }
+    }
+// animation ends here
+
 
     private void imageSlider() {
 
@@ -121,8 +157,8 @@ public class ActivityManager extends Fragment  {
             }
         });
 
-        //Timer timer = new Timer();
-        //timer.scheduleAtFixedRate(new MyTimeTask(), 2000, 4000);
+//        Timer timer = new Timer();
+//        timer.scheduleAtFixedRate(new MyTimeTask(), 2000, 4000);
 
     }
 
@@ -131,7 +167,7 @@ public class ActivityManager extends Fragment  {
         @Override
         public void run() {
 
-           getActivity().runOnUiThread(new Runnable() {
+           Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
 

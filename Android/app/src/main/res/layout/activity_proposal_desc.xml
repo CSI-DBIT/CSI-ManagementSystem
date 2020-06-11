@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="1dp"
-    android:padding="5dp"
     android:background="@color/white"
     tools:context=".mActivityManager.proposal_desc">
 
@@ -14,11 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="vertical">
-        <View
-            android:layout_width="10000dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,6 +20,7 @@
             android:text="EVENT DETAILS"
             android:layout_gravity="center"
             android:textStyle="bold"
+            android:layout_marginVertical="10dp"
             android:textColor="@color/colorPrimary"/>
         <View
             android:layout_width="match_parent"
@@ -105,10 +100,11 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="40dp"
+        android:paddingHorizontal="40dp"
         android:textSize="17sp"
         android:textColor="@color/colorAccent"
         android:text="Description "
+        android:justificationMode="inter_word"
         android:id="@+id/desc_pd"/>
     </LinearLayout>
     <View
@@ -138,11 +134,13 @@
         android:textColor="@color/colorAccent"
         android:text="Event Date"
         android:id="@+id/ed_pd"/>
+    </LinearLayout>
         <View
-            android:layout_width="10000dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary" />
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -150,8 +148,8 @@
             android:text="BUDGET DETAILS"
             android:layout_gravity="center"
             android:textStyle="bold"
+            android:layout_marginVertical="10dp"
             android:textColor="@color/colorPrimary"/>
-    </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -273,7 +271,7 @@
                 android:scrollbars="vertical"
                 android:scrollbarSize="5dp"
                 android:paddingRight="15dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:gravity="start"
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"

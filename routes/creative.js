@@ -37,7 +37,7 @@ router.get('/listcreative',(req,res)=>{
 router.post('/viewpropdetail',(req,res)=>{
 	var eid=req.body.eid;
 
-	connection.query('SELECT name,theme,event_date,speaker,venue,reg_fee_c,reg_fee_nc,prize,convert(description using utf8)as description,creative_budget,publicity_budget,guest_budget FROM events WHERE eid=?',[eid],function(err,result){
+	connection.query('SELECT * FROM(SELECT creative.eid,name,theme,event_date,speaker,venue,reg_fee_c,reg_fee_nc,prize,convert(description using utf8)as description,creative_budget,publicity_budget,guest_budget,poster_link,video_link FROM events,creative WHERE events.eid=creative.eid) AS creative WHERE eid=?',[eid],function(err,result){
 		if(err){
 			console.log("Error");
 			res.sendStatus(400);
@@ -48,6 +48,26 @@ router.post('/viewpropdetail',(req,res)=>{
 		}
 	});
 });
+
+//Submit Creative
+router.post('/submit',(req,res)=>{
+	var eid = req.body.eid;
+	var poster = req.body.poster;
+	var video = req.body.video;
+
+	connection.query("UPDATE creative SET poster_link=?,video_link=? WHERE eid=?",[poster,video,eid],function(error){
+		if(error){
+			console.log(error);
+			console.log("Submit Creative Error");
+			res.sendStatus(400);
+		}
+		else{
+			console.log("Creative Form Successfully Submitted");
+			res.sendStatus(200);
+		}
+	});
+});
+
 
 //Poster,video uploading
 var multer=require('multer');
@@ -64,14 +84,14 @@ var storage=multer.diskStorage({
 var upload=multer({
 	storage:storage,
 	limits:{
-		fileSize: 1024*1024 *20
+		fileSize: 1024*1024 *10
 	}
 }).array('file',3);
 
 router.post('/upload',(req,res)=>{
    	upload(req,res,function(err){
 		if(err){
-			console.log("Error");
+			console.log("Upload Error");
 			res.sendStatus(400);
 		}
 		else{

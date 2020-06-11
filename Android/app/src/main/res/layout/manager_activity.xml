@@ -14,7 +14,7 @@
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="255dp"
-            android:layout_marginTop="-5dp"/>
+            android:layout_marginTop="0dp"/>
 
         <LinearLayout
             android:id="@+id/SliderDots"
@@ -23,7 +23,7 @@
             android:layout_below="@id/viewPager"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="horizontal"
-            android:layout_marginTop="4dp">
+            android:layout_marginTop="30dp">
         </LinearLayout>
         <Space
             android:layout_height="30dp"

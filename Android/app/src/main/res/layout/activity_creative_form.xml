@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".mActivityManager.Proposal"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <LinearLayout
@@ -19,17 +20,14 @@
                 android:orientation="vertical"
                 android:background="@color/white"
                 android:padding="5dp">
-                <View
-                    android:layout_width="10000dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorPrimary" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:text="EVENT DETAILS"
                     android:layout_gravity="center"
+                    android:layout_marginVertical="10dp"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimary"/>
                 <View
@@ -284,26 +282,29 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="40dp"
+                android:paddingHorizontal="40dp"
+                android:justificationMode="inter_word"
                 android:textSize="17sp"
                 android:textColor="@color/colorAccent"
                 android:text="Description "
                 android:id="@+id/desc_pd"/>
-            <View
-                android:layout_width="10000dp"
-                android:layout_height="2dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="BUDGET DETAILS"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"/>
-            </LinearLayout>
 
+            </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="BUDGET DETAILS"
+            android:layout_gravity="center"
+            android:layout_marginVertical="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -496,23 +497,24 @@
                     android:textColor="@color/colorPrimary"/>
             </LinearLayout>
         </LinearLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp">
-            <View
-                android:layout_width="10000dp"
-                android:layout_height="2dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="Upload"
+                android:layout_marginVertical="10dp"
                 android:textAllCaps="true"
                 android:layout_gravity="center"
                 android:textStyle="bold"
@@ -607,7 +609,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginVertical="10dp"
                     android:src="@drawable/saurabh" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/warning_poster"
+                android:layout_gravity="center"/>
 
                 <Button
                     android:id="@+id/uploadVideo"
@@ -636,33 +644,35 @@
                     android:textSize="20sp"
                     android:textColor="@color/colorAccent"/>
 
-                <VideoView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/saurabh" />
+                    android:text="Please Upload Video First"
+                    android:id="@+id/video_preview"
+                    android:paddingLeft="40dp"
+                    android:layout_marginVertical="10dp"/>
             </LinearLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp">
+            android:layout_gravity="center">
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:id="@+id/submit_praposal"
                 android:layout_width="251dp"
-                android:layout_height="49dp"
+                android:layout_height="wrap_content"
                 android:text="Submit"
                 android:layout_gravity="center"
                 android:background="@drawable/ripple_effect"
                 android:textColor="@color/white"
                 android:clickable="true"
                 android:focusable="true"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginVertical="20dp"/>
 
         </LinearLayout>
     </LinearLayout>

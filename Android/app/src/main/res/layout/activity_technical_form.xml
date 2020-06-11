@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".mActivityManager.Proposal"
     android:orientation="vertical">
 
@@ -20,11 +21,7 @@
             android:orientation="vertical"
             android:background="@color/white"
             android:padding="5dp">
-            <View
-                android:layout_width="10000dp"
-                android:layout_height="2dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -32,6 +29,7 @@
                 android:text="EVENT DETAILS"
                 android:layout_gravity="center"
                 android:textStyle="bold"
+                android:layout_marginVertical="10dp"
                 android:textColor="@color/colorPrimary"/>
             <View
                 android:layout_width="match_parent"
@@ -289,7 +287,13 @@
                 android:textColor="@color/colorAccent"
                 android:text="Description "
                 android:id="@+id/desc_pd"/>
+
         </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="0dp"
+                android:background="#EDEDED" />
         </LinearLayout>
 
         <LinearLayout
@@ -298,19 +302,21 @@
             android:orientation="vertical"
             android:background="@color/white"
             android:padding="5dp">
-            <View
-                android:layout_width="10000dp"
-                android:layout_height="2dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/colorPrimary" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="TASK"
                 android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="0dp"
+                android:background="#EDEDED" />
             <CheckBox
                 android:id="@+id/question"
                 android:layout_width="match_parent"
@@ -348,13 +354,59 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp" />
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Comments"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+
+            <EditText
+                android:id="@+id/comment_t"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/buts"
+                android:textColor="@color/colorPrimary"
+                android:isScrollContainer="true"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                android:overScrollMode="always"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:scrollbarSize="5dp"
+                android:paddingRight="15dp"
+                android:visibility="visible"
+                android:gravity="start"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
+                />
+        </LinearLayout>
         <Button
             android:id="@+id/updateTech"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="251dp"
-            android:layout_height="49dp"
+            android:layout_height="wrap_content"
             android:text="EDIT"
             android:layout_gravity="center"
+            android:layout_marginVertical="20dp"
             android:background="@drawable/ripple_effect"
             android:textColor="@color/white"
             android:clickable="true"
