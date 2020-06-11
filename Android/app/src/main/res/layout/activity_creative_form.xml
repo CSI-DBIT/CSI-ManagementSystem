@@ -610,6 +610,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginVertical="10dp"
+                    android:clickable="true"
                     android:src="@drawable/saurabh" />
             <TextView
                 android:layout_width="wrap_content"

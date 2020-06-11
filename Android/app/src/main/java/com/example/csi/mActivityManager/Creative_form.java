@@ -63,6 +63,8 @@ public class Creative_form extends AppCompatActivity {
     String video_url = "";
     String uRole;
 
+    ImageView imagePreview;
+
     public String mediaType = "Image", eid;
     public String server_url = "http://tayyabali.in:9000/creative/viewpropdetail";
     String name, theme, eventDate, description, creativeBudget, date1;
@@ -98,6 +100,7 @@ public class Creative_form extends AppCompatActivity {
         publicity_budget = (TextView) findViewById(R.id.pb);
         guest_budget = (TextView) findViewById(R.id.gb);
         video_preview = (TextView) findViewById(R.id.video_preview);
+        imagePreview = (ImageView) findViewById(R.id.image_preview);
 
         Intent intent = getIntent();
         eid = intent.getStringExtra(Creative.EXTRA_EID);
@@ -252,6 +255,19 @@ public class Creative_form extends AppCompatActivity {
                     dGuestBudget = jsonObject1.getString("guest_budget");
                     poster_url = jsonObject1.getString("poster_link");
                     video_url = jsonObject1.getString("video_link");
+                    if(poster_url.equals("")) {
+                        imagePreview.setEnabled(false);
+                    }
+                    else {
+                        imagePreview.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent creative_form = new Intent(Creative_form.this, CreativePosterFull.class);
+                                creative_form.putExtra("poster_url", poster_url);
+                                startActivity(creative_form);
+                            }
+                        });
+                    }
                     loadImageUrl();
                     loadVideoUrl();
                     Log.i("sanket", poster_url + " !!!!!! " + video_url);
@@ -317,9 +333,7 @@ public class Creative_form extends AppCompatActivity {
     }
 
     private void loadImageUrl() {
-        ImageView imageView = (ImageView) findViewById(R.id.image_preview);
-        Log.i("please chal ja","chal gaya!!");
-
+        imagePreview.setEnabled(true);
 
         Handler uiHandler = new Handler(Looper.getMainLooper());
         uiHandler.post(new Runnable(){
@@ -327,7 +341,7 @@ public class Creative_form extends AppCompatActivity {
             public void run() {
                 Picasso.with(getApplicationContext()).load(poster_url).placeholder(R.mipmap.ic_launcher)
                         .error(R.mipmap.ic_launcher)
-                        .into(imageView, new com.squareup.picasso.Callback(){
+                        .into(imagePreview, new com.squareup.picasso.Callback(){
 
                             @Override
                             public void onSuccess() {

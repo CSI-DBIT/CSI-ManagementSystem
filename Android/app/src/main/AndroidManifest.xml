@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.csi">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/csilogo"
@@ -12,10 +14,13 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".mActivityManager.publcity_recycler"
-            android:theme="@style/AppTheme2"/>
-        <activity android:name=".Prompts.attendance_list"
-            android:theme="@style/AppTheme2"/>
+        <activity android:name=".mActivityManager.CreativePosterFull"></activity>
+        <activity
+            android:name=".mActivityManager.publcity_recycler"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".Prompts.attendance_list"
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".mActivityManager.edit_proposal"
             android:theme="@style/AppTheme2" />
@@ -35,33 +40,39 @@
         <activity
             android:name=".Gallery.Activities.DisplayEventName"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".mActivityManager.Technical_form"
-            android:theme="@style/AppTheme2"/>
+        <activity
+            android:name=".mActivityManager.Technical_form"
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".mActivityManager.Creative_form"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".mActivityManager.Report"
-            android:theme="@style/AppTheme2"/>
+        <activity
+            android:name=".mActivityManager.Report"
+            android:theme="@style/AppTheme2" />
         <activity android:name=".mActivityManager.Gallery" />
-        <activity android:name=".mActivityManager.Technical"
-            android:theme="@style/AppTheme2"/>
-        <activity android:name=".mActivityManager.Publicity"
-            android:theme="@style/AppTheme2"/>
+        <activity
+            android:name=".mActivityManager.Technical"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".mActivityManager.Publicity"
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".mActivityManager.Creative"
             android:theme="@style/AppTheme2" />
         <activity
             android:name=".mActivityManager.Proposal"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".Prompts.ProfileEdit"
-            android:theme="@style/AppTheme2"/>
+        <activity
+            android:name=".Prompts.ProfileEdit"
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".Prompts.Manager"
             android:label="@string/title_activity_manager"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Prompts.role_intent" />
-        <activity android:name=".Prompts.AddMinute"
-            android:theme="@style/AppTheme2"/>
+        <activity
+            android:name=".Prompts.AddMinute"
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".Prompts.MainActivity"
             android:screenOrientation="portrait">
@@ -72,7 +83,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
