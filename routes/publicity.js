@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
+//<<<<<<< HEAD
 var mysql = require('mysql');
 var multer = require('multer');
 
@@ -19,7 +19,7 @@ connection.connect(function(err) {
         console.log(err);
     }
 }); 
-=======
+//=======
 
 // MySQL Connection
 var mysql=require('mysql');
@@ -37,7 +37,7 @@ connection.connect(function(err){
 		console.log("Connected To Mysql!");
 	}
 });
->>>>>>> 21b52b3e6882614b8dc2990b4cdd0cee38c368cb
+//>>>>>>> 21b52b3e6882614b8dc2990b4cdd0cee38c368cb
 
 router.get('/listEvent',(req,res)=>{
 	connection.query('SELECT name,eid FROM events WHERE status=2', function (error, results, fields) {
