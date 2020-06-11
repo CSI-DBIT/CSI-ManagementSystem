@@ -81,7 +81,8 @@ public class PraposalAdapter extends RecyclerView.Adapter<PraposalAdapter.Exampl
 
         //{exampleViewHolder.mTextViewE1.setText("Latest Submitted");exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#213279"));} //white
         else {
-            exampleViewHolder.mTextViewE1.setVisibility(View.INVISIBLE);exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#80ffffff"));//white ,this one is for creative and technical recycler
+            exampleViewHolder.mTextViewE1.setVisibility(View.GONE);
+//            exampleViewHolder.ll.setBackgroundColor(Color.parseColor("#80ffffff"));//white ,this one is for creative and technical recycler
         }
         exampleViewHolder.mTextViewPoints.setText(extra );
     }

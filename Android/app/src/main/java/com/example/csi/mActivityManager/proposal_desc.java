@@ -204,7 +204,7 @@ public class proposal_desc extends AppCompatActivity {
         p.setText(res.getString("publicity_budget"));
         g.setText(res.getString("guest_budget"));
         comment_t.setText(res.getString("comment"));
-
+        getSupportActionBar().setTitle(res.getString("name"));
 
     }
     @Override

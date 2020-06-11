@@ -160,7 +160,7 @@ public class Publicity extends AppCompatActivity {
                         String eventDate=jsonObject1.getString("event_date");
                         String date = eventDate.substring(8,10) + "/" + eventDate.substring(5,7) + "/" + eventDate.substring(0,4);
                         event_date.setText(date);
-
+                        getSupportActionBar().setTitle(jsonObject1.getString("name"));
                         //Send data to Manager.java starts
                         // Call manager.java file i.e. Activity with navigation drawer activity
                     }

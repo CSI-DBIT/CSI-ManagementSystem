@@ -271,7 +271,7 @@ public class Creative_form extends AppCompatActivity {
                     loadImageUrl();
                     loadVideoUrl();
                     Log.i("sanket", poster_url + " !!!!!! " + video_url);
-
+                    getSupportActionBar().setTitle(name);
                     date1 = eventDate.substring(8,10) + "/" + eventDate.substring(5,7) + "/" + eventDate.substring(0,4);
 
                     //Send data to Manager.java starts
@@ -293,6 +293,7 @@ public class Creative_form extends AppCompatActivity {
                 creative_budget.setText(creativeBudget);
                 publicity_budget.setText(dPublicityBudget);
                 guest_budget.setText(dGuestBudget);
+
             }
         },new Response.ErrorListener()  {
 

@@ -13,6 +13,20 @@
         android:id="@+id/technical_manager"
         tools:context=".Manager">
 
+        <TextView
+            android:id="@+id/no_tech"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="No pending Requests"
+            android:textColor="@color/colorAccent"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_T"
             android:layout_width="match_parent"
