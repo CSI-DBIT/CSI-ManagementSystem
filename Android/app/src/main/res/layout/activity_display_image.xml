@@ -7,7 +7,6 @@
     tools:context=".Gallery.Activities.DisplayImage">
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recyclerview">
@@ -24,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/colorPrimary"
             android:src="@drawable/ic_insert_photo_black_24dp"
             />
 

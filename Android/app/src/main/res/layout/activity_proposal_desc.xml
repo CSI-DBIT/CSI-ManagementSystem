@@ -271,7 +271,7 @@
                 android:scrollbars="vertical"
                 android:scrollbarSize="5dp"
                 android:paddingRight="15dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:gravity="start"
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"

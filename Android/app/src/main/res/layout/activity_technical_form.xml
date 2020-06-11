@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".mActivityManager.Proposal"
     android:orientation="vertical">
 
@@ -352,11 +353,51 @@
                 android:textColor="@color/colorPrimary"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp" />
-            <View
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="0dp"
+            android:background="#EDEDED" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:text="Comments"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+
+            <EditText
+                android:id="@+id/comment_t"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_margin="0dp"
-                android:background="#EDEDED" />
+                android:layout_height="100dp"
+                android:background="@drawable/buts"
+                android:textColor="@color/colorPrimary"
+                android:isScrollContainer="true"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                android:overScrollMode="always"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:scrollbarSize="5dp"
+                android:paddingRight="15dp"
+                android:visibility="visible"
+                android:gravity="start"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
+                />
         </LinearLayout>
         <Button
             android:id="@+id/updateTech"
