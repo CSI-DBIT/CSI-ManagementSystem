@@ -4,20 +4,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.csi.Gallery.Activities.DisplayEventName;
+import com.example.csi.Prompts.DetailActivity;
 import com.example.csi.Prompts.MainActivity;
 import com.example.csi.Prompts.Manager;
 import com.example.csi.R;
@@ -37,6 +43,8 @@ import java.util.TimerTask;
 
 
 public class ActivityManager extends Fragment  {
+
+    String roll_text;
 
     View rootView;
     GridLayout mainGrid;
@@ -63,6 +71,9 @@ public class ActivityManager extends Fragment  {
         viewPager = (ViewPager) rootView.findViewById(R.id.viewPager);
         viewPager.setPageTransformer(true, new DepthPageTransformer());
 
+        Bundle bundle = getArguments();
+        Log.i("Sanket_testing",bundle.toString());
+        roll_text = this.getArguments().getString("uRole");
 
         sliderDotsPanel = (LinearLayout) rootView.findViewById(R.id.SliderDots);
 
@@ -207,7 +218,11 @@ public class ActivityManager extends Fragment  {
                         case 0:
                             startActivity(new Intent(getActivity(), praposal_recycler.class));
                                 break;
-                        case 1: startActivity(new Intent(getActivity(), Creative.class));
+                        case 1:
+                            Intent creative = new Intent(getActivity(), Creative.class);
+//                            Toast.makeText(getActivity(), roll_text, Toast.LENGTH_SHORT).show();
+                            creative.putExtra("uRole",roll_text);
+                            startActivity(creative);
                             break;
                         case 2: startActivity(new Intent(getActivity(), publcity_recycler.class));
                             break;

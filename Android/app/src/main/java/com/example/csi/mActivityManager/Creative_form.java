@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -60,6 +61,7 @@ public class Creative_form extends AppCompatActivity {
 
     String poster_url = "";
     String video_url = "";
+    String uRole;
 
     public String mediaType = "Image", eid;
     public String server_url = "http://tayyabali.in:9000/creative/viewpropdetail";
@@ -99,6 +101,7 @@ public class Creative_form extends AppCompatActivity {
 
         Intent intent = getIntent();
         eid = intent.getStringExtra(Creative.EXTRA_EID);
+        uRole = intent.getStringExtra("uRole");
         Log.i("eid",eid);
 
         insertSrv();
@@ -109,6 +112,12 @@ public class Creative_form extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         uploadImage = (Button) findViewById(R.id.uploadImage);
         uploadVideo = (Button) findViewById(R.id.uploadVideo);
+
+        if(!uRole.equals("Creative Head")) {
+            uploadImage.setEnabled(false);
+            uploadVideo.setEnabled(false);
+        }
+
         submit = (Button) findViewById(R.id.submit_praposal);
 
         uploadImage.setOnClickListener(new View.OnClickListener() {

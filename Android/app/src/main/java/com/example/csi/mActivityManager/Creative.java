@@ -23,11 +23,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.csi.Prompts.DetailActivity;
+import com.example.csi.Prompts.MainActivity;
 import com.example.csi.R;
 import com.example.csi.mAdapter.ExampleAdapter;
 import com.example.csi.mAdapter.ExampleItem;
 import com.example.csi.mAdapter.PraposalAdapter;
 import com.example.csi.mAdapter.PraposalItem;
+import com.example.csi.mFragments.ActivityManager;
 import com.example.csi.mFragments.MinuteManager;
 
 import org.json.JSONArray;
@@ -39,6 +41,7 @@ import java.util.ArrayList;
 public class Creative extends AppCompatActivity implements PraposalAdapter.OnItemClickedListener {
 
     public static final String EXTRA_EID = "com.example.csimanagementsystem.EXTRA_EID";
+    String uRole;
 
     private RecyclerView rv;
     private PraposalAdapter mPraposalAdapter;
@@ -50,6 +53,10 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creative);
+
+        Intent intent = getIntent();
+        uRole = intent.getStringExtra("uRole");
+
         getSupportActionBar().setTitle("Creative");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mPraposalList = new ArrayList<>();
@@ -136,6 +143,7 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
         Intent creative_form = new Intent(Creative.this,Creative_form.class);
         String id = clickedItem.getmEid();
         creative_form.putExtra(EXTRA_EID, id);
+        creative_form.putExtra("uRole", uRole);
         Log.i("testing",id);
         startActivity(creative_form);
         //write here code when press back
