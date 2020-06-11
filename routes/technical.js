@@ -81,7 +81,7 @@ router.post('/viewEvents', (req, res) =>{
 		results[0][keys[i]] = json[keys[i]];
 		}
 		console.log(results)*/
-		res.status(200).send(results);	
+		res.status(200).send(results[0]);	
 	}
 	});
 });
