@@ -3,3 +3,9 @@ gallery/
 .env
 node_modules/
 images/
+sky.js
+upload.js
+uploads/
+viewagenda.js
+.env
+server.js
