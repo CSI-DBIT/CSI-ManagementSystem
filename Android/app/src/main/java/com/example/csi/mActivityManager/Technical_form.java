@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,9 +28,12 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 
 public class Technical_form extends AppCompatActivity {
-    String urole1,eid;
+    private String urole1,eid;
     private SharedPreferenceConfig preferenceConfig;
-
+    private TextView name , theme , e_date,speaker,csi_f,ncsi_f,worth_prize , description;
+    CheckBox question , internet , software;
+    EditText comments;
+    LinearLayout comments_layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +43,15 @@ public class Technical_form extends AppCompatActivity {
         preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
         urole1=preferenceConfig.readRoleStatus();
 
+        name =findViewById(R.id.name_tf);
+        theme  =findViewById(R.id.theme_tf);
+        e_date =findViewById(R.id.ed_tf);
+        speaker =findViewById(R.id.speaker_tf);
+        csi_f =findViewById(R.id.fee_csi_tf);
+        ncsi_f =findViewById(R.id.fee_non_csi_tf);
+        worth_prize =findViewById(R.id.prize_tf);
+        description =findViewById(R.id.desc_pd_tf);
+
         Bundle extras = getIntent().getExtras();
         if(extras == null) {
 
@@ -46,15 +60,16 @@ public class Technical_form extends AppCompatActivity {
 
         }
 
-        CheckBox question = findViewById(R.id.question);
-        CheckBox internet = findViewById(R.id.internet);
-        CheckBox software = findViewById(R.id.software);
-        EditText comments = findViewById(R.id.comment_t);
-        comments.setEnabled(false);
+        question = findViewById(R.id.question);
+        internet = findViewById(R.id.internet);
+        software = findViewById(R.id.software);
+        comments = findViewById(R.id.comment_t);
+        comments_layout=findViewById(R.id.tf_comment_layout);
 
         Button update = findViewById(R.id.updateTech);
         if(urole1.equals("Technical Head" )){
             update.setVisibility(View.VISIBLE);
+
         }
 
         update.setOnClickListener(new View.OnClickListener() {
@@ -65,17 +80,20 @@ public class Technical_form extends AppCompatActivity {
                     question.setEnabled(true);
                     internet.setEnabled(true);
                     software.setEnabled(true);
-                    comments.setEnabled(true);
+                    comments_layout.setVisibility(View.VISIBLE);
+
                 }
                 else {
                     update.setText("Edit");
                     question.setEnabled(false);
                     internet.setEnabled(false);
                     software.setEnabled(false);
-                    comments.setEnabled(false);
+                    comments_layout.setVisibility(View.GONE);
+
                 }
             }
         });
+        volley_get();
 
     }
     @Override
@@ -114,14 +132,33 @@ public class Technical_form extends AppCompatActivity {
                     try {
                         JSONObject jsonObject1 = new JSONObject(response);
                         // Log.i("tracking uid","main Activity "+UID);
-
-//                        eventName.setText(jsonObject1.getString("name"));
-
-
+                        name.setText(jsonObject1.getString("name"));
+                        theme.setText(jsonObject1.getString("theme"));
+                        speaker.setText(jsonObject1.getString("speaker"));
+                        csi_f.setText(jsonObject1.getString("reg_fee_c"));
+                        ncsi_f.setText(jsonObject1.getString("reg_fee_nc"));
+                        worth_prize.setText(jsonObject1.getString("prize"));
+                        description.setText(jsonObject1.getString("description"));
+                        if((int)jsonObject1.get("qs_set")==1){
+                          question.setChecked(true);
+                        }else{
+                            question.setChecked(false);
+                        }
+                        if((int)jsonObject1.get("internet")==1){
+                          internet.setChecked(true);
+                        }else{
+                            internet.setChecked(false);
+                        }
+                        if((int)jsonObject1.get("software_install")==1){
+                          software.setChecked(true);
+                        }else{
+                            software.setChecked(false);
+                        }
 
                         String eventDate=jsonObject1.getString("event_date");
-                        String date = eventDate.substring(8,10) + "/" + eventDate.substring(5,7) + "/" + eventDate.substring(0,4);
-//                        event_date.setText(date);
+                        if(eventDate!=null)
+                        eventDate = eventDate.substring(8,10) + "/" + eventDate.substring(5,7) + "/" + eventDate.substring(0,4);
+                        e_date.setText(eventDate);
                         getSupportActionBar().setTitle(jsonObject1.getString("name"));
                         //Send data to Manager.java starts
                         // Call manager.java file i.e. Activity with navigation drawer activity
