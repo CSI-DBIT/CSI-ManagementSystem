@@ -364,7 +364,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@color/white"
-            android:padding="5dp">
+            android:padding="5dp"
+            android:id="@+id/tf_comment_layout"
+            android:visibility="gone"
+            >
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
