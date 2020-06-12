@@ -132,7 +132,7 @@ router.post('/editEvents',(req,res)=>{
 	var others_budget = JSON.stringify(req.body.ob);*/
 	//console.log(others_budget);
 	//modifying events table 
-	connection.query('UPDATE events e INNER JOIN technical t ON e.eid = t.eid SET e.status=3, e.name=?, e.theme=?, e.description=?, e.reg_fee_c=?, e.reg_fee_nc=?, e.venue=?, e.event_date=?, e.speaker=?, e.prize=?, t.qs_set=?, t.internet=?, t.software_install=? WHERE e.eid=?',[name,  theme, description, reg_fee_c, reg_fee_nc, venue, edate, speaker, prize,qs_set, internet,software_install, eid],function(err,results,fields){
+	connection.query('UPDATE events e INNER JOIN technical t ON e.eid = t.eid SET, e.name=?, e.theme=?, e.description=?, e.reg_fee_c=?, e.reg_fee_nc=?, e.venue=?, e.event_date=?, e.speaker=?, e.prize=?, t.qs_set=?, t.internet=?, t.software_install=? WHERE e.eid=?',[name,  theme, description, reg_fee_c, reg_fee_nc, venue, edate, speaker, prize,qs_set, internet,software_install, eid],function(err,results,fields){
 	
 	if(err){
 			console.log(err);			

@@ -55,7 +55,7 @@ router.post('/submit',(req,res)=>{
 	var poster = req.body.poster;
 	var video = req.body.video;
 
-	connection.query("UPDATE creative SET poster_link=?,video_link=?,status=3 WHERE eid=?",[poster,video,eid],function(error){
+	connection.query("UPDATE creative SET poster_link=?,video_link=? WHERE eid=?",[poster,video,eid],function(error){
 		if(error){
 			console.log(error);
 			console.log("Submit Creative Error");
