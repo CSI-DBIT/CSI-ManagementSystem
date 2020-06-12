@@ -79,7 +79,7 @@ router.post('/editPublicity',(req,res)=>{
 	var spent=req.body.spent;
 
 	//pushing into publicty table 
-	connection.query('UPDATE publicity SET desk=?, in_class=?,target=?,comment=?, collected =?,spent =? WHERE eid=?',[desk,in_class,target,comment,collected,spent,eid],function(error,fields){
+	connection.query('UPDATE publicity SET desk=?, in_class=?,target=?,comment=?, collected =?,spent =?,status=3 WHERE eid=?',[desk,in_class,target,comment,collected,spent,eid],function(error,fields){
 	if (error){
 			console.log("Error");
 			res.sendStatus(400);
