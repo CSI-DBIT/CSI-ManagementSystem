@@ -86,7 +86,7 @@ public class DisplayEventName extends AppCompatActivity implements EventNameAdap
                 mEventList.clear();
 
                 Log.i("volleyABC" ,"got response    "+response);
-                Toast.makeText(DisplayEventName.this, "Got Event List", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(DisplayEventName.this, "Got Event List", Toast.LENGTH_SHORT).show();
 
                 //Intent manager = new Intent(MainActivity.this, Manager.class);
                 //String UROLE="", USERNAME="", ProfileURL="";
@@ -159,7 +159,7 @@ public class DisplayEventName extends AppCompatActivity implements EventNameAdap
             EventItem clickedItem = mEventList.get(position);
 
             year.putExtra(EXTRA_EVENT, clickedItem.getEventName() + "/");
-            Toast.makeText(DisplayEventName.this, clickedItem.getEventName() + "/", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(DisplayEventName.this, clickedItem.getEventName() + "/", Toast.LENGTH_SHORT).show();
             startActivity(year);
         }
     }

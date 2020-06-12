@@ -1,25 +1,5 @@
 var express = require('express');
 var router = express.Router();
-//<<<<<<< HEAD
-var mysql = require('mysql');
-var multer = require('multer');
-
-// MySQL Connection
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: 'localhost',
-	user: process.env.user,
-	password: process.env.password,
-    database: 'csiApp'
-});
-connection.connect(function(err) {
-    if (!err) {
-       console.log('Connected to MySql! publicty.js\n');
-    } else {
-        console.log(err);
-    }
-}); 
-//=======
 
 // MySQL Connection
 var mysql=require('mysql');
@@ -37,7 +17,6 @@ connection.connect(function(err){
 		console.log("Connected To Mysql!");
 	}
 });
-//>>>>>>> 21b52b3e6882614b8dc2990b4cdd0cee38c368cb
 
 router.get('/listEvent',(req,res)=>{
 	connection.query('SELECT name,eid FROM events WHERE status=2', function (error, results, fields) {

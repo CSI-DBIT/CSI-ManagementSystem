@@ -103,7 +103,13 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
 
         if(savedInstanceState == null)
         {
-            getSupportFragmentManager().beginTransaction().replace(R.id.containerID, ActivityManager.newInstance()).addToBackStack(null).commit();
+            Bundle bundle = new Bundle();
+            bundle.putString("uRole",urole);
+
+            ActivityManager activityManager = new ActivityManager();
+            activityManager.setArguments(bundle);
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.containerID, activityManager).addToBackStack(null).commit();
         }
     }
 
@@ -192,6 +198,12 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
                 getSupportFragmentManager().popBackStack();
             }
             else if(getSupportFragmentManager().getBackStackEntryCount() != 1){
+                Bundle bundle = new Bundle();
+                bundle.putString("uRole",urole);
+
+                ActivityManager activityManager = new ActivityManager();
+                activityManager.setArguments(bundle);
+
                 getSupportFragmentManager().beginTransaction().replace(R.id.containerID, ActivityManager.newInstance()).addToBackStack(null).commit();
             }
         } else if (id == R.id.nav_minute_manager) {

@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -60,6 +61,9 @@ public class Creative_form extends AppCompatActivity {
 
     String poster_url = "";
     String video_url = "";
+    String uRole;
+
+    ImageView imagePreview;
 
     public String mediaType = "Image", eid;
     public String server_url = "http://tayyabali.in:9000/creative/viewpropdetail";
@@ -96,9 +100,11 @@ public class Creative_form extends AppCompatActivity {
         publicity_budget = (TextView) findViewById(R.id.pb);
         guest_budget = (TextView) findViewById(R.id.gb);
         video_preview = (TextView) findViewById(R.id.video_preview);
+        imagePreview = (ImageView) findViewById(R.id.image_preview);
 
         Intent intent = getIntent();
         eid = intent.getStringExtra(Creative.EXTRA_EID);
+        uRole = intent.getStringExtra("uRole");
         Log.i("eid",eid);
 
         insertSrv();
@@ -109,6 +115,12 @@ public class Creative_form extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         uploadImage = (Button) findViewById(R.id.uploadImage);
         uploadVideo = (Button) findViewById(R.id.uploadVideo);
+
+        if(!uRole.equals("Creative Head")) {
+            uploadImage.setEnabled(false);
+            uploadVideo.setEnabled(false);
+        }
+
         submit = (Button) findViewById(R.id.submit_praposal);
 
         uploadImage.setOnClickListener(new View.OnClickListener() {
@@ -243,10 +255,23 @@ public class Creative_form extends AppCompatActivity {
                     dGuestBudget = jsonObject1.getString("guest_budget");
                     poster_url = jsonObject1.getString("poster_link");
                     video_url = jsonObject1.getString("video_link");
+                    if(poster_url.equals("")) {
+                        imagePreview.setEnabled(false);
+                    }
+                    else {
+                        imagePreview.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent creative_form = new Intent(Creative_form.this, CreativePosterFull.class);
+                                creative_form.putExtra("poster_url", poster_url);
+                                startActivity(creative_form);
+                            }
+                        });
+                    }
                     loadImageUrl();
                     loadVideoUrl();
                     Log.i("sanket", poster_url + " !!!!!! " + video_url);
-
+                    getSupportActionBar().setTitle(name);
                     date1 = eventDate.substring(8,10) + "/" + eventDate.substring(5,7) + "/" + eventDate.substring(0,4);
 
                     //Send data to Manager.java starts
@@ -268,6 +293,7 @@ public class Creative_form extends AppCompatActivity {
                 creative_budget.setText(creativeBudget);
                 publicity_budget.setText(dPublicityBudget);
                 guest_budget.setText(dGuestBudget);
+
             }
         },new Response.ErrorListener()  {
 
@@ -308,9 +334,7 @@ public class Creative_form extends AppCompatActivity {
     }
 
     private void loadImageUrl() {
-        ImageView imageView = (ImageView) findViewById(R.id.image_preview);
-        Log.i("please chal ja","chal gaya!!");
-
+        imagePreview.setEnabled(true);
 
         Handler uiHandler = new Handler(Looper.getMainLooper());
         uiHandler.post(new Runnable(){
@@ -318,7 +342,7 @@ public class Creative_form extends AppCompatActivity {
             public void run() {
                 Picasso.with(getApplicationContext()).load(poster_url).placeholder(R.mipmap.ic_launcher)
                         .error(R.mipmap.ic_launcher)
-                        .into(imageView, new com.squareup.picasso.Callback(){
+                        .into(imagePreview, new com.squareup.picasso.Callback(){
 
                             @Override
                             public void onSuccess() {
