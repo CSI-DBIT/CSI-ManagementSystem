@@ -112,6 +112,8 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
         PraposalItem clickedItem = mPraposalList.get(position);
         //Toast.makeText(Technical.this,clickedItem.getmEid() , Toast.LENGTH_SHORT).show();
         Intent technical_form = new Intent(Technical.this,Technical_form.class);
+        String id = clickedItem.getmEid();
+        technical_form.putExtra("EID", id);
         startActivity(technical_form);
 
     }
