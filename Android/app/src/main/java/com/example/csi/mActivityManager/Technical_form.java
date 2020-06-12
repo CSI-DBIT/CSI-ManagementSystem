@@ -66,33 +66,41 @@ public class Technical_form extends AppCompatActivity {
         comments = findViewById(R.id.comment_t);
         comments_layout=findViewById(R.id.tf_comment_layout);
 
-        Button update = findViewById(R.id.updateTech);
+
+        Button edit = findViewById(R.id.updateTech);
         if(urole1.equals("Technical Head" )){
-            update.setVisibility(View.VISIBLE);
+            edit.setVisibility(View.VISIBLE);
 
         }
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                comments_layout.setVisibility(View.VISIBLE);
+                question.setEnabled(true);
+                internet.setEnabled(true);
+                software.setEnabled(true);
+                edit.setVisibility(View.GONE);
+                Log.i("volleyABC4985" ,"edit text");
+            }
+        });
+
+
+        Button update = findViewById(R.id.Send_Tech_form);
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (update.getText().equals("Edit")) {
-                    update.setText("Update");
-                    question.setEnabled(true);
-                    internet.setEnabled(true);
-                    software.setEnabled(true);
-                    comments_layout.setVisibility(View.VISIBLE);
 
-                }
-                else {
-                    update.setText("Edit");
+                    comments_layout.setVisibility(View.VISIBLE);
                     question.setEnabled(false);
                     internet.setEnabled(false);
                     software.setEnabled(false);
-                    comments_layout.setVisibility(View.GONE);
-
-                }
+                    Log.i("volleyABC4985" ,"update text");
+                    volley_send();
             }
         });
+
+
         volley_get();
 
     }
@@ -176,13 +184,95 @@ public class Technical_form extends AppCompatActivity {
 
                 try{
                     Log.i("volleyABC" ,Integer.toString(error.networkResponse.statusCode));
-                    Toast.makeText(Technical_form.this, "Invalid Credentials", Toast.LENGTH_SHORT).show(); //This method is used to show pop-up on the screen if user gives wrong uid
+                    Toast.makeText(Technical_form.this, "Invalid request", Toast.LENGTH_SHORT).show(); //This method is used to show pop-up on the screen if user gives wrong uid
                     error.printStackTrace();}
                 catch (Exception e)
                 {
                     Toast.makeText(Technical_form.this,"Check Network",Toast.LENGTH_SHORT).show();
 
                 }
+
+            }
+        }){
+            //sending JSONOBJECT String to server starts
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                try {
+                    return requestBody.getBytes("utf-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+        };
+        //sending JSONOBJECT String to server ends
+
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest); // get response from server
+//        return ret[0];
+
+
+    }
+
+
+    public void volley_send(){
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("eid", eid);
+            jsonObject.put("comment",comments.getText().toString());
+            if(question.isChecked()){
+                jsonObject.put("qs_set",1);
+            }else{
+                jsonObject.put("qs_set",0);
+            }
+            if(internet.isChecked()){
+                jsonObject.put("internet",1);
+            }else{
+                jsonObject.put("internet",0);
+            }
+            if(software.isChecked()){
+                jsonObject.put("software_install",1);
+            }else{
+                jsonObject.put("software_install",0);
+            }
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        final String requestBody = jsonObject.toString();
+        Log.i("volleyABC ", requestBody);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/technical/editEvents ", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+//                ret[0]=response;
+                Log.i("volleyABC4985" ,"got response    "+response);
+                finish();
+                Toast.makeText(Technical_form.this, "Updated", Toast.LENGTH_SHORT).show();
+                comments_layout.setVisibility(View.GONE);
+
+            }
+        },new Response.ErrorListener()  {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                try{
+                    Log.i("volleyABC" ,Integer.toString(error.networkResponse.statusCode));
+                    Toast.makeText(Technical_form.this, "Invalid request", Toast.LENGTH_SHORT).show(); //This method is used to show pop-up on the screen if user gives wrong uid
+                    error.printStackTrace();}
+                catch (Exception e)
+                {
+                    Toast.makeText(Technical_form.this,"Check Network",Toast.LENGTH_SHORT).show();
+
+                }
+//                finish();
 
             }
         }){
