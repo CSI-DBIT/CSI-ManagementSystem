@@ -19,19 +19,6 @@ connection.connect(function(err) {
     }
 });
 
-// router.get('/viewListEvents', (req, res) =>{
-// 	//fetching from events table
-// 	connection.query('SELECT eid,name,p_date,status FROM events WHERE status IN (2,3)', function (error, results, fields) {
-// 	if (error){
-// 		console.log(error)
-// 		res.sendStatus(400);
-// 	}
-// 	else
-		
-// 	res.send(results);
-// 	});
-// });
-
 /*
 Response -
 [
@@ -69,6 +56,7 @@ Response -
 			results[0][keys[i]] = json[keys[i]];
 			}
 			console.log(results)*/
+
 //Viewing Events
 router.post('/viewEvents', (req, res) =>{
 	var eid = req.body.eid;
