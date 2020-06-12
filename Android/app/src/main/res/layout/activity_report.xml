@@ -23,14 +23,14 @@
             android:textColor="@color/colorAccent"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:visibility="visible" />
+            android:visibility="gone" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_report"
             android:layout_width="match_parent"
             android:layout_height="709dp"
             android:layout_alignParentTop="true"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_alignParentBottom="true">
 
         </android.support.v7.widget.RecyclerView>
