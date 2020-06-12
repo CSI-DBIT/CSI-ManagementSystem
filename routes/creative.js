@@ -13,10 +13,10 @@ var connection=mysql.createConnection({
 });
 connection.connect(function(err){
 	if(err){
-		console.log('Not Connected to MySql!');
+		console.log('Not Connected to MySql!Creative.js');
 	}
 	else{
-		console.log("Connected To Mysql!");
+		console.log("Connected To Mysql!Creative.js");
 	}
 });
 
@@ -24,10 +24,11 @@ connection.connect(function(err){
 router.get('/listcreative',(req,res)=>{
 	connection.query('SELECT eid,name,theme,event_date FROM events where status=2',function(err,result){
 		if(err){
-			console.log("Error");
+			console.log("Failed to  List All creative events");
+			res.sendStatus(400);
 		}
 		else{
-			console.log("Succesfully Listed");
+			console.log("Succesfully Listed All creative events");
 			res.status(200).send(result);
 		}
 	});
@@ -39,11 +40,11 @@ router.post('/viewpropdetail',(req,res)=>{
 
 	connection.query('SELECT * FROM(SELECT creative.eid,name,theme,event_date,speaker,venue,reg_fee_c,reg_fee_nc,prize,convert(description using utf8)as description,creative_budget,publicity_budget,guest_budget,poster_link,video_link FROM events,creative WHERE events.eid=creative.eid) AS creative WHERE eid=?',[eid],function(err,result){
 		if(err){
-			console.log("Error");
+			console.log("Failed to view  creative event detail");
 			res.sendStatus(400);
 		}
 		else{
-			console.log("Succesfully Listed");
+			console.log("Succesfully viewed creative event detail");
 			res.status(200).send(result[0]);
 		}
 	});
@@ -55,9 +56,8 @@ router.post('/submit',(req,res)=>{
 	var poster = req.body.poster;
 	var video = req.body.video;
 
-	connection.query("UPDATE creative SET poster_link=?,video_link=? WHERE eid=?",[poster,video,eid],function(error){
+	connection.query("UPDATE creative SET poster_link=?,video_link=?,status=3 WHERE eid=?",[poster,video,eid],function(error){
 		if(error){
-			console.log(error);
 			console.log("Submit Creative Error");
 			res.sendStatus(400);
 		}

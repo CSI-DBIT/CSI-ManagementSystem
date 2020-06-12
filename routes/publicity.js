@@ -11,34 +11,24 @@ var connection=mysql.createConnection({
 });
 connection.connect(function(err){
 	if(err){
-		console.log('Not Connected to MySql!');
+		console.log('Not Connected to MySql!Publicity.js');
 	}
 	else{
-		console.log("Connected To Mysql!");
+		console.log("Connected To Mysql!Publicity.js");
 	}
 });
 
-router.get('/listEvent',(req,res)=>{
-	connection.query('SELECT name,eid FROM events WHERE status=2', function (error, results, fields) {
-	if (error){
-		console.log(error)
-		res.sendStatus(400);
-	}
-	else
-		res.status(200).send(results);
-	});
-});
-
+//Viewing each event
 router.post('/viewEvent',(req,res)=>{
 	var eid=req.body.eid;
 
 	connection.query('SELECT e.name, e.theme, e.event_date, e.speaker, e.venue, e.reg_fee_c, e.reg_fee_nc, e.prize, convert(e.description using utf8)as description, e.creative_budget, e.publicity_budget, e.guest_budget, p.desk, p.in_class, p.target, convert(p.comment using utf8)as comment, p.collected, p.spent FROM events e inner join publicity p on e.eid=p.eid WHERE p.eid=?',[eid],function(err,result){
 		if(err){
-			console.log(err);
+			console.log("Failed to view publicity event");
 			res.sendStatus(400);
 		}
 		else{
-			console.log("Succesfully Listed");
+			console.log("Succesfully viewed publicity event");
 			res.status(200).send(result[0]);
 		}
 	});
@@ -69,6 +59,7 @@ router.post('/viewEvent',(req,res)=>{
     "spent": 100
 }*/
 
+//Edit form
 router.post('/editPublicity',(req,res)=>{
 	var collected=req.body.collected;
 	var desk=req.body.desk;
@@ -79,14 +70,14 @@ router.post('/editPublicity',(req,res)=>{
 	var spent=req.body.spent;
 
 	//pushing into publicty table 
-	connection.query('UPDATE publicity SET desk=?, in_class=?,target=?,comment=?, collected =?,spent =? WHERE eid=?',[desk,in_class,target,comment,collected,spent,eid],function(error,fields){
+	connection.query('UPDATE publicity SET desk=?, in_class=?,target=?,comment=?, collected =?,spent =? ,status=3 WHERE eid=?',[desk,in_class,target,comment,collected,spent,eid],function(error){
 	if (error){
-			console.log("Error");
+			console.log("Failed to edit publicity event");
 			res.sendStatus(400);
 		}
 	else
 	{
-		console.log("Updated!");
+		console.log("Sucessfully updated publicty event");
 		res.sendStatus(200);
 	}
 	});
