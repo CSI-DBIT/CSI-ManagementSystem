@@ -8,7 +8,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -85,6 +87,15 @@ public class publcity_recycler extends AppCompatActivity implements  PraposalAda
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
+                    TextView no_pub_text = findViewById(R.id.no_pub);
+                    if(jsonArray.length() > 0) {
+                        rv.setVisibility(View.VISIBLE);
+
+                        no_pub_text.setVisibility(View.GONE);
+                    }
+                    else {
+                        no_pub_text.setText("No pending Requests");
+                    }
                     for(int i=0; i< jsonArray.length(); i++) {
                         JSONObject minutes = jsonArray.getJSONObject(i);
 

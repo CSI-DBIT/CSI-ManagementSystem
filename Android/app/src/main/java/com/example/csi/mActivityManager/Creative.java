@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -84,6 +85,15 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
+                    TextView no_creative_text = findViewById(R.id.no_cr);
+                    if(jsonArray.length() > 0) {
+                        rv.setVisibility(View.VISIBLE);
+
+                        no_creative_text.setVisibility(View.GONE);
+                    }
+                    else {
+                        no_creative_text.setText("No pending Requests");
+                    }
                     for(int i=0; i< jsonArray.length(); i++) {
                         JSONObject minutes = jsonArray.getJSONObject(i);
 

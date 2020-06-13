@@ -19,18 +19,18 @@
             android:layout_alignParentBottom="true"
             android:background="@color/white"
             android:gravity="center"
-            android:text="No Reports Currently"
+            android:text="Waiting for response from server"
             android:textColor="@color/colorAccent"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_report"
             android:layout_width="match_parent"
             android:layout_height="709dp"
             android:layout_alignParentTop="true"
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_alignParentBottom="true">
 
         </android.support.v7.widget.RecyclerView>

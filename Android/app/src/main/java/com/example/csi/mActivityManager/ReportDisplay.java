@@ -82,11 +82,6 @@ public class ReportDisplay extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if(requestCode == 100 && (grantResults[0] == PackageManager.PERMISSION_GRANTED)){
             DownloadBooks(url, eName);
-        }else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-
-                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},100);
-            }
         }
     }
 

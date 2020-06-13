@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -125,6 +126,15 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
+                    TextView no_prop_text = findViewById(R.id.no_pro);
+                    if(jsonArray.length() > 0) {
+                        rv.setVisibility(View.VISIBLE);
+
+                        no_prop_text.setVisibility(View.GONE);
+                    }
+                    else {
+                        no_prop_text.setText("No pending Requests");
+                    }
                     for(int i=0; i< jsonArray.length(); i++) {
                             JSONObject minutes = jsonArray.getJSONObject(i);
 
