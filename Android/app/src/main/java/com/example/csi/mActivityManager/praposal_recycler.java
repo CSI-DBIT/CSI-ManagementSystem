@@ -152,7 +152,7 @@ public class praposal_recycler extends AppCompatActivity implements  PraposalAda
                                     mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name, status,"Theme: "+ theme));
 
                             }
-                            else if(urole1.equals("SBC") && (status.equals("1") || status.equals("0"))) {
+                            else if(urole1.equals("SBC") && (status.equals("1") || status.equals("0")|| status.equals("2"))) {
                                 mPraposalList.add(new PraposalItem(eid,"Date: "+date1, Name, status,"Theme: "+ theme));
                             }
                             else if(!urole1.equals("HOD") && !urole1.equals("SBC") ) {

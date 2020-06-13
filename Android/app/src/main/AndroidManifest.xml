@@ -16,7 +16,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".mActivityManager.ReportDisplay"></activity>
+        <activity android:name=".mActivityManager.ReportDisplay"
+            android:theme="@style/AppTheme2"/>
         <activity android:name=".mActivityManager.CreativePosterFull" />
         <activity
             android:name=".mActivityManager.publcity_recycler"

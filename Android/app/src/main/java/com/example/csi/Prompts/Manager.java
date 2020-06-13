@@ -41,6 +41,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
     private SharedPreferenceConfig preferenceConfig; //....6/6/2019
     public static final String EXTRA_UROLE = "com.example.csimanagementsystem.EXTRA_UROLE";
 
+
     String uid, uname, urole, uProfile;
 
     TextView UNAME, UID, UROLE;
@@ -61,11 +62,15 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
         //get data sent by Mainactivity.java startsact
         Intent intent = getIntent();
         uid = intent.getStringExtra(MainActivity.EXTRA_UID);
+        uid=preferenceConfig.readLoginStatus();
         Log.i("tracking uid","manager when received "+uid);
 
         uname = intent.getStringExtra(MainActivity.EXTRA_UNAME);
+        uname=preferenceConfig.readNameStatus();
         urole = intent.getStringExtra(MainActivity.EXTRA_UROLE);
+        urole=preferenceConfig.readRoleStatus();
         uProfile = intent.getStringExtra(MainActivity.EXTRA_URL);
+        uProfile=preferenceConfig.readUrlStatus();
         Log.i("tracking uid","manager when received "+uid+uname+urole+uProfile);
         //get data sent by Mainactivity.java ends
 

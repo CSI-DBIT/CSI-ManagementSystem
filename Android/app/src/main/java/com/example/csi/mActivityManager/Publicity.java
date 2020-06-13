@@ -244,6 +244,9 @@ public class Publicity extends AppCompatActivity {
             public void onResponse(String response) {
 //                ret[0]=response;
                 Toast.makeText(Publicity.this,"Submitted",Toast.LENGTH_SHORT).show();
+//                finish();
+                Intent manager = new Intent(Publicity.this, Manager.class);
+                startActivity(manager);
                 finish();
 
 
