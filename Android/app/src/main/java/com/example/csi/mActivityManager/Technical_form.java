@@ -1,5 +1,6 @@
 package com.example.csi.mActivityManager;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.csi.Prompts.Manager;
 import com.example.csi.R;
 import com.example.csi.SharedPreferenceConfig;
 
@@ -254,9 +256,12 @@ public class Technical_form extends AppCompatActivity {
             public void onResponse(String response) {
 //                ret[0]=response;
                 Log.i("volleyABC4985" ,"got response    "+response);
-                finish();
+
                 Toast.makeText(Technical_form.this, "Updated", Toast.LENGTH_SHORT).show();
                 comments_layout.setVisibility(View.GONE);
+                Intent manager = new Intent(Technical_form.this, Manager.class);
+                startActivity(manager);
+                finish();
 
             }
         },new Response.ErrorListener()  {

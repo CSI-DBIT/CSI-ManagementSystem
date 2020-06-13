@@ -20,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.csi.Prompts.MainActivity;
+import com.example.csi.Prompts.Manager;
 import com.example.csi.R;
 import com.example.csi.SharedPreferenceConfig;
 
@@ -65,11 +66,13 @@ public class proposal_desc extends AppCompatActivity {
             ap.setVisibility(View.VISIBLE);
             rej.setVisibility(View.VISIBLE);
             comment_e.setVisibility(View.VISIBLE);
+            comment_t.setVisibility(View.GONE);
         }
         else if(urole1.equals("SBC") && st.equals("0")){
             ap.setVisibility(View.VISIBLE);
             rej.setVisibility(View.VISIBLE);
             comment_e.setVisibility(View.VISIBLE);
+            comment_t.setVisibility(View.GONE);
         }
         else if(urole1.equals("Technical Head" ) ){
             if((st.equals("0") || st.equals("-1") || st.equals("-2"))){
@@ -237,6 +240,9 @@ public class proposal_desc extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         get_data("http://tayyabali.in:9000/proposal/status","1",st );
 
+//                        finish();
+                        Intent manager = new Intent(proposal_desc.this, Manager.class);
+                        startActivity(manager);
                         finish();
 
                     }
