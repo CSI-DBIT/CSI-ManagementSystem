@@ -155,7 +155,8 @@ var eid = req.query.eid;
 				} 
 			else {
 				var file = 'report/'.concat(result[0].name).concat('.pdf');
-				res.download(file); // Set disposition and send it.
+				var data=fs.readFileSync(file);
+				res.status(200).send(data); // Set disposition and send it.
 				}
 				});
 			}
@@ -164,6 +165,8 @@ var eid = req.query.eid;
 			});
 		});
 	}
+
 });
 });
+router.use('/report', express.static(__dirname + '/report'));
 module.exports = router;

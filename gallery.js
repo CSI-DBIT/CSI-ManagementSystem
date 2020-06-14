@@ -112,7 +112,7 @@ app.post('/view',(req,res)=>{
 });
 app.use('/images', express.static(__dirname + '/images'));
 app.use('/images', express.static(__dirname + '/creative'));
-
+// app.use('/report', express.static(__dirname + '/report'));
 //port listening
 app.listen(9091,(req,res)=>{
     console.log("Listening on 9091");
