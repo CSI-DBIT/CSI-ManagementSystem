@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
             manager.putExtra(EXTRA_UNAME,preferenceConfig.readNameStatus());
             //Log.i("New Error", preferenceConfig.readUrlStatus());
             manager.putExtra(EXTRA_URL, preferenceConfig.readUrlStatus());
+//            Intent manager = new Intent(this, Manager.class);
             startActivity(manager);
             finish();
         }

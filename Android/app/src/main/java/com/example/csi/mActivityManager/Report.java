@@ -7,6 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -66,6 +68,14 @@ public class Report extends AppCompatActivity implements PraposalAdapter.OnItemC
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
+                    TextView no_report_text = findViewById(R.id.no_report);
+                    if(jsonArray.length() > 0) {
+                        rv.setVisibility(View.VISIBLE);
+                        no_report_text.setVisibility(View.GONE);
+                    }
+                    else {
+                        no_report_text.setText("No pending Requests");
+                    }
                     for(int i=0; i< jsonArray.length(); i++) {
                         JSONObject minutes = jsonArray.getJSONObject(i);
 
