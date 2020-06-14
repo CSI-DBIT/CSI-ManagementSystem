@@ -13,21 +13,23 @@ var login=require('./routes/login');
 var minutes=require('./routes/minutes');
 var profile=require('./routes/profile');
 var attendance=require('./routes/attendance');
+var feedback=require("./routes/feedback");
 var proposal=require('./routes/proposal');
 var creative=require('./routes/creative');
-var publicity=require('./routes/publicity')
-var feedback=require("./routes/feedback");
+var publicity=require('./routes/publicity');
 var technical=require("./routes/technical");
+var report=require("./routes/report.js");
 
 app.use('/login',login);
 app.use('/minutes',minutes);
 app.use('/profile',profile);
 app.use('/attendance',attendance);
+app.use('/feedback',feedback);
 app.use('/proposal',proposal);
 app.use('/creative',creative);
 app.use('/publicity',publicity);
-app.use('/feedback',feedback);
 app.use('/technical',technical);
+app.use('/report',report);
 
 app.get("/",(req,res)=>{
 return res.send("Welcome to CSI-DBIT");
