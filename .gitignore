@@ -3,6 +3,7 @@ gallery/
 .env
 node_modules/
 images/
+report/
 sky.js
 upload.js
 uploads/
