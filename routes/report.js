@@ -66,7 +66,8 @@ var eid = req.query.eid;
 					throw err;
 				} 
 			else {
-				result[0].poster_link=result[0].poster_link.substr(25);
+				result[0].poster_link=result[0].poster_link.substr(31);
+				result[0].poster_link='creative/'+result[0].poster_link;
 				a.addPage();
 				a.moveDown(2);
 				a.font('Helvetica-Bold').fontSize(25).text('Marketing: ')
