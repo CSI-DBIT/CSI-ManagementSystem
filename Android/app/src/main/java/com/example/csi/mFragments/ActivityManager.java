@@ -1,6 +1,8 @@
 package com.example.csi.mFragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -53,6 +55,7 @@ public class ActivityManager extends Fragment  {
     LinearLayout sliderDotsPanel;
     private int dotsCount;
     private ImageView[] dots;
+    private SharedPreferenceConfig preferenceConfig;
 
     public  static ActivityManager newInstance()
     {
@@ -74,6 +77,8 @@ public class ActivityManager extends Fragment  {
         Bundle bundle = getArguments();
         Log.i("Sanket_testing",bundle.toString());
         roll_text = this.getArguments().getString("uRole");
+        preferenceConfig = new SharedPreferenceConfig(getActivity().getApplicationContext());
+        roll_text=preferenceConfig.readRoleStatus();
 
         sliderDotsPanel = (LinearLayout) rootView.findViewById(R.id.SliderDots);
 
@@ -86,7 +91,10 @@ public class ActivityManager extends Fragment  {
         return rootView;
 
     }
-   // image slider animation
+
+
+
+    // image slider animation
     public static class DepthPageTransformer implements ViewPager.PageTransformer {
        @Override
        public void transformPage(View page, float position) {

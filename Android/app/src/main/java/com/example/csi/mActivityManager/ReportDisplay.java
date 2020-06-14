@@ -15,6 +15,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -39,7 +40,8 @@ public class ReportDisplay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_display);
-
+        getSupportActionBar().setTitle("Report");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
         eName = intent.getStringExtra("eName");
         eName = eName + ".pdf";
@@ -82,11 +84,6 @@ public class ReportDisplay extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if(requestCode == 100 && (grantResults[0] == PackageManager.PERMISSION_GRANTED)){
             DownloadBooks(url, eName);
-        }else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-
-                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},100);
-            }
         }
     }
 
@@ -156,4 +153,14 @@ public class ReportDisplay extends AppCompatActivity {
 
         }
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method sub
+        int id= item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

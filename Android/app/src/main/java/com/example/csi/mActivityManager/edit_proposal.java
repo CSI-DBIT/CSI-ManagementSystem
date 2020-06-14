@@ -1,6 +1,7 @@
 package com.example.csi.mActivityManager;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -20,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.csi.Prompts.Manager;
 import com.example.csi.R;
 import com.example.csi.mFragments.datePickerFrag_min;
 
@@ -156,6 +158,9 @@ public class edit_proposal extends AppCompatActivity {
 
                 Log.i("volleyABC response", response);
                 Toast.makeText(edit_proposal.this,"Edited",Toast.LENGTH_SHORT).show();//it will not occur as authenticating at start
+//                finish();
+                Intent manager = new Intent(edit_proposal.this, Manager.class);
+                startActivity(manager);
                 finish();
 
 //

@@ -115,13 +115,22 @@ public class Creative_form extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         uploadImage = (Button) findViewById(R.id.uploadImage);
         uploadVideo = (Button) findViewById(R.id.uploadVideo);
+        submit = (Button) findViewById(R.id.submit_praposal);
 
         if(!uRole.equals("Creative Head")) {
-            uploadImage.setEnabled(false);
-            uploadVideo.setEnabled(false);
-        }
+            uploadImage.setVisibility(View.GONE);
+            uploadVideo.setVisibility(View.GONE);
+            submit.setVisibility(View.GONE);
 
-        submit = (Button) findViewById(R.id.submit_praposal);
+            TextView upload_text = findViewById(R.id.upload_text);
+            upload_text.setVisibility(View.GONE);
+
+            TextView image_text = findViewById(R.id.upload_image_text);
+            image_text.setText("Poster");
+
+            TextView video_text = findViewById(R.id.upload_video_text);
+            video_text.setText("Video Url");
+        }
 
         uploadImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -411,11 +420,6 @@ public class Creative_form extends AppCompatActivity {
             }
             else {
                 enable_video_button();
-            }
-        }else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-
-                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},100);
             }
         }
     }
