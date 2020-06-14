@@ -176,7 +176,7 @@ public class publcity_recycler extends AppCompatActivity implements  PraposalAda
     public void onItemClick(int position) {
 
         PraposalItem clickedItem = mPraposalList.get(position);
-        Toast.makeText(publcity_recycler.this,clickedItem.getmEid() , Toast.LENGTH_SHORT).show();
+//        Toast.makeText(publcity_recycler.this,clickedItem.getmEid() , Toast.LENGTH_SHORT).show();
         Intent creative_form = new Intent(publcity_recycler.this,Publicity.class);
         String id = clickedItem.getmEid();
         creative_form.putExtra("EID", id);
