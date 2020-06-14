@@ -32,7 +32,7 @@ import java.io.UnsupportedEncodingException;
 public class Technical_form extends AppCompatActivity {
     private String urole1,eid;
     private SharedPreferenceConfig preferenceConfig;
-    private TextView name , theme , e_date,speaker,csi_f,ncsi_f,worth_prize , description;
+    private TextView name , theme , e_date,speaker,csi_f,ncsi_f,worth_prize , description, cr_budget, pub_budget, guest_budget;
     CheckBox question , internet , software;
     EditText comments;
     LinearLayout comments_layout;
@@ -53,6 +53,9 @@ public class Technical_form extends AppCompatActivity {
         ncsi_f =findViewById(R.id.fee_non_csi_tf);
         worth_prize =findViewById(R.id.prize_tf);
         description =findViewById(R.id.desc_pd_tf);
+        cr_budget=findViewById(R.id.cb);
+        pub_budget=findViewById(R.id.pb);
+        guest_budget=findViewById(R.id.gb);
 
         Bundle extras = getIntent().getExtras();
         if(extras == null) {
@@ -164,6 +167,10 @@ public class Technical_form extends AppCompatActivity {
                         }else{
                             software.setChecked(false);
                         }
+
+                        cr_budget.setText(jsonObject1.getString("creative_budget"));
+                        pub_budget.setText(jsonObject1.getString("publicity_budget"));
+                        guest_budget.setText(jsonObject1.getString("guest_budget"));
 
                         String eventDate=jsonObject1.getString("event_date");
                         if(eventDate!=null)

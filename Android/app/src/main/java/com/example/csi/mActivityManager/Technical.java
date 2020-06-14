@@ -1,6 +1,8 @@
 package com.example.csi.mActivityManager;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -34,6 +36,7 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
     private ArrayList<PraposalItem> mPraposalList;
     private RequestQueue mRequestQueue;
     private String server_url;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,8 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
         getSupportActionBar().setTitle("Technical");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        swipe();
+
         mPraposalList = new ArrayList<>();
         rv=findViewById(R.id.recycler_view_T);
         rv.setLayoutManager(new LinearLayoutManager(Technical.this));
@@ -50,6 +55,29 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
         parseJSON(); //This method is used to get list of Agendas from server
 
         rv.setAdapter(new PraposalAdapter(Technical.this,mPraposalList));
+    }
+
+    void swipe() {
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresher_P);
+        //swipeRefreshLayout.setColorSchemeResources(R.color.Red,R.color.OrangeRed,R.color.Yellow,R.color.GreenYellow,R.color.BlueViolet);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                swipeRefreshLayout.setRefreshing(true);
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipeRefreshLayout.setRefreshing(false);
+
+                        int min = 65;
+                        int max = 95;
+
+                        parseJSON();
+                    }
+                }, 1000);
+            }
+        });
     }
 
     public void parseJSON() {
@@ -61,6 +89,7 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
         StringRequest stringRequest =new StringRequest(Request.Method.GET,server_url,new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
+                swipeRefreshLayout.setRefreshing(false);
                 Log.i("volleyABC" ,"got response    "+response);
 //                Toast.makeText(Technical.this,response ,Toast.LENGTH_SHORT).show();
                 try {

@@ -38,7 +38,7 @@ public class Publicity extends AppCompatActivity {
     LinearLayout pr_lay;
     Button edit_pr,submit_pr;
     String eid;
-    TextView eventName, eventTheme, event_date, eventDescription, speaker, venue, fee_csi, fee_non_csi, prize;
+    TextView eventName, eventTheme, event_date, eventDescription, speaker, venue, fee_csi, fee_non_csi, prize, cr_budget, pub_budget, guest_budget;
     EditText target_aud,comments, money_c , money_s;
     CheckBox reg_desk , inclass_pub;
 
@@ -73,9 +73,9 @@ public class Publicity extends AppCompatActivity {
         money_s=findViewById(R.id.pr_m_spent);
         reg_desk=findViewById(R.id.pr_desk);
         inclass_pub=findViewById(R.id.pr_inclass);
-
-
-
+        cr_budget=findViewById(R.id.cb);
+        pub_budget=findViewById(R.id.pb);
+        guest_budget=findViewById(R.id.gb);
 
         Bundle extras = getIntent().getExtras();
         if(extras == null) {
@@ -155,7 +155,9 @@ public class Publicity extends AppCompatActivity {
                         comments.setText(jsonObject1.getString("comment"));
                         money_c.setText(jsonObject1.getString("collected"));
                         money_s.setText(jsonObject1.getString("spent"));
-
+                        cr_budget.setText(jsonObject1.getString("creative_budget"));
+                        pub_budget.setText(jsonObject1.getString("publicity_budget"));
+                        guest_budget.setText(jsonObject1.getString("guest_budget"));
 
                         String eventDate=jsonObject1.getString("event_date");
                         String date = eventDate.substring(8,10) + "/" + eventDate.substring(5,7) + "/" + eventDate.substring(0,4);

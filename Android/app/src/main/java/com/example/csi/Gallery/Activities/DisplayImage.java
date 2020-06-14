@@ -208,7 +208,7 @@ public class DisplayImage extends AppCompatActivity {
     }
 
     private void UploadImages() {
-        //progress = new ProgressDialog(GalleryActivity.this);
+        progress = new ProgressDialog(DisplayImage.this);
 
         //button = findViewById(R.id.pick_image);
         //tv = findViewById(R.id.textView);
@@ -328,9 +328,9 @@ public class DisplayImage extends AppCompatActivity {
     }
 
     public void afterActivityResult(Intent data) {
-//        progress.setTitle("Uploading");
-//        progress.setMessage("Please wait...");
-//        progress.show();
+        progress.setTitle("Uploading");
+        progress.setMessage("Please wait...");
+        progress.show();
 
         Thread t = new Thread(new Runnable() {
             @Override
@@ -399,7 +399,7 @@ public class DisplayImage extends AppCompatActivity {
                                 throw new IOException("Error : " + response);
                             }
 
-                            //progress.dismiss();
+                            progress.dismiss();
 
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -454,7 +454,7 @@ public class DisplayImage extends AppCompatActivity {
                                 throw new IOException("Error : " + response);
                             }
 
-                            //progress.dismiss();
+                            progress.dismiss();
 
                         } catch (IOException e) {
                             e.printStackTrace();
