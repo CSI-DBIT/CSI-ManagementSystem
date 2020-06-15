@@ -91,7 +91,12 @@ public class Publicity extends AppCompatActivity {
         else {
             pr_lay.setVisibility(View.VISIBLE);
             submit_pr.setVisibility(View.GONE);
-            reg_desk.;
+            reg_desk.setEnabled(false);
+            inclass_pub.setEnabled(false);
+            findViewById(R.id.pr_target).setEnabled(false);
+            findViewById(R.id.pr_comments).setEnabled(false);
+            findViewById(R.id.pr_m_coll).setEnabled(false);
+            findViewById(R.id.pr_m_spent).setEnabled(false);
         }
 
         edit_pr.setOnClickListener(new View.OnClickListener() {

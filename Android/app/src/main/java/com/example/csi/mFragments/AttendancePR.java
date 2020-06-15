@@ -1,9 +1,11 @@
 package com.example.csi.mFragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -40,9 +42,10 @@ public class AttendancePR extends Fragment {
 
     private View rootView;
     private RecyclerView mRecyclerView;
-private RequestListAdapter mRequestListAdapter;
+    private RequestListAdapter mRequestListAdapter;
     private ArrayList<RequestListItem> mRequestList;
     private RequestQueue mRequestQueue;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     StringBuffer sb = null;
 
@@ -55,6 +58,8 @@ private RequestListAdapter mRequestListAdapter;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getActivity().setTitle("Attendance");
         rootView = inflater.inflate(R.layout.activity_attendance_pr,null);
+
+        swipe();
 
         mRecyclerView = rootView.findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -85,6 +90,29 @@ private RequestListAdapter mRequestListAdapter;
         return "Attendance PR";
     }
 
+    void swipe() {
+        swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.refresher_P);
+        //swipeRefreshLayout.setColorSchemeResources(R.color.Red,R.color.OrangeRed,R.color.Yellow,R.color.GreenYellow,R.color.BlueViolet);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                swipeRefreshLayout.setRefreshing(true);
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipeRefreshLayout.setRefreshing(false);
+
+                        int min = 65;
+                        int max = 95;
+
+                        parseJSON();
+                    }
+                }, 1000);
+            }
+        });
+    }
+
     private void parseJSON() {
         //String url = "http://192.168.43.84:8080/requestlist";
         String url = "http://tayyabali.in:9000/attendance/requestlist";   //Main Server URL
@@ -95,6 +123,7 @@ private RequestListAdapter mRequestListAdapter;
             public void onResponse(String response) {
                 try {
                     Log.i("AttPR","got response"+response);
+                    swipeRefreshLayout.setRefreshing(false);
                     JSONArray jsonArray = new JSONArray(response);
 
                     if(jsonArray.length() == 0) {

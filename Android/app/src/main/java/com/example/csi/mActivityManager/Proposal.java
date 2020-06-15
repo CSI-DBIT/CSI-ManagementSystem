@@ -383,9 +383,9 @@ public class Proposal extends AppCompatActivity {
 
                 preview+="\nVenue : "+venue_s;jsonobject.put("venue",venue_s);
 
-                preview+="\nRegistration Fee \n CSI Member : "+csi_s;jsonobject.put("reg_fee",csi_s);
+                preview+="\nRegistration Fee \n CSI Member : "+csi_s;jsonobject.put("reg_fee_c",csi_s);
 
-                preview+="\nNon-CSI member : "+ncsi_s;jsonobject.put("reg_fee_n",ncsi_s);
+                preview+="\nNon-CSI member : "+ncsi_s;jsonobject.put("reg_fee_p",ncsi_s);
 
                 preview+="\nWorth Prize : "+prize_s;jsonobject.put("prize",prize_s);
 

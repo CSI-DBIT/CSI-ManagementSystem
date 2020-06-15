@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -146,6 +147,14 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
+                    TextView no_minute_text = rootView.findViewById(R.id.no_minute);
+                    if(jsonArray.length() > 0) {
+                        rv.setVisibility(View.VISIBLE);
+                        no_minute_text.setVisibility(View.GONE);
+                    }
+                    else {
+                        no_minute_text.setText("No minutes to display");
+                    }
                     for(int i=0; i< jsonArray.length(); i++) {
                         JSONObject minutes = jsonArray.getJSONObject(i);
 
