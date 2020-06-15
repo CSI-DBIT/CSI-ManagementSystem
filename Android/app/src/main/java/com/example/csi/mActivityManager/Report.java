@@ -55,7 +55,7 @@ public class Report extends AppCompatActivity implements PraposalAdapter.OnItemC
     }
 
     public void parseJSON() {
-        server_url = "http://tayyabali.in:9000/creative/listcreative";   //Main Server URL
+        server_url = "http://tayyabali.in:9000/report/list";   //Main Server URL
         // server_url = "http://192.168.43.110:8081/creative/viewListEvents";
 
         mPraposalList.clear();

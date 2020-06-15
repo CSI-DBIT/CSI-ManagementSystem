@@ -65,6 +65,7 @@ public class ReportDisplay extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(ReportDisplay.this, eName, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ReportDisplay.this, "Downloading Started", Toast.LENGTH_SHORT).show();
                 StartDownloading(v);
             }
         });
@@ -74,7 +75,7 @@ public class ReportDisplay extends AppCompatActivity {
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             if(ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},100);
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},100);
                 return;
             }
         }
