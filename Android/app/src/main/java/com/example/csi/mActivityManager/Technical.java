@@ -102,7 +102,7 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
                         no_tech_text.setVisibility(View.GONE);
                     }
                     else {
-                        no_tech_text.setText("No pending Requests");
+                        no_tech_text.setText("Nothing to display");
                     }
 
                     for(int i=0; i< jsonArray.length(); i++) {

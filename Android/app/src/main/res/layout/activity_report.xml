@@ -19,7 +19,7 @@
             android:layout_alignParentBottom="true"
             android:background="@color/white"
             android:gravity="center"
-            android:text="Waiting for response from server"
+            android:text="No Reports to Display"
             android:textColor="@color/colorAccent"
             android:textSize="17sp"
             android:textStyle="bold"

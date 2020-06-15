@@ -121,7 +121,7 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
                         no_creative_text.setVisibility(View.GONE);
                     }
                     else {
-                        no_creative_text.setText("No pending Requests");
+                        no_creative_text.setText("Nothing to display");
                     }
                     for(int i=0; i< jsonArray.length(); i++) {
                         JSONObject minutes = jsonArray.getJSONObject(i);

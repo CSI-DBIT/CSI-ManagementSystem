@@ -74,7 +74,7 @@ public class Report extends AppCompatActivity implements PraposalAdapter.OnItemC
                         no_report_text.setVisibility(View.GONE);
                     }
                     else {
-                        no_report_text.setText("No pending Requests");
+                        no_report_text.setText("No Reports to display");
                     }
                     for(int i=0; i< jsonArray.length(); i++) {
                         JSONObject minutes = jsonArray.getJSONObject(i);

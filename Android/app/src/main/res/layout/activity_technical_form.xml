@@ -265,12 +265,7 @@
             android:layout_height="1dp"
             android:layout_margin="0dp"
             android:background="#EDEDED" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/white"
-            android:padding="5dp">
+
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -286,14 +281,14 @@
                 android:textSize="17sp"
                 android:textColor="@color/colorAccent"
                 android:text="Description "
+                android:layout_marginBottom="10dp"
                 android:id="@+id/desc_pd_tf"/>
 
-
             <View
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:layout_margin="0dp"
-                android:background="@color/colorAccent" />
+                android:background="#EDEDED" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -401,7 +396,6 @@
                     android:textSize="17sp" />
             </LinearLayout>
 
-        </LinearLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

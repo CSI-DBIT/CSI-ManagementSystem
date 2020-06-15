@@ -20,7 +20,7 @@
             android:layout_alignParentBottom="true"
             android:background="@color/white"
             android:gravity="center"
-            android:text="Waiting for response from server"
+            android:text="No Minutes to Display"
             android:textColor="@color/colorAccent"
             android:textSize="17sp"
             android:textStyle="bold"
@@ -33,8 +33,7 @@
             android:layout_below="@+id/search_bar"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="-2dp"
-            android:layout_marginBottom="1dp"
-            android:visibility="gone">
+            android:layout_marginBottom="1dp">
 
         </android.support.v7.widget.RecyclerView>
 
@@ -62,19 +61,18 @@
             android:text="URL"
             android:visibility="gone"/>
 
-        <Button
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <android.support.design.widget.FloatingActionButton
             android:id="@+id/add_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="26dp"
-            android:layout_marginBottom="44dp"
-            android:background="@drawable/circular_button"
-            android:text="+"
-            android:textSize="25dp"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_baseline_add_24"/>
+        </android.support.design.widget.CoordinatorLayout>
 
         <EditText
             android:id="@+id/search_bar"

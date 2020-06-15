@@ -117,7 +117,7 @@ public class publcity_recycler extends AppCompatActivity implements  PraposalAda
                         no_pub_text.setVisibility(View.GONE);
                     }
                     else {
-                        no_pub_text.setText("No pending Requests");
+                        no_pub_text.setText("No Proposals to display");
                     }
                     for(int i=0; i< jsonArray.length(); i++) {
                         JSONObject minutes = jsonArray.getJSONObject(i);

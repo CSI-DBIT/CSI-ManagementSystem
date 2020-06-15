@@ -24,7 +24,7 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
             android:backgroundTint="@color/colorPrimary"
-            android:src="@drawable/ic_insert_photo_black_24dp"
+            android:src="@drawable/ic_add_photo_alternate_black_18dp"
             />
 
     </android.support.design.widget.CoordinatorLayout>
