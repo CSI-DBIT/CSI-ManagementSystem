@@ -240,7 +240,7 @@ public class Manager extends AppCompatActivity implements NavigationView.OnNavig
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.containerID, AttendancePR.newInstance()).addToBackStack(null).commit();
             }
-            else if (urole.equals("SBC")) {
+            else if (urole.equals("SBC") || urole.equals("HOD")) {
                 if(getSupportFragmentManager().getBackStackEntryCount() > 1){
                     getSupportFragmentManager().popBackStack();
                 }

@@ -88,6 +88,11 @@ public class Publicity extends AppCompatActivity {
         if(urole1.equals("PR Head")){
             edit_pr.setVisibility(View.VISIBLE);
         }
+        else {
+            pr_lay.setVisibility(View.VISIBLE);
+            submit_pr.setVisibility(View.GONE);
+            reg_desk.;
+        }
 
         edit_pr.setOnClickListener(new View.OnClickListener() {
             @Override
