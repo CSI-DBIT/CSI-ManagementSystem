@@ -523,7 +523,7 @@ public class Creative_form extends AppCompatActivity {
                                     throw new IOException("Error : " + response);
                                 }
 
-                                //progress.dismiss();
+                                progress.dismiss();
 
                             } catch (IOException e) {
                                 e.printStackTrace();

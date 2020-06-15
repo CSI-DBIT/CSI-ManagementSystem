@@ -33,7 +33,7 @@ import java.net.URL;
 public class ReportDisplay extends AppCompatActivity {
 
     PDFView pdfView;
-    String url = "http://ancestralauthor.com/download/sample.pdf";
+    String url = "http://tayyabali.in:9091/report/";
     String eName;
 
     @Override
@@ -45,6 +45,8 @@ public class ReportDisplay extends AppCompatActivity {
         Intent intent = getIntent();
         eName = intent.getStringExtra("eName");
         eName = eName + ".pdf";
+        url += eName;
+        Log.i("url testing", url);
 
         pdfView = (PDFView)findViewById(R.id.pdfView);
 

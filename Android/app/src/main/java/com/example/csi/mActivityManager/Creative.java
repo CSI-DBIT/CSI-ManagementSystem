@@ -1,8 +1,10 @@
 package com.example.csi.mActivityManager;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -49,6 +51,7 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
     private ArrayList<PraposalItem> mPraposalList;
     private RequestQueue mRequestQueue;
     private String server_url, eid;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,8 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
 
         Intent intent = getIntent();
         uRole = intent.getStringExtra("uRole");
+
+        swipe();
 
         getSupportActionBar().setTitle("Creative");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -71,6 +76,29 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
 
     }
 
+    void swipe() {
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresher_P);
+        //swipeRefreshLayout.setColorSchemeResources(R.color.Red,R.color.OrangeRed,R.color.Yellow,R.color.GreenYellow,R.color.BlueViolet);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                swipeRefreshLayout.setRefreshing(true);
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipeRefreshLayout.setRefreshing(false);
+
+                        int min = 65;
+                        int max = 95;
+
+                        parseJSON();
+                    }
+                }, 1000);
+            }
+        });
+    }
+
     public void parseJSON() {
         server_url = "http://tayyabali.in:9000/creative/listcreative";   //Main Server URL
        // server_url = "http://192.168.43.110:8081/creative/viewListEvents";
@@ -80,6 +108,7 @@ public class Creative extends AppCompatActivity implements PraposalAdapter.OnIte
         StringRequest stringRequest =new StringRequest(Request.Method.GET,server_url,new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
+                swipeRefreshLayout.setRefreshing(false);
                 Log.i("volleyABC" ,"got response    "+response);
 //                Toast.makeText(Creative.this,response ,Toast.LENGTH_SHORT).show();
                 try {
