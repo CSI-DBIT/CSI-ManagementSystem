@@ -23,6 +23,20 @@ connection.connect(function(err) {
     	}
 });
 
+//Listing All events ready for report
+router.get('/list',(req,res)=>{
+
+	connection.query('SELECT events.eid,name,theme,event_date FROM events,(SELECT * FROM(SELECT res1.eid,status,res1.creative_status,res1.publicity_status FROM technical,(SELECT * FROM (SELECT creative.eid,creative.status AS creative_status,publicity.status AS publicity_status FROM creative,publicity WHERE creative.eid=publicity.eid) AS res0  WHERE creative_status=3 AND publicity_status=3) AS res1 WHERE res1.eid=technical.eid) AS res2 WHERE res2.status=3) AS res3 WHERE events.eid=res3.eid',function(err,result){
+		if(err){
+			console.log("Report listing error");
+			res.sendStatus(400);
+		}
+		else{
+			console.log("Succesully Listed Report");
+			res.status(200).send(result);
+		}
+	});
+});
 
 
 //Download Report
