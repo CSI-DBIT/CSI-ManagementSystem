@@ -6,3 +6,7 @@ A Mobile interface for Members to CSI-DBIT to use.
 
 # Design Interface
 ![Design](https://i.imgur.com/rR5kmI5.png)
+
+## Team
+
+[![Afif Shaikh](https://i.imgur.com/WacH1vt.png)](https://github.com/afif79)  | ---|---
