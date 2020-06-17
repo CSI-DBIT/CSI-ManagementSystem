@@ -9,4 +9,6 @@ A Mobile interface for Members to CSI-DBIT to use.
 
 ## Team
 
-[![Afif Shaikh](https://i.imgur.com/WacH1vt.png)](https://github.com/afif79)  | ---|---
+[![Afif Shaikh](https://i.imgur.com/WacH1vt.png)](https://github.com/afif79) | [![Quandl.com](https://github.com/iharsh234/WebApp/blob/master/images/quandl.jpg)](https://www.quandl.com/)
+---|---
+[Harsh Vijay ](https://github.com/iharsh234) |[Quandl](https://www.quandl.com)
