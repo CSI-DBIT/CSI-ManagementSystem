@@ -34,7 +34,7 @@ import java.io.UnsupportedEncodingException;
 
 public class Profile extends Fragment {
 
-    String server_url="http://tayyabali.in:9000/profile/";  //Main Server URL
+    String server_url;   //Main Server URL
     //String server_url="http://192.168.43.84:8080/profile";
     //string to store position as we are not showing it in any textview
     String position_s=" ", UID, UProfile;
@@ -68,6 +68,7 @@ public class Profile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
         rootView = inflater.inflate(R.layout.activity_profile,container,false);
+        server_url = rootView.getResources().getString(R.string.server_url) + "/profile/";
         getActivity().setTitle("My Profile");
         Bundle bundle = getArguments();
         UID = this.getArguments().getString("id");

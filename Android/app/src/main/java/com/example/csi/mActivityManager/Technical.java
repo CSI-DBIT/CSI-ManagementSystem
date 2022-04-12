@@ -81,7 +81,7 @@ public class Technical extends AppCompatActivity implements  PraposalAdapter.OnI
     }
 
     public void parseJSON() {
-        server_url = "http://tayyabali.in:9000/creative/listcreative";   //Main Server URL
+        server_url = getApplicationContext().getResources().getString(R.string.server_url) + "/creative/listcreative";   //Main Server URL
         //server_url = "http://192.168.43.110:8081/creative/viewListEvents";
 
         mPraposalList.clear();

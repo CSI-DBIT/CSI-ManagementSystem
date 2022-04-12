@@ -132,7 +132,7 @@ public class Technical_form extends AppCompatActivity {
         final String requestBody = jsonObject.toString();
         Log.i("volleyABC ", requestBody);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/technical/viewEvents", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,getApplicationContext().getResources().getString(R.string.server_url) + "/technical/viewEvents", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 //                ret[0]=response;
@@ -258,7 +258,7 @@ public class Technical_form extends AppCompatActivity {
         final String requestBody = jsonObject.toString();
         Log.i("volleyABC ", requestBody);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/technical/editEvents ", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,getApplicationContext().getResources().getString(R.string.server_url) + "/technical/editEvents ", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 //                ret[0]=response;

@@ -66,7 +66,7 @@ public class Creative_form extends AppCompatActivity {
     ImageView imagePreview;
 
     public String mediaType = "Image", eid;
-    public String server_url = "http://tayyabali.in:9000/creative/viewpropdetail";
+    public String server_url;
     String name, theme, eventDate, description, creativeBudget, date1;
     String dSpeaker, dVenue, dFeeCSI, dFeeNonCSI, dPrize, dPublicityBudget, dGuestBudget;
 
@@ -83,6 +83,7 @@ public class Creative_form extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        server_url = getApplicationContext().getResources().getString(R.string.server_url) + "/creative/viewpropdetail";
         setContentView(R.layout.activity_creative_form);
 
         Log.i("sanket testing", "entered");
@@ -176,7 +177,7 @@ public class Creative_form extends AppCompatActivity {
         Log.i("volleyABC123", requestBody);
 
         //getting response from server starts
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/creative/submit",new Response.Listener<String>(){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,getApplicationContext().getResources().getString(R.string.server_url) + "/creative/submit",new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
 
@@ -507,7 +508,7 @@ public class Creative_form extends AppCompatActivity {
 
                             okhttp3.Request request = new okhttp3.Request.Builder()
                                     //.url("http://192.168.43.84:8080/pic")
-                                    .url("http://tayyabali.in:9000/creative/upload")    //Main Server URL)
+                                    .url(getApplicationContext().getResources().getString(R.string.server_url) + "/creative/upload")    //Main Server URL)
                                     //.url("http://192.168.42.156:8080/upload")
                                     .post(requestBody)
                                     .build();
@@ -567,7 +568,7 @@ public class Creative_form extends AppCompatActivity {
 
                             okhttp3.Request request = new okhttp3.Request.Builder()
                                     //.url("http://192.168.43.84:8080/pic")
-                                    .url("http://tayyabali.in:9000/creative/upload")
+                                    .url(getApplicationContext().getResources().getString(R.string.server_url) + "/creative/upload")
                                     //.url("http://192.168.42.156:8080/upload")
                                     .post(request_body)
                                     .build();

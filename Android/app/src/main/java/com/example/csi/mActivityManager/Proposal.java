@@ -162,7 +162,7 @@ public class Proposal extends AppCompatActivity {
         try {
             jsonObject.put("date",date);
             Log.i("info123",jsonObject.toString());
-            sendData("http://tayyabali.in:9000/proposal/viewagenda",jsonObject,0);
+            sendData(getApplicationContext().getResources().getString(R.string.server_url) + "/proposal/viewagenda",jsonObject,0);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -443,7 +443,7 @@ public class Proposal extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        sendData("http://tayyabali.in:9000/proposal/createproposal",jsonobject,1);
+                        sendData(getApplicationContext().getResources().getString(R.string.server_url) + "/proposal/createproposal",jsonobject,1);
                         finish();
 
                     }

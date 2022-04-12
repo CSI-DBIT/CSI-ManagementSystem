@@ -132,7 +132,7 @@ public class Publicity extends AppCompatActivity {
         final String requestBody = jsonObject.toString();
         Log.i("volleyABC ", requestBody);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/publicity/viewEvent", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,getApplicationContext().getResources().getString(R.string.server_url) + "/publicity/viewEvent", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 //                ret[0]=response;
@@ -251,7 +251,7 @@ public class Publicity extends AppCompatActivity {
         final String[] ret = new String[1];
         ret[0]=null;
         String r=null;
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://tayyabali.in:9000/publicity/editPublicity", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,getApplicationContext().getResources().getString(R.string.server_url) + "/publicity/editPublicity", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 //                ret[0]=response;
@@ -319,7 +319,7 @@ public class Publicity extends AppCompatActivity {
 //        //creating jsonobject ends
 //
 //        //checking data inserted into json object
-////        String response = volley(jsonObject, "http://tayyabali.in:9000/creative/viewpropdetail");
+////        String response = volley(jsonObject, getApplicationContext().getResources().getString(R.string.server_url) + "/creative/viewpropdetail");
 //
 //
 //

@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
     public static final String EXTRA_UROLE = "com.example.csimanagementsystem.EXTRA_UROLE";
     public static final String EXTRA_URL = "com.example.csimanagementsystem.EXTRA_URL";
 
-    String server_url="http://tayyabali.in:9000/login"; //Main Server URL
+    String server_url;
+     //Main Server URL
     private SharedPreferences mpref; //asdfg
     private static final String pref_name="";
 
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        server_url = getApplicationContext().getResources().getString(R.string.server_url) + "/login";
+//        Toast.makeText(this, "this is server_rl from string " + server_url , Toast.LENGTH_SHORT).show();
         setContentView(R.layout.activity_main);
         animation();
         //.....6/6/2019
@@ -73,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("" ,"Reached Listner");
+                Log.i("abcdef" ,"Reached Listner" + server_url);
 
                 uid =usrid.getText().toString();
                 Log.i("something","User ID is"+uid);
@@ -177,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
                     error.printStackTrace();}
                 catch (Exception e)
                 {
-                    Toast.makeText(MainActivity.this,"Check Network",Toast.LENGTH_SHORT).show();}
+                    Toast.makeText(MainActivity.this,"Check Network " + server_url,Toast.LENGTH_SHORT).show();}
             }
         }){
             //sending JSONOBJECT String to server starts

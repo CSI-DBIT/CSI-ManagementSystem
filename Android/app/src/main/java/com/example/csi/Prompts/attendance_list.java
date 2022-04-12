@@ -34,12 +34,13 @@ import static com.example.csi.mFragments.AttendanceSBC.EXTRA_CLASS;
 public class attendance_list extends AppCompatActivity {
 
     String sam;
-    String server_url = "http://tayyabali.in:9000/attendance/view";
+    String server_url;
     TableLayout tableLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        server_url = getApplicationContext().getResources().getString(R.string.server_url) + "/attendance/view";
         setContentView(R.layout.activity_attendance_list);
         getSupportActionBar().setTitle("Attendance List");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

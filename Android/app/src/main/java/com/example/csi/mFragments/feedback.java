@@ -38,7 +38,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class feedback extends Fragment {
     View rootView;
-    String server_url = "http://tayyabali.in:9000/feedback";
+    String server_url;
     //    private SharedPreferenceConfig preferenceConfig;
 //    private SharedPreferences mpref;
     private String usrid, usrname = "";
@@ -59,6 +59,7 @@ public class feedback extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.activity_feedback, container, false);
+        server_url = rootView.getResources().getString(R.string.server_url) + "/feedback";
         getActivity().setTitle("Feedback");
 
 

@@ -36,7 +36,7 @@ import java.util.regex.Pattern;
 
 public class ProfileEdit extends AppCompatActivity {
 
-    String server_url="http://tayyabali.in:9000/profile/edit";    //Main Server URL
+    String server_url;     //Main Server URL
     //String server_url="http://192.168.43.84:8080/profile/edit";
     String position_s, UProfile;
 
@@ -45,6 +45,7 @@ public class ProfileEdit extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        server_url = getApplicationContext().getResources().getString(R.string.server_url) + "/profile/edit";
         setContentView(R.layout.activity_profile_edit);
 
         getSupportActionBar().setTitle("Edit Profile");

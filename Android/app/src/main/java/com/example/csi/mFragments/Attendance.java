@@ -40,7 +40,7 @@ public class Attendance extends Fragment {
     JSONObject jsonObject = new JSONObject();
     String checkboxData=null;
     String date=null;
-    String server_url="http://tayyabali.in:9000/attendance/request";    //Main Server URL
+    String server_url; //Main Server URL
     //String server_url="http://192.168.43.84:8080/request";
     String rsn="";
     String slots="";
@@ -54,6 +54,7 @@ public class Attendance extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.activity_request_attendance,container,false);
+        server_url = rootView.getResources().getString(R.string.server_url) + "/attendance/request";
         getActivity().setTitle("Attendance");
         Bundle bundle = getArguments();
         UID = this.getArguments().getString("id");

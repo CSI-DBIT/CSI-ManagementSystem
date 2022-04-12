@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -59,7 +60,7 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
     private ExampleAdapter mExampleAdapter;
     private ArrayList<ExampleItem> mExampleList;
     private RequestQueue mRequestQueue;
-    private Button mAddMinute;
+    private FloatingActionButton mAddMinute;
     private View rootView;
     EditText SearchInput;
     private String server_url, UID;
@@ -91,7 +92,7 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
         swipe(); //This method is used to add swipe refresh Layout
 
         mExampleList = new ArrayList<>();
-        mAddMinute = (Button) rootView.findViewById(R.id.add_button);
+        mAddMinute = rootView.findViewById(R.id.add_button);
         mAddMinute.setOnClickListener(new View.OnClickListener() {
             Context context = rootView.getContext();
             @Override
@@ -128,7 +129,7 @@ public class MinuteManager extends Fragment implements ExampleAdapter.OnItemClic
     }
 
     public void parseJSON() {
-        server_url = "http://tayyabali.in:9000/minutes/list";   //Main Server URL
+        server_url = rootView.getResources().getString(R.string.server_url) + "/minutes/list";   //Main Server URL
         //server_url = "http://206.189.135.147:8081/minutes/list";
         //server_url = "http://192.168.43.84:8080/minutes/list";
 
